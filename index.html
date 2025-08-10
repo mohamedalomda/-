@@ -12,7 +12,6 @@
       --paper: #fff6eb;
       --muted: #6b6b6b;
       --card: #fff;
-      --accent-blue: #bfeaf0;
       --accent-yellow: #ffe38f;
       --border: rgba(0,0,0,0.08);
     }
@@ -78,7 +77,7 @@
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(191,234,240,0.28), rgba(255,227,143,0.12));
+      background: #fff;
       padding: 16px;
       border-radius: 12px;
       margin: 14px 0;
@@ -102,32 +101,12 @@
       font-weight: 800;
     }
 
-    .examples {
-      margin: 14px 0;
-    }
-    .example {
-      background: #fff;
-      padding: 12px;
-      border-radius: 10px;
-      border-left: 6px solid var(--orange);
-      margin-bottom: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    }
-
     .code {
       font-family: monospace;
       background: rgba(0,0,0,0.05);
       padding: 4px 6px;
       border-radius: 4px;
       color: #c75a00;
-    }
-
-    .two-cols {
-      display: flex;
-      gap: 20px;
-    }
-    .col {
-      flex: 1;
     }
 
     .tips {
@@ -181,20 +160,7 @@
       opacity: 0.5;
     }
 
-    blockquote {
-      background: #fff3d9;
-      border-right: 6px solid var(--orange);
-      padding: 12px 16px;
-      margin: 16px 0;
-      border-radius: 8px;
-      font-style: italic;
-      color: #555;
-    }
-
     @media (max-width: 760px) {
-      .two-cols {
-        flex-direction: column;
-      }
       .decor, .decor2 {
         display: none;
       }
@@ -233,21 +199,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Nada a girl</td>
-            <td><span class="code">Nada is a girl</span></td>
-            <td>ندى هي بنت</td>
-          </tr>
-          <tr>
-            <td>Egypt an African country</td>
-            <td><span class="code">Egypt is an African country</span></td>
-            <td>مصر دولة أفريقية</td>
-          </tr>
-          <tr>
-            <td>I a doctor</td>
-            <td><span class="code">I am a doctor</span></td>
-            <td>أنا طبيب</td>
-          </tr>
+          <tr><td><span class="code">Nada a girl</span></td><td><span class="code">Nada is a girl</span></td><td>ندى هي بنت</td></tr>
+          <tr><td><span class="code">Egypt an African country</span></td><td><span class="code">Egypt is an African country</span></td><td>مصر دولة أفريقية</td></tr>
+          <tr><td><span class="code">I a doctor</span></td><td><span class="code">I am a doctor</span></td><td>أنا طبيب</td></tr>
         </tbody>
       </table>
     </section>
@@ -264,36 +218,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><strong>الجمل الخبرية (Declarative)</strong></td>
-            <td>تُخبر بمعلومة</td>
-            <td><span class="code">I like my apples</span></td>
-            <td>أنا أحب تفاحي</td>
-          </tr>
-          <tr>
-            <td><strong>جمل النفي (Negative)</strong></td>
-            <td>تحتاج فعلًا مساعدًا (Helping Verb) للنفي</td>
-            <td><span class="code">I don't like apples</span></td>
-            <td>أنا لا أحب التفاح</td>
-          </tr>
-          <tr>
-            <td><strong>جمل الأمر (Imperative)</strong></td>
-            <td>تبدأ بفعل مباشر</td>
-            <td><span class="code">Stand up</span></td>
-            <td>قف</td>
-          </tr>
-          <tr>
-            <td><strong>نفي الأمر</strong></td>
-            <td>تبدأ بـ "Don't + فعل"</td>
-            <td><span class="code">Don't sit down</span></td>
-            <td>لا تجلس</td>
-          </tr>
-          <tr>
-            <td><strong>جمل الاستفهام (Interrogative)</strong></td>
-            <td>تبدأ بفعل مساعد أو أداة استفهام</td>
-            <td><span class="code">Did you see Ali?</span></td>
-            <td>هل رأيت علي؟</td>
-          </tr>
+          <tr><td><strong>الجمل الخبرية (Declarative)</strong></td><td>تُخبر بمعلومة</td><td><span class="code">I like my apples</span></td><td>أنا أحب تفاحي</td></tr>
+          <tr><td><strong>جمل النفي (Negative)</strong></td><td>تحتاج فعلًا مساعدًا (Helping Verb) للنفي</td><td><span class="code">I don't like apples</span></td><td>أنا لا أحب التفاح</td></tr>
+          <tr><td><strong>جمل الأمر (Imperative)</strong></td><td>تبدأ بفعل مباشر</td><td><span class="code">Stand up</span></td><td>قف</td></tr>
+          <tr><td><strong>نفي الأمر</strong></td><td>تبدأ بـ "Don't + فعل"</td><td><span class="code">Don't sit down</span></td><td>لا تجلس</td></tr>
+          <tr><td><strong>جمل الاستفهام (Interrogative)</strong></td><td>تبدأ بفعل مساعد أو أداة استفهام</td><td><span class="code">?Did you see Ali</span></td><td>هل رأيت علي؟</td></tr>
         </tbody>
       </table>
     </section>
@@ -309,58 +238,29 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><strong>الجمل البسيطة (Simple)</strong></td>
-            <td>تحتوي على فعل واحد وفاعل واحد/مركب</td>
-            <td><span class="code">Ali ate dinner alone in the house</span><br><small>علي تناول العشاء وحيدًا في المنزل</small></td>
-          </tr>
-          <tr>
-            <td><strong>الجمل المركبة (Compound)</strong></td>
-            <td>تربط جملتين مستقلتين برابط (Coordinating Conjunction)</td>
-            <td><span class="code">I like tea, and he likes coffee</span><br><small>أنا أحب الشاي، وهو يحب القهوة</small></td>
-          </tr>
-          <tr>
-            <td><strong>الجمل المعقدة (Complex)</strong></td>
-            <td>تربط جملة مستقلة بأخرى معتمدة عليها (Subordinating Conjunction)</td>
-            <td><span class="code">When the cake is brown, remove it</span><br><small>عندما يصبح الكيك بنيًا، أخرجه</small></td>
-          </tr>
+          <tr><td><strong>الجمل البسيطة (Simple)</strong></td><td>تحتوي على فعل واحد وفاعل واحد/مركب</td><td><span class="code">Ali ate dinner alone in the house</span></td></tr>
+          <tr><td><strong>الجمل المركبة (Compound)</strong></td><td>تربط جملتين مستقلتين برابط (Coordinating Conjunction)</td><td><span class="code">I like tea, and he likes coffee</span></td></tr>
+          <tr><td><strong>الجمل المعقدة (Complex)</strong></td><td>تربط جملة مستقلة بأخرى معتمدة عليها (Subordinating Conjunction)</td><td><span class="code">When the cake is brown, remove it</span></td></tr>
         </tbody>
       </table>
     </section>
 
     <section>
       <h3 class="section-title">رابعاً: أدوات الربط (Conjunctions)</h3>
-      <div class="two-cols">
-        <div class="col">
-          <h4>الروابط التنسيقية (Coordinating)</h4>
-          <p><strong>FANBOYS:</strong> For, And, Nor, But, Or, Yet, So</p>
-          <div class="example">
-            <strong>مثال:</strong> <span class="code">She is smart, but lazy</span><br>
-            <small>هي ذكية لكن كسولة</small>
-          </div>
-        </div>
-        <div class="col">
-          <h4>الروابط التبعية (Subordinating)</h4>
-          <p>When, If, Because, After, Although (تربط الجمل المعتمدة)</p>
-          <div class="example">
-            <strong>مثال:</strong> <span class="code">If you don't try, you will lose</span><br>
-            <small>إذا لم تحاول، ستخسر</small>
-          </div>
-        </div>
+      <div class="card">
+        <h4>الروابط التنسيقية (Coordinating)</h4>
+        <p><strong>FANBOYS:</strong> For, And, Nor, But, Or, Yet, So</p>
+        <p><span class="code">She is smart, but lazy</span> → هي ذكية لكن كسولة</p>
+      </div>
+      <div class="card">
+        <h4>الروابط التبعية (Subordinating)</h4>
+        <p>When, If, Because, After, Although (تربط الجمل المعتمدة)</p>
+        <p><span class="code">If you don't try, you will lose</span> → إذا لم تحاول، ستخسر</p>
       </div>
     </section>
 
     <section>
-      <h3 class="section-title">خامساً: أمثلة توضيحية من الملفات</h3>
-      <div class="card">
-        <h4>تصحيح الأخطاء الشائعة</h4>
-        <ul>
-          <li>خطأ: "Egypt an African country" ← صحيح: <span class="code">Egypt is an African country</span></li>
-          <li>خطأ: "I a doctor" ← صحيح: <span class="code">I am a doctor</span></li>
-        </ul>
-      </div>
-
-      <h4>أدوات الاستفهام (WH-Questions)</h4>
+      <h3 class="section-title">خامساً: أدوات الاستفهام (WH-Questions)</h3>
       <table>
         <thead>
           <tr>
@@ -370,37 +270,54 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><strong>What</strong></td>
-            <td>شيء/معلومة</td>
-            <td><span class="code">What is your name?</span> / ما اسمك؟</td>
-          </tr>
-          <tr>
-            <td><strong>Where</strong></td>
-            <td>مكان</td>
-            <td><span class="code">Where do you live?</span> / أين تعيش؟</td>
-          </tr>
-          <tr>
-            <td><strong>Who</strong></td>
-            <td>فاعل الجملة</td>
-            <td><span class="code">Who ate the cheese?</span> / من أكل الجبن؟</td>
-          </tr>
-          <tr>
-            <td><strong>Whom</strong></td>
-            <td>مفعول الجملة</td>
-            <td><span class="code">Whom did you meet?</span> / من قابلت؟</td>
-          </tr>
+          <tr><td><strong>What</strong></td><td>شيء / معلومة</td><td><span class="code">?What is your name</span></td></tr>
+          <tr><td><strong>Where</strong></td><td>مكان</td><td><span class="code">?Where do you live</span></td></tr>
+          <tr><td><strong>When</strong></td><td>وقت</td><td><span class="code">?When is your birthday</span></td></tr>
+          <tr><td><strong>Who</strong></td><td>شخص (فاعل)</td><td><span class="code">?Who is your teacher</span></td></tr>
+          <tr><td><strong>Whom</strong></td><td>شخص (مفعول به)</td><td><span class="code">?Whom did you meet</span></td></tr>
+          <tr><td><strong>Which</strong></td><td>اختيار</td><td><span class="code">?Which color do you like</span></td></tr>
+          <tr><td><strong>Why</strong></td><td>سبب</td><td><span class="code">?Why are you sad</span></td></tr>
+          <tr><td><strong>How</strong></td><td>طريقة / حالة</td><td><span class="code">?How do you go to school</span></td></tr>
         </tbody>
       </table>
+    </section>
 
-      <h4>تمارين التصنيف</h4>
-      <div class="examples">
-        <div class="example">
-          <strong>"Ali likes apples and oranges"</strong> ← <strong>جملة بسيطة</strong>
-        </div>
-        <div class="example">
-          <strong>"If Ali likes apples, he probably likes oranges"</strong> ← <strong>جملة معقدة</strong>
-        </div>
+    <section>
+      <h3 class="section-title">سادساً: تفاصيل أنواع الجمل (بالتركيب الدقيق)</h3>
+      
+      <div class="card">
+        <h4>الجملة الخبرية (Declarative)</h4>
+        <p><strong>التركيب:</strong> Subject + Verb + Complement</p>
+        <p><span class="code">A boy is Ali.</span> (إعادة ترتيب: <span class="code">Ali is a boy.</span>)</p>
+        <p><span class="code">Ali gave me an apple.</span></p>
+        <p><span class="code">Education is important.</span></p>
+      </div>
+
+      <div class="card">
+        <h4>الجملة النافية (مع فعل مساعد)</h4>
+        <p><strong>التركيب:</strong> Subject + helping verb + not + main verb + complement</p>
+        <p><span class="code">She didn't go to school yesterday.</span></p>
+        <p><span class="code">She doesn't go to school on Fridays.</span></p>
+        <p><span class="code">She isn't going to school now.</span></p>
+      </div>
+
+      <div class="card">
+        <h4>الجملة الأمرية (Imperative)</h4>
+        <p><strong>التركيب:</strong> (Don't) + Verb + Complement</p>
+        <p><span class="code">Eat your lunch.</span></p>
+        <p><span class="code">Don't forget your books.</span></p>
+      </div>
+
+      <div class="card">
+        <h4>الجملة الاستفهامية (Interrogative)</h4>
+        <p><strong>التركيب:</strong> ?Helping verb + Subject + main verb + complement</p>
+        <p><span class="code">?Did you eat lunch</span></p>
+      </div>
+
+      <div class="card">
+        <h4>أسئلة أدوات الاستفهام (WH-Questions)</h4>
+        <p><strong>التركيب:</strong> ?Wh-word + helping verb + subject + main verb</p>
+        <p><span class="code">?What did you eat</span></p>
       </div>
     </section>
 
@@ -412,9 +329,9 @@
           <li>صف تراكيب الجمل الثلاثة (بسيطة، مركبة، معقدة).</li>
           <li>أعد كتابة:
             <ul>
-              <li>٣ جمل بسيطة</li>
-              <li>٣ جمل مركبة</li>
-              <li>٣ جمل معقدة</li>
+              <li><span class="code">3 جمل بسيطة</span></li>
+              <li><span class="code">3 جمل مركبة</span></li>
+              <li><span class="code">3 جمل معقدة</span></li>
             </ul>
           </li>
         </ol>
@@ -425,19 +342,12 @@
     <section>
       <h3 class="section-title">ملاحظات نهائية</h3>
       <div class="card">
-        <blockquote>
-          <strong>الجملة المعتمدة (Dependent Clause):</strong> لا تعطي معنى كاملاً دون الجملة المستقلة<br>
-          <span class="code">(مثال: "When you visit me" / "عندما تزورني")</span>
-        </blockquote>
-        <blockquote>
-          <strong>الجملة المستقلة (Independent Clause):</strong> تعطي معنى كاملاً وحدها<br>
-          <span class="code">(مثال: "I will make tea" / "سأُعد الشاي")</span>
-        </blockquote>
+        <p><strong>الجملة المعتمدة (Dependent Clause):</strong> لا تعطي معنى كاملاً دون الجملة المستقلة</p>
+        <p><span class="code">"When you visit me"</span> → عندما تزورني</p>
+        <p><strong>الجملة المستقلة (Independent Clause):</strong> تعطي معنى كاملاً وحدها</p>
+        <p><span class="code">"I will make tea"</span> → سأُعد الشاي</p>
         <p><strong>رابط الجمل المركبة:</strong> يجب أن يكون بين جملتين مستقلتين</p>
-        <div class="example">
-          <span class="code">He studied hard, so he succeeded</span><br>
-          <small>اجتهد لذا نجح</small>
-        </div>
+        <p><span class="code">He studied hard, so he succeeded</span> → اجتهد لذا نجح</p>
       </div>
     </section>
 
