@@ -1,185 +1,349 @@
+```html
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ملخص المحاضرة 3 - تكوين الجملة في الإنجليزية</title>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <title>ملخص محاضرة الازمنة (Lecture 4: Verbs Tenses)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --orange: #ff7a00;
-      --paper: #fff6eb;
-      --muted: #6b6b6b;
-      --card: #fff;
-      --accent-yellow: #ffe38f;
-      --border: rgba(0,0,0,0.08);
-    }
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
       margin: 0;
-      background: var(--paper);
+      background: #000;
       font-family: 'Cairo', sans-serif;
-      color: #111;
+      color: #fff;
       line-height: 1.8;
-      font-size: 18px; /* زيادة حجم الخط العام */
+      font-size: 18px;
     }
     .page {
-      max-width: 960px;
-      margin: 24px auto;
+      width: 100vw;
+      min-height: 100vh;
       padding: 32px;
-      background: var(--card);
-      border-radius: 16px;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.14);
       position: relative;
+      overflow: hidden;
     }
-    .ribbon {
-      position: absolute;
-      left: -60px;
-      top: 32px;
-      background: var(--orange);
-      color: #fff;
-      padding: 12px 18px;
-      font-weight: 800;
-      border-radius: 8px;
-      transform: rotate(-90deg);
-      font-size: 15px;
+    
+    /* تأثيرات خلفية احترافية */
+    .page::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 30%, rgba(138, 43, 226, 0.1), transparent 40%),
+                  radial-gradient(circle at 80% 70%, rgba(138, 43, 226, 0.08), transparent 35%);
+      z-index: -1;
     }
+    
     header h1 {
       font-family: 'Amiri', serif;
-      font-size: 36px; /* تكبير حجم العنوان الرئيسي */
+      font-size: 38px;
       text-align: center;
       margin: 12px 0 24px;
-      padding: 12px 20px;
-      border-radius: 10px;
-      background: linear-gradient(90deg, var(--orange), #ff9b3d);
+      padding: 16px 24px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #8a2be2, #9d4edd, #8a2be2);
+      background-size: 300% 300%;
+      animation: gradientShift 4s ease infinite;
       color: #fff;
       display: inline-block;
       transform: skewX(-6deg);
+      box-shadow: 0 8px 25px rgba(157, 78, 221, 0.4);
+      border: 1px solid rgba(157, 78, 221, 0.3);
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .section-title {
       display: inline-block;
-      background: var(--accent-yellow);
-      padding: 10px 16px;
-      border-radius: 10px;
+      background: linear-gradient(135deg, #8a2be2, #9d4edd);
+      background-size: 300% 300%;
+      animation: gradientShift 4s ease infinite;
+      padding: 12px 18px;
+      border-radius: 12px;
       font-weight: 800;
       margin: 24px 0 16px;
       transform: skewX(-6deg);
-      font-size: 22px; /* تكبير عناوين الأقسام */
+      font-size: 24px;
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(157, 78, 221, 0.35);
+      border: 1px solid rgba(157, 78, 221, 0.3);
     }
 
     p.lead {
       margin: 10px 0 20px;
-      color: var(--muted);
-      font-size: 18px; /* تكبير خط الفقرات التمهيدية */
+      color: #ccc;
+      font-size: 18px;
+      text-align: center;
+      font-weight: 500;
     }
 
     .card {
-      background: #fff;
-      padding: 16px;
-      border-radius: 12px;
-      margin: 14px 0;
-      border: 1px solid var(--border);
-      font-size: 18px; /* تكبير خط داخل البطاقات */
+      background: #111;
+      padding: 20px;
+      border-radius: 14px;
+      margin: 20px 0;
+      border: 1px solid #333;
+      font-size: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4), 
+                  inset 0 1px 0 rgba(255,255,255,0.05);
+      border-left: 3px solid #9d4edd;
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(157, 78, 221, 0.25), 
+                  inset 0 1px 0 rgba(255,255,255,0.05);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 16px 0;
-      font-size: 18px; /* تكبير حجم خط الجداول */
+      margin: 20px 0;
+      font-size: 18px;
       text-align: right;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      overflow: hidden;
     }
     th, td {
-      padding: 14px 12px; /* زيادة المساحة الداخلية */
-      border: 1px solid var(--border);
+      padding: 16px 14px;
+      border: 1px solid #333;
       vertical-align: top;
       direction: rtl;
       text-align: right;
-      white-space: normal; /* السماح بالتفاف النص */
+      white-space: normal;
     }
     th {
-      background: linear-gradient(90deg, #fff8ea, #fff3d9);
+      background: #1a1a1a;
       font-weight: 800;
       text-align: center;
+      color: #9d4edd;
+      font-size: 19px;
+      text-shadow: 0 0 8px rgba(157, 78, 221, 0.4);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(157, 78, 221, 0.2);
+    }
+    td:first-child {
+      background: #1a1a1a;
+    }
+    td:nth-child(2) {
+      background: #151515;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    td:nth-child(3) {
+      background: #1a1a1a;
+      color: #9d4edd;
+      font-weight: 600;
+    }
+    
+    /* تأثيرات خاصة للجداول عند التحويم */
+    table tr:hover td {
+      background: #222 !important;
+      transform: scale(1.01);
+      transition: all 0.2s ease;
+    }
+    
+    table tr:hover td:nth-child(2) {
+      background: #1a1a1a !important;
+      color: #fff !important;
+      transform: scale(1.01);
     }
 
     .code {
-      font-family: monospace;
-      background: rgba(0,0,0,0.05);
-      padding: 6px 8px;
-      border-radius: 4px;
-      color: #c75a00;
-      font-size: 18px; /* تكبير الكود */
+      font-family: 'Cairo', monospace;
+      background: #222;
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: #9d4edd;
+      font-size: 17px;
+      border: 1px solid #444;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      display: inline-block;
+      margin: 0 2px;
     }
 
     .tips {
-      background: linear-gradient(90deg, #ffe38f, #fff);
-      padding: 14px;
-      border-radius: 10px;
-      margin-top: 16px;
-      border: 1px dashed rgba(0,0,0,0.08);
+      background: #1a1a1a;
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 20px;
+      border: 1px solid #333;
       font-size: 18px;
+      color: #ccc;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      border-top: 3px solid #9d4edd;
+      backdrop-filter: blur(10px);
     }
 
     .cta {
-      margin-top: 24px;
+      margin-top: 30px;
       text-align: center;
+      padding: 20px 0;
     }
     .cta button {
-      background: var(--orange);
+      background: linear-gradient(135deg, #8a2be2, #9d4edd);
+      background-size: 300% 300%;
+      animation: gradientShift 4s ease infinite;
       color: #fff;
       border: 0;
-      padding: 12px 20px;
-      border-radius: 10px;
+      padding: 14px 28px;
+      border-radius: 12px;
       font-weight: 800;
       cursor: pointer;
       font-size: 18px;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(157, 78, 221, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid rgba(157, 78, 221, 0.4);
     }
     .cta button:hover {
-      background: #e56a00;
-      transform: scale(1.05);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(157, 78, 221, 0.7);
+      text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+    .cta button:active {
+      transform: translateY(-1px);
     }
 
-    .decor {
-      position: absolute;
-      right: -50px;
-      top: -50px;
-      width: 180px;
-      height: 180px;
-      border-radius: 40%;
-      background: radial-gradient(circle at 30% 30%, rgba(255,154,0,0.12), transparent 40%), linear-gradient(45deg, rgba(191,234,240,0.12), transparent);
-      transform: rotate(10deg);
-      opacity: 0.7;
+    .time-expressions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
     }
-    .decor2 {
+    .time-category {
+      background: #111;
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid #333;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      border-top: 3px solid #9d4edd;
+    }
+    .time-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(157, 78, 221, 0.2);
+    }
+    .time-category h4 {
+      margin: 0 0 15px;
+      color: #9d4edd;
+      font-weight: 800;
+      text-align: center;
+      text-shadow: 0 0 8px rgba(157, 78, 221, 0.4);
+      font-size: 20px;
+    }
+    .time-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .time-list li {
+      padding: 6px 0;
+      border-bottom: 1px dashed #333;
+      color: #ccc;
+      transition: all 0.2s ease;
+    }
+    .time-list li:hover {
+      color: #fff;
+      padding-right: 10px;
+    }
+    .time-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* تخصيص العناصر المرقمة */
+    ol {
+      counter-reset: arabic-list;
+      list-style: none;
+      padding-right: 25px;
+    }
+    
+    ol > li {
+      counter-increment: arabic-list;
+      position: relative;
+      margin: 20px 0;
+      padding: 16px 24px 16px 50px;
+      background: #1a1a1a;
+      border-radius: 12px;
+      border-right: 4px solid #9d4edd;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(157, 78, 221, 0.1);
+    }
+    
+    ol > li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 12px 30px rgba(157, 78, 221, 0.25);
+    }
+    
+    ol > li::before {
+      content: counter(arabic-list);
       position: absolute;
-      left: -40px;
-      bottom: -40px;
-      width: 140px;
-      height: 140px;
-      border-radius: 20px;
-      background: rgba(255,165,0,0.08);
-      transform: rotate(18deg);
-      opacity: 0.5;
+      left: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #8a2be2, #9d4edd);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 4px 12px rgba(157, 78, 221, 0.5);
+      border: 2px solid #000;
+    }
+    
+    ol > li p {
+      margin: 10px 0;
+      color: #ccc;
+      padding-right: 10px;
+      line-height: 1.7;
+    }
+    
+    ol > li strong {
+      color: #fff;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 19px;
+      text-shadow: 0 0 5px rgba(255,255,255,0.3);
+    }
+    
+    /* تأثيرات خاصة للعناوين الفرعية */
+    h4 {
+      color: #9d4edd;
+      margin: 15px 0 10px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #333;
+      font-weight: 700;
     }
 
     @media (max-width: 760px) {
-      .decor, .decor2 {
-        display: none;
-      }
       .page {
-        margin: 16px;
         padding: 20px;
       }
       body {
         font-size: 16px;
       }
       .section-title {
-        font-size: 20px;
+        font-size: 22px;
       }
       table, th, td {
         font-size: 16px;
@@ -188,267 +352,376 @@
       .code {
         font-size: 16px;
       }
+      .time-expressions {
+        grid-template-columns: 1fr;
+      }
+      
+      ol > li::before {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+        left: -25px;
+      }
+      
+      header h1 {
+        font-size: 32px;
+        padding: 12px 16px;
+      }
+    }
+    
+    /* تأثيرات إضافية للإحترافية */
+    .card, .time-category, ol > li {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before, .time-category::before, ol > li::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255,255,255,0.1), 
+        transparent);
+      transform: rotate(30deg);
+      opacity: 0;
+      transition: opacity 0.8s;
+    }
+    
+    .card:hover::before, .time-category:hover::before, ol > li:hover::before {
+      opacity: 1;
+      animation: shine 2s;
+    }
+    
+    @keyframes shine {
+      0% { left: -50%; }
+      100% { left: 150%; }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <div class="ribbon">ملخص المحاضرة</div>
-    <div class="decor"></div>
-    <div class="decor2"></div>
-
     <header>
-      <h1>تلخيص ملف "702.txt" و"Lec 3 notes.pdf"</h1>
+      <h1>ملخص محاضرة الازمنة (Lecture 4: Verbs Tenses)</h1>
       <p class="lead">مع الحفاظ على المحتوى الأصلي والصياغة الأصلية تمامًا</p>
     </header>
 
     <section>
-      <h3 class="section-title">أولاً: أساسيات الجمل الإنجليزية (Fundamental Notes)</h3>
+      <h3 class="section-title">المفاهيم الأساسية التي يجب معرفتها (Fundamental Concepts)</h3>
       <div class="card">
-        <p><strong>القاعدة الأساسية:</strong></p>
-        <p>"لا توجد جملة في الإنجليزية بدون فعل"</p>
-        <p><em>(No English sentence exists without a verb)</em></p>
-      </div>
-
-      <table>
-        <thead>
-          <tr>
-            <th style="width: 30%;">الجملة الخاطئة</th>
-            <th style="width: 35%;">التصحيح</th>
-            <th style="width: 35%;">الترجمة</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="code">Nada a girl</span></td>
-            <td><span class="code">Nada is a girl</span></td>
-            <td>ندى هي بنت</td>
-          </tr>
-          <tr>
-            <td><span class="code">Egypt an African country</span></td>
-            <td><span class="code">Egypt is an African country</span></td>
-            <td>مصر دولة أفريقية</td>
-          </tr>
-          <tr>
-            <td><span class="code">I a doctor</span></td>
-            <td><span class="code">I am a doctor</span></td>
-            <td>أنا طبيب</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section>
-      <h3 class="section-title">ثانياً: أنواع الجمل (Sentence Types)</h3>
-      <table>
-        <thead>
-          <tr>
-            <th style="width: 25%;">النوع</th>
-            <th style="width: 25%;">الوصف</th>
-            <th style="width: 25%;">مثال</th>
-            <th style="width: 25%;">الترجمة</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>الجمل الخبرية (Declarative)</strong></td>
-            <td>تُخبر بمعلومة</td>
-            <td><span class="code">I like my apples</span></td>
-            <td>أنا أحب تفاحي</td>
-          </tr>
-          <tr>
-            <td><strong>جمل النفي (Negative)</strong></td>
-            <td>تحتاج فعلًا مساعدًا (Helping Verb) للنفي</td>
-            <td><span class="code">I don't like apples</span></td>
-            <td>أنا لا أحب التفاح</td>
-          </tr>
-          <tr>
-            <td><strong>جمل الأمر (Imperative)</strong></td>
-            <td>تبدأ بفعل مباشر</td>
-            <td><span class="code">Stand up</span></td>
-            <td>قف</td>
-          </tr>
-          <tr>
-            <td><strong>نفي الأمر</strong></td>
-            <td>تبدأ بـ "Don't + فعل"</td>
-            <td><span class="code">Don't sit down</span></td>
-            <td>لا تجلس</td>
-          </tr>
-          <tr>
-            <td><strong>جمل الاستفهام (Interrogative)</strong></td>
-            <td>تبدأ بفعل مساعد أو أداة استفهام</td>
-            <td><span class="code">?Did you see Ali</span></td>
-            <td>هل رأيت علي؟</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section>
-      <h3 class="section-title">ثالثاً: تراكيب الجمل (Sentence Structures)</h3>
-      <table>
-        <thead>
-          <tr>
-            <th style="width: 30%;">النوع</th>
-            <th style="width: 35%;">الوصف</th>
-            <th style="width: 35%;">مثال</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>الجمل البسيطة (Simple)</strong></td>
-            <td>تحتوي على فعل واحد وفاعل واحد/مركب</td>
-            <td><span class="code">Ali ate dinner alone in the house</span></td>
-          </tr>
-          <tr>
-            <td><strong>الجمل المركبة (Compound)</strong></td>
-            <td>تربط جملتين مستقلتين برابط (Coordinating Conjunction)</td>
-            <td><span class="code">I like tea, and he likes coffee</span></td>
-          </tr>
-          <tr>
-            <td><strong>الجمل المعقدة (Complex)</strong></td>
-            <td>تربط جملة مستقلة بأخرى معتمدة عليها (Subordinating Conjunction)</td>
-            <td><span class="code">When the cake is brown, remove it</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section>
-      <h3 class="section-title">رابعاً: أدوات الربط (Conjunctions)</h3>
-      <div class="card">
-        <h4>الروابط التنسيقية (Coordinating)</h4>
-        <p><strong>FANBOYS:</strong> For, And, Nor, But, Or, Yet, So</p>
-        <p><span class="code">She is smart, but lazy</span> → هي ذكية لكن كسولة</p>
-      </div>
-      <div class="card">
-        <h4>الروابط التبعية (Subordinating)</h4>
-        <p>When, If, Because, After, Although (تربط الجمل المعتمدة)</p>
-        <p><span class="code">If you don't try, you will lose</span> → إذا لم تحاول، ستخسر</p>
-      </div>
-    </section>
-
-    <section>
-      <h3 class="section-title">خامساً: أدوات الاستفهام (WH-Questions)</h3>
-      <table>
-        <thead>
-          <tr>
-            <th style="width: 15%;">الأداة</th>
-            <th style="width: 30%;">الاستخدام</th>
-            <th style="width: 55%;">مثال</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>What</strong></td>
-            <td>شيء / معلومة</td>
-            <td><span class="code">?What is your name</span></td>
-          </tr>
-          <tr>
-            <td><strong>Where</strong></td>
-            <td>مكان</td>
-            <td><span class="code">?Where do you live</span></td>
-          </tr>
-          <tr>
-            <td><strong>When</strong></td>
-            <td>وقت</td>
-            <td><span class="code">?When is your birthday</span></td>
-          </tr>
-          <tr>
-            <td><strong>Who</strong></td>
-            <td>شخص (فاعل)</td>
-            <td><span class="code">?Who is your teacher</span></td>
-          </tr>
-          <tr>
-            <td><strong>Whom</strong></td>
-            <td>شخص (مفعول به)</td>
-            <td><span class="code">?Whom did you meet</span></td>
-          </tr>
-          <tr>
-            <td><strong>Which</strong></td>
-            <td>اختيار</td>
-            <td><span class="code">?Which color do you like</span></td>
-          </tr>
-          <tr>
-            <td><strong>Why</strong></td>
-            <td>سبب</td>
-            <td><span class="code">?Why are you sad</span></td>
-          </tr>
-          <tr>
-            <td><strong>How</strong></td>
-            <td>طريقة / حالة</td>
-            <td><span class="code">?How do you go to school</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section>
-      <h3 class="section-title">سادساً: تفاصيل أنواع الجمل (بالتركيب الدقيق)</h3>
-      
-      <div class="card">
-        <h4>الجملة الخبرية (Declarative)</h4>
-        <p><strong>التركيب:</strong> Subject + Verb + Complement</p>
-        <p><span class="code">A boy is Ali.</span> (إعادة ترتيب: <span class="code">Ali is a boy.</span>)</p>
-        <p><span class="code">Ali gave me an apple.</span></p>
-        <p><span class="code">Education is important.</span></p>
-      </div>
-
-      <div class="card">
-        <h4>الجملة النافية (مع فعل مساعد)</h4>
-        <p><strong>التركيب:</strong> Subject + helping verb + not + main verb + complement</p>
-        <p><span class="code">She didn't go to school yesterday.</span></p>
-        <p><span class="code">She doesn't go to school on Fridays.</span></p>
-        <p><span class="code">She isn't going to school now.</span></p>
-      </div>
-
-      <div class="card">
-        <h4>الجملة الأمرية (Imperative)</h4>
-        <p><strong>التركيب:</strong> (Don't) + Verb + Complement</p>
-        <p><span class="code">Eat your lunch.</span></p>
-        <p><span class="code">Don't forget your books.</span></p>
-      </div>
-
-      <div class="card">
-        <h4>الجملة الاستفهامية (Interrogative)</h4>
-        <p><strong>التركيب:</strong> ?Helping verb + Subject + main verb + complement</p>
-        <p><span class="code">?Did you eat lunch</span></p>
-      </div>
-
-      <div class="card">
-        <h4>أسئلة أدوات الاستفهام (WH-Questions)</h4>
-        <p><strong>التركيب:</strong> ?Wh-word + helping verb + subject + main verb</p>
-        <p><span class="code">?What did you eat</span></p>
-      </div>
-    </section>
-
-    <section>
-      <h3 class="section-title">سادساً: الواجب (Assignment)</h3>
-      <div class="tips">
         <ol>
-          <li>اكتب أنواع الجمل الأربعة (خبرية، نفي، أمر، استفهامية).</li>
-          <li>صف تراكيب الجمل الثلاثة (بسيطة، مركبة، معقدة).</li>
-          <li>أعد كتابة:
-            <ul>
-              <li><span class="code">3 جمل بسيطة</span></li>
-              <li><span class="code">3 جمل مركبة</span></li>
-              <li><span class="code">3 جمل معقدة</span></li>
-            </ul>
+          <li>
+            <strong>العنصر الرئيسي في الجملة باللغة الإنجليزية هو الفعل</strong>
+            <p>(The key element of a sentence in English is the verb)</p>
+            <p>- الجملة الإنجليزية قائمة على الفعل ولا يمكن تكوين جملة إنجليزية بدون فعل</p>
+             <p>- الفعل في الجملة الانجليزية يغير شكله طبقا للزمن</p>
+
+            <p>- مثال: <span class="code">I watch TV every morning</span> (مضارع بسيط) مقابل <span class="code">I watched TV every morning when I was young</span> (ماضي بسيط)</p>
+          </li>
+          <li>
+            <strong>التوافق بين الفاعل والفعل (Subject Verb Agreement)</strong>
+            <p>- يوجد توافق بين الفاعل والفعل فقط في الأفعال المساعدة (Auxiliary/Helping verbs) وفي زمن المضارع البسيط (Present Simple)</p>
+            <p>- أمثلة:</p>
+            <p><span class="code">I eat lunch with my family</span> (أنا أتناول الغداء مع عائلتي)</p>
+            <p><span class="code">She eats lunch with her family</span> (هي تتناول الغداء مع عائلتها)</p>
+            <p><span class="code">I am a girl</span> (أنا فتاة)</p>
+            <p><span class="code">He is a boy</span> (هو ولد)</p>
+          </li>
+          <li>
+            <strong>نفس الكلمة/الفعل في الإنجليزية يمكن أن تحمل معاني مختلفة حسب السياق</strong>
+            <p>- أمثلة:</p>
+            <p><span class="code">He runs fast</span> (يركض بسرعة) - هنا معناها يجري</p>
+            <p><span class="code">He runs the company</span> (يدير الشركة) - هنا معناها يدير</p>
+          </li>
+          <li>
+            <strong>يمكن تحديد زمن الجملة في الإنجليزية من خلال التعبيرات الزمنية او حتي الافعال في نفس الجملة </strong>
+            <p>- مثال: <span class="code">I saw Ali when I visited your house the other night</span></p>
           </li>
         </ol>
-        <p style="margin-top:12px"><strong>ملاحظة:</strong> ارفع إجابتك في جروب الفيسبوك الخاص بالكورس.</p>
       </div>
     </section>
 
     <section>
-      <h3 class="section-title">ملاحظات نهائية</h3>
+      <h3 class="section-title">فكرة أساسية في فهم الازمنة</h3>
       <div class="card">
-        <p><strong>الجملة المعتمدة (Dependent Clause):</strong> لا تعطي معنى كاملاً دون الجملة المستقلة</p>
-        <p><span class="code">"When you visit me"</span> → عندما تزورني</p>
-        <p><strong>الجملة المستقلة (Independent Clause):</strong> تعطي معنى كاملاً وحدها</p>
-        <p><span class="code">"I will make tea"</span> → سأُعد الشاي</p>
-        <p><strong>رابط الجمل المركبة:</strong> يجب أن يكون بين جملتين مستقلتين</p>
-        <p><span class="code">He studied hard, so he succeeded</span> → اجتهد لذا نجح</p>
+        <ol>
+          <li>
+            <strong>قبل تعلم جوانب/عائلات الازمنة (Tense)، يجب إتقان أزمنة الجملة الأساسية:</strong>
+            <p>- الماضي (Past)</p>
+            <p>- الحاضر (Present)</p>
+            <p>- المستقبل (Future)</p>
+          </li>
+          <li>
+            <strong>العائلات الأربع للأزمنة (Aspects/Family):</strong>
+            <p>- البسيط (Simple)</p>
+            <p>- المستمر (Continuous)</p>
+            <p>- التام (Perfect)</p>
+            <p>- التام المستمر (Perfect Continuous)</p>
+          </li>
+          <li>
+            <strong>عندما نجمع الأزمنة الثلاثة مع العائلات الأربع نحصل على 12 زمناً في اللغة الإنجليزية:</strong>
+            <div style="text-align: center; margin: 16px 0; font-family: 'Cairo', sans-serif; font-weight: 700;">
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 800px; margin: 20px auto;">
+                <div style="background: #1a1a1a; padding: 12px; border-radius: 10px; color: #9d4edd; font-weight: 700; text-shadow: 0 0 8px rgba(157, 78, 221, 0.4); border: 1px solid rgba(157, 78, 221, 0.2);">الماضي</div>
+                <div style="background: #1a1a1a; padding: 12px; border-radius: 10px; color: #9d4edd; font-weight: 700; text-shadow: 0 0 8px rgba(157, 78, 221, 0.4); border: 1px solid rgba(157, 78, 221, 0.2);">الحاضر</div>
+                <div style="background: #1a1a1a; padding: 12px; border-radius: 10px; color: #9d4edd; font-weight: 700; text-shadow: 0 0 8px rgba(157, 78, 221, 0.4); border: 1px solid rgba(157, 78, 221, 0.2);">المستقبل</div>
+                
+                <div style="background: #151515; padding: 12px; border-radius: 10px; color: #ccc; border: 1px solid #333;">الماضي البسيط</div>
+                <div style="background: #151515; padding: 12px; border-radius: 10px; color: #ccc; border: 1px solid #333;">المضارع البسيط</div>
+                <div style="background: #151515; padding: 12px; border-radius: 10px; color: #ccc; border: 1px solid #333;">المستقبل البسيط</div>
+                
+                <div style="background: #151515; padding: 12px; border-radius: 10px; color: #ccc; border: 1px solid #333;">الماضي المستمر</div>
+                <div style="background: #151515; padding: 12px; border-radius: 10px; color: #ccc; border: 1px solid #333;">المضارع المستمر</div>
+                <div style="background: #151515; padding: 12px; border-radius: 10px; color: #ccc; border: 1px solid #333;">المستقبل المستمر</div>
+                
+                <div style="background: #151515; padding: 12px; border-radius: 10px; color: #ccc; border: 1px solid #333;">الماضي التام</div>
+                <div style="background: #151515; padding: 12px; border-radius: 10px; color: #ccc; border: 1px solid #333;">المضارع التام</div>
+                <div style="background: #151515; padding: 12px; border-radius: 10px; color: #ccc; border: 1px solid #333;">المستقبل التام</div>
+                
+                <div style="background: #151515; padding: 12px; border-radius: 10px; color: #ccc; border: 1px solid #333;">الماضي التام المستمر</div>
+                <div style="background: #151515; padding: 12px; border-radius: 10px; color: #ccc; border: 1px solid #333;">المضارع التام المستمر</div>
+                <div style="background: #151515; padding: 12px; border-radius: 10px; color: #ccc; border: 1px solid #333;">المستقبل التام المستمر</div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">التعبيرات الزمنية (Time Expressions)</h3>
+      
+      <div class="time-expressions">
+        <div class="time-category">
+          <h4>الماضي (Past)</h4>
+          <ul class="time-list">
+            <li>yesterday <span style="color: #c7a3ed; font-style: italic;">(أمس)</span></li>
+            <li>last night <span style="color: #c7a3ed; font-style: italic;">(الليلة الماضية)</span></li>
+            <li>last week <span style="color: #c7a3ed; font-style: italic;">(الأسبوع الماضي)</span></li>
+            <li>last year <span style="color: #c7a3ed; font-style: italic;">(السنة الماضية)</span></li>
+            <li>two days ago <span style="color: #c7a3ed; font-style: italic;">(من يومين)</span></li>
+            <li>a few minutes ago <span style="color: #c7a3ed; font-style: italic;">(منذ بضع دقائق)</span></li>
+            <li>in 1990 <span style="color: #c7a3ed; font-style: italic;">(في عام 1990)</span></li>
+            <li>when I was a child <span style="color: #c7a3ed; font-style: italic;">(عندما كنت طفلاً)</span></li>
+            <li>earlier today <span style="color: #c7a3ed; font-style: italic;">(في وقت سابق اليوم)</span></li>
+            <li>back then <span style="color: #c7a3ed; font-style: italic;">(في ذلك الوقت)</span></li>
+            <li>a long time ago <span style="color: #c7a3ed; font-style: italic;">(من وقت طويل)</span></li>
+            <li>in my childhood <span style="color: #c7a3ed; font-style: italic;">(في طفولتي)</span></li>
+            <li>previously <span style="color: #c7a3ed; font-style: italic;">(سابقاً)</span></li>
+            <li>ages ago <span style="color: #c7a3ed; font-style: italic;">(منذ زمن بعيد)</span></li>
+            <li>in the past <span style="color: #c7a3ed; font-style: italic;">(في الماضي)</span></li>
+            <li>before that <span style="color: #c7a3ed; font-style: italic;">(قبل ذلك)</span></li>
+            <li>not long ago <span style="color: #c7a3ed; font-style: italic;">(ليس منذ وقت طويل)</span></li>
+            <li>the day before yesterday <span style="color: #c7a3ed; font-style: italic;">(اليوم قبل أمس)</span></li>
+          </ul>
+        </div>
+        
+        <div class="time-category">
+          <h4>الحاضر (Present)</h4>
+          <ul class="time-list">
+            <li>today <span style="color: #c7a3ed; font-style: italic;">(اليوم)</span></li>
+            <li>every day <span style="color: #c7a3ed; font-style: italic;">(كل يوم)</span></li>
+            <li>at the moment <span style="color: #c7a3ed; font-style: italic;">(في هذه اللحظة)</span></li>
+            <li>these days <span style="color: #c7a3ed; font-style: italic;">(في هذه الأيام)</span></li>
+            <li>currently <span style="color: #c7a3ed; font-style: italic;">(حالياً)</span></li>
+            <li>right now <span style="color: #c7a3ed; font-style: italic;">(الآن)</span></li>
+            <li>this week <span style="color: #c7a3ed; font-style: italic;">(هذا الأسبوع)</span></li>
+            <li>nowadays <span style="color: #c7a3ed; font-style: italic;">(في الوقت الحاضر)</span></li>
+            <li>all the time <span style="color: #c7a3ed; font-style: italic;">(طوال الوقت)</span></li>
+            <li>most of the time <span style="color: #c7a3ed; font-style: italic;">(معظم الوقت)</span></li>
+            <li>as we speak <span style="color: #c7a3ed; font-style: italic;">(في الوقت الذي نتحدث فيه)</span></li>
+            <li>at present <span style="color: #c7a3ed; font-style: italic;">(في الوقت الحالي)</span></li>
+            <li>this morning <span style="color: #c7a3ed; font-style: italic;">(صباح اليوم)</span></li>
+            <li>right this second <span style="color: #c7a3ed; font-style: italic;">(في هذه الثانية)</span></li>
+            <li>on a daily basis <span style="color: #c7a3ed; font-style: italic;">(على أساس يومي)</span></li>
+            <li>as of now <span style="color: #c7a3ed; font-style: italic;">(اعتباراً من الآن)</span></li>
+            <li>often <span style="color: #c7a3ed; font-style: italic;">(في كثير من الأحيان)</span></li>
+          </ul>
+        </div>
+        
+        <div class="time-category">
+          <h4>المستقبل (Future)</h4>
+          <ul class="time-list">
+            <li>tomorrow <span style="color: #c7a3ed; font-style: italic;">(غداً)</span></li>
+            <li>next week <span style="color: #c7a3ed; font-style: italic;">(الأسبوع القادم)</span></li>
+            <li>next year <span style="color: #c7a3ed; font-style: italic;">(السنة القادمة)</span></li>
+            <li>soon <span style="color: #c7a3ed; font-style: italic;">(قريباً)</span></li>
+            <li>in two days <span style="color: #c7a3ed; font-style: italic;">(في خلال يومين)</span></li>
+            <li>later today <span style="color: #c7a3ed; font-style: italic;">(في وقت لاحق اليوم)</span></li>
+            <li>in the future <span style="color: #c7a3ed; font-style: italic;">(في المستقبل)</span></li>
+            <li>this weekend <span style="color: #c7a3ed; font-style: italic;">(نهاية هذا الأسبوع)</span></li>
+            <li>in a few minutes <span style="color: #c7a3ed; font-style: italic;">(في خلال بضع دقائق)</span></li>
+            <li>someday <span style="color: #c7a3ed; font-style: italic;">(يوماً ما)</span></li>
+            <li>in a moment <span style="color: #c7a3ed; font-style: italic;">(بعد لحظة)</span></li>
+            <li>next month <span style="color: #c7a3ed; font-style: italic;">(الشهر القادم)</span></li>
+            <li>in 2030 <span style="color: #c7a3ed; font-style: italic;">(في عام 2030)</span></li>
+            <li>one day <span style="color: #c7a3ed; font-style: italic;">(يوماً ما)</span></li>
+            <li>after a while <span style="color: #c7a3ed; font-style: italic;">(بعد فترة)</span></li>
+            <li>in no time <span style="color: #c7a3ed; font-style: italic;">(قريباً جداً)</span></li>
+            <li>by next week <span style="color: #c7a3ed; font-style: italic;">(بحلول الأسبوع القادم)</span></li>
+            <li>the day after tomorrow <span style="color: #c7a3ed; font-style: italic;">(اليوم بعد غد)</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">تمارين تطبيقية</h3>
+      
+      <div class="card">
+        <h4>1. تصنيف التعبيرات الزمنية إلى ماضي، حاضر، مستقبل:</h4>
+        <table class="practical-exercises">
+          <thead>
+            <tr>
+              <th>التعبير الزمني</th>
+              <th>الترجمة</th>
+              <th>الزمن</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="code">Tomorrow</span></td>
+              <td style="color: #fff; font-weight: 700;">غداً</td>
+              <td>مستقبل</td>
+            </tr>
+            <tr>
+              <td><span class="code">Last year</span></td>
+              <td style="color: #fff; font-weight: 700;">السنة الماضية</td>
+              <td>ماضي</td>
+            </tr>
+            <tr>
+              <td><span class="code">In 2 days' time</span></td>
+              <td style="color: #fff; font-weight: 700;">في خلال يومين</td>
+              <td>مستقبل</td>
+            </tr>
+            <tr>
+              <td><span class="code">Earlier</span></td>
+              <td style="color: #fff; font-weight: 700;">في وقت سابق</td>
+              <td>ماضي</td>
+            </tr>
+            <tr>
+              <td><span class="code">Soon</span></td>
+              <td style="color: #fff; font-weight: 700;">قريباً</td>
+              <td>مستقبل</td>
+            </tr>
+            <tr>
+              <td><span class="code">Sometimes</span></td>
+              <td style="color: #fff; font-weight: 700;">أحياناً</td>
+              <td>حاضر</td>
+            </tr>
+            <tr>
+              <td><span class="code">Every year</span></td>
+              <td style="color: #fff; font-weight: 700;">كل سنة</td>
+              <td>حاضر</td>
+            </tr>
+            <tr>
+              <td><span class="code">At the moment</span></td>
+              <td style="color: #fff; font-weight: 700;">في هذه اللحظة</td>
+              <td>حاضر</td>
+            </tr>
+            <tr>
+              <td><span class="code">Currently</span></td>
+              <td style="color: #fff; font-weight: 700;">حالياً</td>
+              <td>حاضر</td>
+            </tr>
+            <tr>
+              <td><span class="code">2 days ago</span></td>
+              <td style="color: #fff; font-weight: 700;">من يومين</td>
+              <td>ماضي</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h4>2. ممارسة أخرى:</h4>
+        <table class="practical-exercises">
+          <thead>
+            <tr>
+              <th>التعبير الزمني</th>
+              <th>الترجمة</th>
+              <th>الزمن</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="code">Back then</span></td>
+              <td style="color: #fff; font-weight: 700;">في ذلك الوقت</td>
+              <td>ماضي</td>
+            </tr>
+            <tr>
+              <td><span class="code">All the time</span></td>
+              <td style="color: #fff; font-weight: 700;">طوال الوقت</td>
+              <td>حاضر</td>
+            </tr>
+            <tr>
+              <td><span class="code">While I was sleeping</span></td>
+              <td style="color: #fff; font-weight: 700;">عندما كنت نائماً</td>
+              <td>ماضي</td>
+            </tr>
+            <tr>
+              <td><span class="code">In a moment</span></td>
+              <td style="color: #fff; font-weight: 700;">بعد لحظة</td>
+              <td>مستقبل</td>
+            </tr>
+            <tr>
+              <td><span class="code">Currently</span></td>
+              <td style="color: #fff; font-weight: 700;">حالياً</td>
+              <td>حاضر</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h4>3. تحديد زمن الجملة:</h4>
+        <table class="practical-exercises">
+          <thead>
+            <tr>
+              <th>الجملة</th>
+              <th>الترجمة</th>
+              <th>الزمن</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="code">I will need your help tomorrow.</span></td>
+              <td style="color: #fff; font-weight: 700;">سأحتاج إلى مساعدتك غداً.</td>
+              <td>مستقبل</td>
+            </tr>
+            <tr>
+              <td><span class="code">He didn't see me yesterday.</span></td>
+              <td style="color: #fff; font-weight: 700;">لم يرني بالأمس.</td>
+              <td>ماضي</td>
+            </tr>
+            <tr>
+              <td><span class="code">I like English.</span></td>
+              <td style="color: #fff; font-weight: 700;">أنا أحب اللغة الإنجليزية.</td>
+              <td>حاضر</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">الواجب (Assignment)</h3>
+      <div class="tips">
+        <ol>
+          <li>دراسة العرض التقديمي (قراءته مرتين على الأقل)</li>
+          <li>دراسة وحفظ التعبيرات الزمنية جيداً:
+            <ul>
+              <li>حفظ 10 تعبيرات زمنية للحاضر (Present)</li>
+              <li>حفظ 10 تعبيرات زمنية للماضي (Past)</li>
+              <li>حفظ 10 تعبيرات زمنية للمستقبل (Future)</li>
+            </ul>
+          </li>
+          <li>كتابة التعبيرات في دفتر ملاحظات دون الرجوع إلى المواد الدراسية</li>
+        </ol>
+        <p style="margin-top:12px"><strong>ملاحظة:</strong> ارفع إجابتك في جروب الفيسبوك الخاص بالكورس.</p>
       </div>
     </section>
 
@@ -458,3 +731,4 @@
   </div>
 </body>
 </html>
+```
