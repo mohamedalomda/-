@@ -1,736 +1,864 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ملخص محاضرة الازمنة (Lecture 4: Verbs Tenses)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      margin: 0;
-      background: #000;
-      font-family: 'Cairo', sans-serif;
-      color: #fff;
-      line-height: 1.8;
-      font-size: 28px;
-    }
-    .page {
-      width: 100vw;
-      min-height: 100vh;
-      padding: 48px;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    /* تأثيرات خلفية احترافية */
-    .page::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 20% 30%, rgba(138, 43, 226, 0.1), transparent 40%),
-                  radial-gradient(circle at 80% 70%, rgba(138, 43, 226, 0.08), transparent 35%);
-      z-index: -1;
-    }
-    
-    header h1 {
-      font-family: 'Amiri', serif;
-      font-size: 56px;
-      text-align: center;
-      margin: 20px 0 36px;
-      padding: 24px 36px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #8a2be2, #9d4edd, #8a2be2);
-      background-size: 300% 300%;
-      animation: gradientShift 4s ease infinite;
-      color: #fff;
-      display: inline-block;
-      transform: skewX(-6deg);
-      box-shadow: 0 12px 35px rgba(157, 78, 221, 0.4);
-      border: 2px solid rgba(157, 78, 221, 0.3);
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .section-title {
-      display: inline-block;
-      background: linear-gradient(135deg, #8a2be2, #9d4edd);
-      background-size: 300% 300%;
-      animation: gradientShift 4s ease infinite;
-      padding: 18px 26px;
-      border-radius: 16px;
-      font-weight: 800;
-      margin: 36px 0 24px;
-      transform: skewX(-6deg);
-      font-size: 32px;
-      color: #fff;
-      box-shadow: 0 8px 30px rgba(157, 78, 221, 0.35);
-      border: 2px solid rgba(157, 78, 221, 0.3);
-    }
-
-    p.lead {
-      margin: 15px 0 30px;
-      color: #ccc;
-      font-size: 28px;
-      text-align: center;
-      font-weight: 500;
-    }
-
-    .card {
-      background: #111;
-      padding: 30px;
-      border-radius: 18px;
-      margin: 30px 0;
-      border: 2px solid #333;
-      font-size: 28px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.4), 
-                  inset 0 1px 0 rgba(255,255,255,0.05);
-      border-left: 4px solid #9d4edd;
-      transition: all 0.3s ease;
-    }
-    
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 45px rgba(157, 78, 221, 0.25), 
-                  inset 0 1px 0 rgba(255,255,255,0.05);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 30px 0;
-      font-size: 28px;
-      text-align: right;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-      border-radius: 14px;
-      overflow: hidden;
-    }
-    th, td {
-      padding: 24px 20px;
-      border: 2px solid #333;
-      vertical-align: top;
-      direction: rtl;
-      text-align: right;
-      white-space: normal;
-    }
-    th {
-      background: #1a1a1a;
-      font-weight: 800;
-      text-align: center;
-      color: #9d4edd;
-      font-size: 28px;
-      text-shadow: 0 0 10px rgba(157, 78, 221, 0.4);
-      backdrop-filter: blur(4px);
-      border: 2px solid rgba(157, 78, 221, 0.2);
-    }
-    td:first-child {
-      background: #1a1a1a;
-    }
-    td:nth-child(2) {
-      background: #151515;
-      color: #fff;
-      font-weight: 700;
-      font-size: 28px;
-    }
-    td:nth-child(3) {
-      background: #1a1a1a;
-      color: #9d4edd;
-      font-weight: 600;
-    }
-    
-    /* تأثيرات خاصة للجداول عند التحويم */
-    table tr:hover td {
-      background: #222 !important;
-      transform: scale(1.02);
-      transition: all 0.2s ease;
-    }
-    
-    table tr:hover td:nth-child(2) {
-      background: #1a1a1a !important;
-      color: #fff !important;
-      transform: scale(1.02);
-    }
-
-    .code {
-      font-family: 'Cairo', monospace;
-      background: #222;
-      padding: 12px 14px;
-      border-radius: 8px;
-      color: #9d4edd;
-      font-size: 26px;
-      border: 2px solid #444;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-      display: inline-block;
-      margin: 0 3px;
-    }
-
-    .tips {
-      background: #1a1a1a;
-      padding: 26px;
-      border-radius: 16px;
-      margin-top: 30px;
-      border: 2px solid #333;
-      font-size: 28px;
-      color: #ccc;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-      border-top: 4px solid #9d4edd;
-      backdrop-filter: blur(10px);
-    }
-
-    .cta {
-      margin-top: 50px;
-      text-align: center;
-      padding: 30px 0;
-    }
-    .cta button {
-      background: linear-gradient(135deg, #8a2be2, #9d4edd);
-      background-size: 300% 300%;
-      animation: gradientShift 4s ease infinite;
-      color: #fff;
-      border: 0;
-      padding: 18px 36px;
-      border-radius: 16px;
-      font-weight: 800;
-      cursor: pointer;
-      font-size: 28px;
-      transition: all 0.3s ease;
-      box-shadow: 0 12px 35px rgba(157, 78, 221, 0.5);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      border: 2px solid rgba(157, 78, 221, 0.4);
-    }
-    .cta button:hover {
-      transform: translateY(-4px) scale(1.08);
-      box-shadow: 0 16px 40px rgba(157, 78, 221, 0.7);
-      text-shadow: 0 0 15px rgba(255,255,255,0.5);
-    }
-    .cta button:active {
-      transform: translateY(-2px);
-    }
-
-    .time-expressions {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      margin: 30px 0;
-    }
-    .time-category {
-      background: #111;
-      padding: 30px;
-      border-radius: 18px;
-      border: 2px solid #333;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-      border-top: 4px solid #9d4edd;
-    }
-    .time-category:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 45px rgba(157, 78, 221, 0.2);
-    }
-    .time-category h4 {
-      margin: 0 0 20px;
-      color: #9d4edd;
-      font-weight: 800;
-      text-align: center;
-      text-shadow: 0 0 10px rgba(157, 78, 221, 0.4);
-      font-size: 28px;
-    }
-    .time-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .time-list li {
-      padding: 8px 0;
-      border-bottom: 2px dashed #333;
-      color: #ccc;
-      transition: all 0.2s ease;
-      font-size: 26px;
-    }
-    .time-list li:hover {
-      color: #fff;
-      padding-right: 15px;
-    }
-    .time-list li:last-child {
-      border-bottom: none;
-    }
-
-    /* تخصيص العناصر المرقمة */
-    ol {
-      counter-reset: arabic-list;
-      list-style: none;
-      padding-right: 35px;
-    }
-    
-    ol > li {
-      counter-increment: arabic-list;
-      position: relative;
-      margin: 30px 0;
-      padding: 24px 32px 24px 70px;
-      background: #1a1a1a;
-      border-radius: 16px;
-      border-right: 5px solid #9d4edd;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-      border: 2px solid rgba(157, 78, 221, 0.1);
-    }
-    
-    ol > li:hover {
-      transform: translateX(8px);
-      box-shadow: 0 16px 40px rgba(157, 78, 221, 0.25);
-    }
-    
-    ol > li::before {
-      content: counter(arabic-list);
-      position: absolute;
-      left: -40px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, #8a2be2, #9d4edd);
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 22px;
-      box-shadow: 0 6px 16px rgba(157, 78, 221, 0.5);
-      border: 3px solid #000;
-    }
-    
-    ol > li p {
-      margin: 15px 0;
-      color: #ccc;
-      padding-right: 15px;
-      line-height: 1.8;
-      font-size: 28px;
-    }
-    
-    ol > li strong {
-      color: #fff;
-      display: block;
-      margin-bottom: 15px;
-      font-size: 30px;
-      text-shadow: 0 0 8px rgba(255,255,255,0.3);
-    }
-    
-    /* تأثيرات خاصة للعناوين الفرعية */
-    h4 {
-      color: #9d4edd;
-      margin: 20px 0 15px;
-      padding-bottom: 10px;
-      border-bottom: 3px solid #333;
-      font-weight: 700;
-      font-size: 28px;
-    }
-
-    @media (max-width: 800px) {
-      .page {
-        padding: 30px;
-      }
-      body {
-        font-size: 24px;
-      }
-      .section-title {
-        font-size: 28px;
-        padding: 16px 22px;
-      }
-      table, th, td {
-        font-size: 24px;
-        padding: 18px 12px;
-      }
-      .code {
-        font-size: 24px;
-      }
-      .time-expressions {
-        grid-template-columns: 1fr;
-      }
-      
-      ol > li::before {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-        left: -32px;
-      }
-      
-      header h1 {
-        font-size: 48px;
-        padding: 18px 24px;
-      }
-    }
-    
-    /* تأثيرات إضافية للإحترافية */
-    .card, .time-category, ol > li {
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .card::before, .time-category::before, ol > li::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(90deg, 
-        transparent, 
-        rgba(255,255,255,0.1), 
-        transparent);
-      transform: rotate(30deg);
-      opacity: 0;
-      transition: opacity 0.8s;
-    }
-    
-    .card:hover::before, .time-category:hover::before, ol > li:hover::before {
-      opacity: 1;
-      animation: shine 2s;
-    }
-    
-    @keyframes shine {
-      0% { left: -50%; }
-      100% { left: 150%; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأزمنة البسيطة في اللغة الإنجليزية</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: #e6e6e6;
+            min-height: 100vh;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #e94057, #f27121, #e94057);
+            box-shadow: 0 0 15px rgba(233, 64, 87, 0.5);
+        }
+        
+        .header h1 {
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #f27121, #e94057, #f27121);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+        
+        .header h2 {
+            font-size: 2.5rem;
+            color: #f8f8f8;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.5rem;
+            color: #b8b8b8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: rgba(25, 30, 50, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        .card h3 {
+            font-size: 3rem;
+            color: #f8f8f8;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e94057;
+            display: inline-block;
+        }
+        
+        .card h4 {
+            font-size: 2rem;
+            color: #f27121;
+            margin: 25px 0 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card h4 i {
+            color: #e94057;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 25px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(30, 35, 60, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        th, td {
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        th {
+            background: rgba(233, 64, 87, 0.3);
+            color: #f8f8f8;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+        
+        tr:nth-child(even) {
+            background: rgba(40, 45, 70, 0.5);
+        }
+        
+        tr:hover {
+            background: rgba(233, 64, 87, 0.2);
+        }
+        
+        .example {
+            background: rgba(233, 64, 87, 0.15);
+            border-right: 6px solid #e94057;
+            padding: 20px 25px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+            direction: ltr;
+            text-align: right;
+        }
+        
+        .example p {
+            margin: 8px 0;
+            font-style: italic;
+            font-size: 1.8rem;
+        }
+        
+        .example .arabic {
+            color: #b8b8b8;
+            font-weight: 500;
+            font-size: 1.8rem;
+        }
+        
+        .example .english {
+            color: #f8f8f8;
+            font-weight: 600;
+            font-size: 1.8rem;
+        }
+        
+        .example .translation {
+            color: #b8b8b8;
+            font-size: 1.8rem;
+            margin-top: 5px;
+            text-align: left;
+            direction: rtl;
+            font-weight: 500;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, rgba(233, 64, 87, 0.3), rgba(242, 113, 33, 0.3));
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #f8f8f8;
+            font-size: 1.8rem;
+        }
+        
+        .grammar-point {
+            background: rgba(40, 45, 70, 0.6);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 6px solid #f27121;
+        }
+        
+        .grammar-point h5 {
+            color: #f27121;
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+        
+        .exercise {
+            background: rgba(25, 30, 50, 0.8);
+            border: 1px solid rgba(233, 64, 87, 0.3);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .exercise h4 {
+            color: #e94057;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .dialogue {
+            background: rgba(30, 35, 60, 0.7);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 1px solid rgba(242, 113, 33, 0.3);
+        }
+        
+        .dialogue p {
+            margin: 15px 0;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1.8rem;
+        }
+        
+        .dialogue p:nth-child(odd) {
+            background: rgba(233, 64, 87, 0.2);
+            margin-right: 30px;
+        }
+        
+        .dialogue p:nth-child(even) {
+            background: rgba(242, 113, 33, 0.2);
+            margin-left: 30px;
+        }
+        
+        .dialogue .speaker {
+            font-weight: bold;
+            color: #f8f8f8;
+            font-size: 1.8rem;
+        }
+        
+        .dialogue .text {
+            margin-top: 5px;
+        }
+        
+        .answer {
+            background: rgba(233, 64, 87, 0.15);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px dashed #e94057;
+        }
+        
+        .answer h5 {
+            color: #e94057;
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+            color: #b8b8b8;
+            font-size: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .decoration {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .decoration-1 {
+            top: 10%;
+            left: 10%;
+            font-size: 12rem;
+            transform: rotate(-30deg);
+        }
+        
+        .decoration-2 {
+            bottom: 10%;
+            right: 10%;
+            font-size: 12rem;
+            transform: rotate(45deg);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 3.5rem;
+            }
+            
+            .header h2 {
+                font-size: 2rem;
+            }
+            
+            .header p {
+                font-size: 1.2rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .card h3 {
+                font-size: 2.5rem;
+            }
+            
+            .card h4 {
+                font-size: 1.8rem;
+            }
+            
+            .example {
+                padding: 15px 20px;
+            }
+            
+            .example p {
+                font-size: 1.5rem;
+            }
+            
+            .example .translation {
+                font-size: 1.5rem;
+            }
+            
+            .highlight {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <h1>ملخص محاضرة الازمنة (Lecture 4: Verbs Tenses)</h1>
-      <p class="lead">مع الحفاظ على المحتوى الأصلي والصياغة الأصلية تمامًا</p>
-    </header>
-
-    <section>
-      <h3 class="section-title">المفاهيم الأساسية التي يجب معرفتها (Fundamental Concepts)</h3>
-      <div class="card">
-        <ol>
-          <li>
-            <strong>العنصر الرئيسي في الجملة باللغة الإنجليزية هو الفعل</strong>
-            <p>(The key element of a sentence in English is the verb)</p>
-            <p>- الجملة الإنجليزية قائمة على الفعل ولا يمكن تكوين جملة إنجليزية بدون فعل</p>
-             <p>- الفعل في الجملة الانجليزية يغير شكله طبقا للزمن</p>
-
-            <p>- مثال: <span class="code">I watch TV every morning</span> (مضارع بسيط) مقابل <span class="code">I watched TV every morning when I was young</span> (ماضي بسيط)</p>
-          </li>
-          <li>
-            <strong>التوافق بين الفاعل والفعل (Subject Verb Agreement)</strong>
-            <p>- يوجد توافق بين الفاعل والفعل فقط في الأفعال المساعدة (Auxiliary/Helping verbs) وفي زمن المضارع البسيط (Present Simple)</p>
-            <p>- أمثلة:</p>
-            <p><span class="code">I eat lunch with my family</span> (أنا أتناول الغداء مع عائلتي)</p>
-            <p><span class="code">She eats lunch with her family</span> (هي تتناول الغداء مع عائلتها)</p>
-            <p><span class="code">I am a girl</span> (أنا فتاة)</p>
-            <p><span class="code">He is a boy</span> (هو ولد)</p>
-          </li>
-          <li>
-            <strong>نفس الكلمة/الفعل في الإنجليزية يمكن أن تحمل معاني مختلفة حسب السياق</strong>
-            <p>- أمثلة:</p>
-            <p><span class="code">He runs fast</span> (يركض بسرعة) - هنا معناها يجري</p>
-            <p><span class="code">He runs the company</span> (يدير الشركة) - هنا معناها يدير</p>
-          </li>
-          <li>
-            <strong>يمكن تحديد زمن الجملة في الإنجليزية من خلال التعبيرات الزمنية او حتي الافعال في نفس الجملة </strong>
-            <p>- مثال: <span class="code">I saw Ali when I visited your house the other night</span></p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section>
-      <h3 class="section-title">فكرة أساسية في فهم الازمنة</h3>
-      <div class="card">
-        <ol>
-          <li>
-            <strong>(Tense) يجب إتقان أزمنة الجملة الأساسية قبل تعلم جوانب/عائلات الازمنة  :</strong>
-            <p>- الماضي (Past)</p>
-            <p>- الحاضر (Present)</p>
-            <p>- المستقبل (Future)</p>
-          </li>
-          <li>
-            <strong>  (Aspects/Family) العائلات الأربع للأزمنة:</strong>
-            <p>- البسيط (Simple)</p>
-            <p>- المستمر (Continuous)</p>
-            <p>- التام (Perfect)</p>
-            <p>- التام المستمر (Perfect Continuous)</p>
-          </li>
-          <li>
-            <strong>عندما نجمع الأزمنة الثلاثة مع العائلات الأربع نحصل على 12 زمناً في اللغة الإنجليزية:</strong>
-            <div style="text-align: center; margin: 24px 0; font-family: 'Cairo', sans-serif; font-weight: 700;">
-              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 900px; margin: 30px auto;">
-                <div style="background: #1a1a1a; padding: 16px; border-radius: 12px; color: #9d4edd; font-weight: 700; text-shadow: 0 0 10px rgba(157, 78, 221, 0.4); border: 2px solid rgba(157, 78, 221, 0.2);">الماضي</div>
-                <div style="background: #1a1a1a; padding: 16px; border-radius: 12px; color: #9d4edd; font-weight: 700; text-shadow: 0 0 10px rgba(157, 78, 221, 0.4); border: 2px solid rgba(157, 78, 221, 0.2);">الحاضر</div>
-                <div style="background: #1a1a1a; padding: 16px; border-radius: 12px; color: #9d4edd; font-weight: 700; text-shadow: 0 0 10px rgba(157, 78, 221, 0.4); border: 2px solid rgba(157, 78, 221, 0.2);">المستقبل</div>
-                
-                <div style="background: #151515; padding: 16px; border-radius: 12px; color: #ccc; border: 2px solid #333;">الماضي البسيط</div>
-                <div style="background: #151515; padding: 16px; border-radius: 12px; color: #ccc; border: 2px solid #333;">المضارع البسيط</div>
-                <div style="background: #151515; padding: 16px; border-radius: 12px; color: #ccc; border: 2px solid #333;">المستقبل البسيط</div>
-                
-                <div style="background: #151515; padding: 16px; border-radius: 12px; color: #ccc; border: 2px solid #333;">الماضي المستمر</div>
-                <div style="background: #151515; padding: 16px; border-radius: 12px; color: #ccc; border: 2px solid #333;">المضارع المستمر</div>
-                <div style="background: #151515; padding: 16px; border-radius: 12px; color: #ccc; border: 2px solid #333;">المستقبل المستمر</div>
-                
-                <div style="background: #151515; padding: 16px; border-radius: 12px; color: #ccc; border: 2px solid #333;">الماضي التام</div>
-                <div style="background: #151515; padding: 16px; border-radius: 12px; color: #ccc; border: 2px solid #333;">المضارع التام</div>
-                <div style="background: #151515; padding: 16px; border-radius: 12px; color: #ccc; border: 2px solid #333;">المستقبل التام</div>
-                
-                <div style="background: #151515; padding: 16px; border-radius: 12px; color: #ccc; border: 2px solid #333;">الماضي التام المستمر</div>
-                <div style="background: #151515; padding: 16px; border-radius: 12px; color: #ccc; border: 2px solid #333;">المضارع التام المستمر</div>
-                <div style="background: #151515; padding: 16px; border-radius: 12px; color: #ccc; border: 2px solid #333;">المستقبل التام المستمر</div>
-              </div>
+    <div class="container">
+        <div class="header">
+            <div class="decoration decoration-1">
+                <i class="fas fa-crown"></i>
             </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section>
-      <h3 class="section-title">التعبيرات الزمنية (Time Expressions)</h3>
-      
-      <div class="time-expressions">
-        <div class="time-category">
-          <h4>الماضي (Past)</h4>
-          <ul class="time-list">
-            <li>yesterday <span style="color: #c7a3ed; font-style: italic;">(أمس)</span></li>
-            <li>last night <span style="color: #c7a3ed; font-style: italic;">(الليلة الماضية)</span></li>
-            <li>last week <span style="color: #c7a3ed; font-style: italic;">(الأسبوع الماضي)</span></li>
-            <li>last year <span style="color: #c7a3ed; font-style: italic;">(السنة الماضية)</span></li>
-            <li>two days ago <span style="color: #c7a3ed; font-style: italic;">(من يومين)</span></li>
-            <li>a few minutes ago <span style="color: #c7a3ed; font-style: italic;">(منذ بضع دقائق)</span></li>
-            <li>in 1990 <span style="color: #c7a3ed; font-style: italic;">(في عام 1990)</span></li>
-            <li>when I was a child <span style="color: #c7a3ed; font-style: italic;">(عندما كنت طفلاً)</span></li>
-            <li>earlier today <span style="color: #c7a3ed; font-style: italic;">(في وقت سابق اليوم)</span></li>
-            <li>back then <span style="color: #c7a3ed; font-style: italic;">(في ذلك الوقت)</span></li>
-            <li>a long time ago <span style="color: #c7a3ed; font-style: italic;">(من وقت طويل)</span></li>
-            <li>in my childhood <span style="color: #c7a3ed; font-style: italic;">(في طفولتي)</span></li>
-            <li>previously <span style="color: #c7a3ed; font-style: italic;">(سابقاً)</span></li>
-            <li>ages ago <span style="color: #c7a3ed; font-style: italic;">(منذ زمن بعيد)</span></li>
-            <li>in the past <span style="color: #c7a3ed; font-style: italic;">(في الماضي)</span></li>
-            <li>before that <span style="color: #c7a3ed; font-style: italic;">(قبل ذلك)</span></li>
-            <li>not long ago <span style="color: #c7a3ed; font-style: italic;">(ليس منذ وقت طويل)</span></li>
-            <li>the day before yesterday <span style="color: #c7a3ed; font-style: italic;">(اليوم قبل أمس)</span></li>
-          </ul>
+            <div class="decoration decoration-2">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <h1>الأزمنة البسيطة في اللغة الإنجليزية</h1>
+            <h2><i class="fas fa-graduation-cap"></i> شرح مفصل واحترافي</h2>
+            <p>دليل شامل لفهم وتطبيق الأزمنة البسيطة في اللغة الإنجليزية</p>
         </div>
         
-        <div class="time-category">
-          <h4>الحاضر (Present)</h4>
-          <ul class="time-list">
-            <li>today <span style="color: #c7a3ed; font-style: italic;">(اليوم)</span></li>
-            <li>every day <span style="color: #c7a3ed; font-style: italic;">(كل يوم)</span></li>
-            <li>at the moment <span style="color: #c7a3ed; font-style: italic;">(في هذه اللحظة)</span></li>
-            <li>these days <span style="color: #c7a3ed; font-style: italic;">(في هذه الأيام)</span></li>
-            <li>currently <span style="color: #c7a3ed; font-style: italic;">(حالياً)</span></li>
-            <li>right now <span style="color: #c7a3ed; font-style: italic;">(الآن)</span></li>
-            <li>this week <span style="color: #c7a3ed; font-style: italic;">(هذا الأسبوع)</span></li>
-            <li>nowadays <span style="color: #c7a3ed; font-style: italic;">(في الوقت الحاضر)</span></li>
-            <li>all the time <span style="color: #c7a3ed; font-style: italic;">(طوال الوقت)</span></li>
-            <li>most of the time <span style="color: #c7a3ed; font-style: italic;">(معظم الوقت)</span></li>
-            <li>as we speak <span style="color: #c7a3ed; font-style: italic;">(في الوقت الذي نتحدث فيه)</span></li>
-            <li>at present <span style="color: #c7a3ed; font-style: italic;">(في الوقت الحالي)</span></li>
-            <li>this morning <span style="color: #c7a3ed; font-style: italic;">(صباح اليوم)</span></li>
-            <li>right this second <span style="color: #c7a3ed; font-style: italic;">(في هذه الثانية)</span></li>
-            <li>on a daily basis <span style="color: #c7a3ed; font-style: italic;">(على أساس يومي)</span></li>
-            <li>as of now <span style="color: #c7a3ed; font-style: italic;">(اعتباراً من الآن)</span></li>
-            <li>often <span style="color: #c7a3ed; font-style: italic;">(في كثير من الأحيان)</span></li>
-          </ul>
-        </div>
-        
-        <div class="time-category">
-          <h4>المستقبل (Future)</h4>
-          <ul class="time-list">
-            <li>tomorrow <span style="color: #c7a3ed; font-style: italic;">(غداً)</span></li>
-            <li>next week <span style="color: #c7a3ed; font-style: italic;">(الأسبوع القادم)</span></li>
-            <li>next year <span style="color: #c7a3ed; font-style: italic;">(السنة القادمة)</span></li>
-            <li>soon <span style="color: #c7a3ed; font-style: italic;">(قريباً)</span></li>
-            <li>in two days <span style="color: #c7a3ed; font-style: italic;">(في خلال يومين)</span></li>
-            <li>later today <span style="color: #c7a3ed; font-style: italic;">(في وقت لاحق اليوم)</span></li>
-            <li>in the future <span style="color: #c7a3ed; font-style: italic;">(في المستقبل)</span></li>
-            <li>this weekend <span style="color: #c7a3ed; font-style: italic;">(نهاية هذا الأسبوع)</span></li>
-            <li>in a few minutes <span style="color: #c7a3ed; font-style: italic;">(في خلال بضع دقائق)</span></li>
-            <li>someday <span style="color: #c7a3ed; font-style: italic;">(يوماً ما)</span></li>
-            <li>in a moment <span style="color: #c7a3ed; font-style: italic;">(بعد لحظة)</span></li>
-            <li>next month <span style="color: #c7a3ed; font-style: italic;">(الشهر القادم)</span></li>
-            <li>in 2030 <span style="color: #c7a3ed; font-style: italic;">(في عام 2030)</span></li>
-            <li>one day <span style="color: #c7a3ed; font-style: italic;">(يوماً ما)</span></li>
-            <li>after a while <span style="color: #c7a3ed; font-style: italic;">(بعد فترة)</span></li>
-            <li>in no time <span style="color: #c7a3ed; font-style: italic;">(قريباً جداً)</span></li>
-            <li>by next week <span style="color: #c7a3ed; font-style: italic;">(بحلول الأسبوع القادم)</span></li>
-            <li>the day after tomorrow <span style="color: #c7a3ed; font-style: italic;">(اليوم بعد غد)</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h3 class="section-title">تمارين تطبيقية</h3>
-      
-      <div class="card">
-        <h4>1. تصنيف التعبيرات الزمنية إلى ماضي، حاضر، مستقبل:</h4>
-        <table class="practical-exercises">
-          <thead>
-            <tr>
-              <th>التعبير الزمني</th>
-              <th>الترجمة</th>
-              <th>الزمن</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="code">Tomorrow</span></td>
-              <td style="color: #fff; font-weight: 700;">غداً</td>
-              <td>مستقبل</td>
-            </tr>
-            <tr>
-              <td><span class="code">Last year</span></td>
-              <td style="color: #fff; font-weight: 700;">السنة الماضية</td>
-              <td>ماضي</td>
-            </tr>
-            <tr>
-              <td><span class="code">In 2 days' time</span></td>
-              <td style="color: #fff; font-weight: 700;">في خلال يومين</td>
-              <td>مستقبل</td>
-            </tr>
-            <tr>
-              <td><span class="code">Earlier</span></td>
-              <td style="color: #fff; font-weight: 700;">في وقت سابق</td>
-              <td>ماضي</td>
-            </tr>
-            <tr>
-              <td><span class="code">Soon</span></td>
-              <td style="color: #fff; font-weight: 700;">قريباً</td>
-              <td>مستقبل</td>
-            </tr>
-            <tr>
-              <td><span class="code">Sometimes</span></td>
-              <td style="color: #fff; font-weight: 700;">أحياناً</td>
-              <td>حاضر</td>
-            </tr>
-            <tr>
-              <td><span class="code">Every year</span></td>
-              <td style="color: #fff; font-weight: 700;">كل سنة</td>
-              <td>حاضر</td>
-            </tr>
-            <tr>
-              <td><span class="code">At the moment</span></td>
-              <td style="color: #fff; font-weight: 700;">في هذه اللحظة</td>
-              <td>حاضر</td>
-            </tr>
-            <tr>
-              <td><span class="code">Currently</span></td>
-              <td style="color: #fff; font-weight: 700;">حالياً</td>
-              <td>حاضر</td>
-            </tr>
-            <tr>
-              <td><span class="code">2 days ago</span></td>
-              <td style="color: #fff; font-weight: 700;">من يومين</td>
-              <td>ماضي</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="card">
-        <h4>2. ممارسة أخرى:</h4>
-        <table class="practical-exercises">
-          <thead>
-            <tr>
-              <th>التعبير الزمني</th>
-              <th>الترجمة</th>
-              <th>الزمن</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="code">Back then</span></td>
-              <td style="color: #fff; font-weight: 700;">في ذلك الوقت</td>
-              <td>ماضي</td>
-            </tr>
-            <tr>
-              <td><span class="code">All the time</span></td>
-              <td style="color: #fff; font-weight: 700;">طوال الوقت</td>
-              <td>حاضر</td>
-            </tr>
-            <tr>
-              <td><span class="code">While I was sleeping</span></td>
-              <td style="color: #fff; font-weight: 700;">عندما كنت نائماً</td>
-              <td>ماضي</td>
-            </tr>
-            <tr>
-              <td><span class="code">In a moment</span></td>
-              <td style="color: #fff; font-weight: 700;">بعد لحظة</td>
-              <td>مستقبل</td>
-            </tr>
-            <tr>
-              <td><span class="code">Currently</span></td>
-              <td style="color: #fff; font-weight: 700;">حالياً</td>
-              <td>حاضر</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="card">
-        <h4>3. تحديد زمن الجملة:</h4>
-        <table class="practical-exercises">
-          <thead>
-            <tr>
-              <th>الجملة</th>
-              <th>الترجمة</th>
-              <th>الزمن</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="code">I will need your help tomorrow.</span></td>
-              <td style="color: #fff; font-weight: 700;">سأحتاج إلى مساعدتك غداً.</td>
-              <td>مستقبل</td>
-            </tr>
-            <tr>
-              <td><span class="code">He didn't see me yesterday.</span></td>
-              <td style="color: #fff; font-weight: 700;">لم يرني بالأمس.</td>
-              <td>ماضي</td>
-            </tr>
-            <tr>
-              <td><span class="code">I like English.</span></td>
-              <td style="color: #fff; font-weight: 700;">أنا أحب اللغة الإنجليزية.</td>
-              <td>حاضر</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section>
-      <h3 class="section-title">الواجب (Assignment)</h3>
-      <div class="tips">
-        <ol>
-          <li>دراسة العرض التقديمي (قراءته مرتين على الأقل)</li>
-          <li>دراسة وحفظ التعبيرات الزمنية جيداً:
-            <ul>
-              <li>حفظ 10 تعبيرات زمنية للحاضر (Present)</li>
-              <li>حفظ 10 تعبيرات زمنية للماضي (Past)</li>
-              <li>حفظ 10 تعبيرات زمنية للمستقبل (Future)</li>
+        <div class="card">
+            <h3><i class="fas fa-info-circle"></i> مقدمة عن الأزمنة</h3>
+            <p style="font-size: 1.8rem;">في المحاضرة الخامسة، يتم شرح الأزمنة البسيطة (Simple Tenses) في اللغة الإنجليزية. توجد 4 عائلات (Aspects) من الأزمنة:</p>
+            <ul style="margin: 15px 0 15px 30px; list-style-type: none;">
+                <li style="margin: 8px 0;"><i class="fas fa-chevron-left" style="color: #e94057; margin-left: 10px;"></i> <span class="highlight">Simple</span> (بسيط)</li>
+                <li style="margin: 8px 0;"><i class="fas fa-chevron-left" style="color: #e94057; margin-left: 10px;"></i> <span class="highlight">Continuous</span> (مستمر)</li>
+                <li style="margin: 8px 0;"><i class="fas fa-chevron-left" style="color: #e94057; margin-left: 10px;"></i> <span class="highlight">Perfect</span> (تام)</li>
+                <li style="margin: 8px 0;"><i class="fas fa-chevron-left" style="color: #e94057; margin-left: 10px;"></i> <span class="highlight">Perfect Continuous</span> (تام مستمر)</li>
             </ul>
-          </li>
-          <li>كتابة التعبيرات في دفتر ملاحظات دون الرجوع إلى المواد الدراسية</li>
-        </ol>
-        <p style="margin-top:18px"><strong>ملاحظة:</strong> ارفع إجابتك في جروب الفيسبوك الخاص بالكورس.</p>
-      </div>
-    </section>
+            <p style="font-size: 1.8rem; margin-top: 15px;">ولكل عائلة 3 أزمنة:</p>
+            <ul style="margin: 15px 0 15px 30px; list-style-type: none;">
+                <li style="margin: 8px 0;"><i class="fas fa-chevron-left" style="color: #f27121; margin-left: 10px;"></i> <span class="highlight">Past</span> (ماضي)</li>
+                <li style="margin: 8px 0;"><i class="fas fa-chevron-left" style="color: #f27121; margin-left: 10px;"></i> <span class="highlight">Present</span> (حاضر/مضارع)</li>
+                <li style="margin: 8px 0;"><i class="fas fa-chevron-left" style="color: #f27121; margin-left: 10px;"></i> <span class="highlight">Future</span> (مستقبل)</li>
+            </ul>
+            <p style="margin-top: 15px; font-size: 1.8rem;">مما يشكل إجمالي <span class="highlight">12 زمناً</span>.</p>
+        </div>
+        
+        <div class="card">
+            <h3><i class="fas fa-table"></i> جدول الأزمنة</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Family / time</th>
+                            <th>Past</th>
+                            <th>Present</th>
+                            <th>Future</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="highlight">Simple</span></td>
+                            <td>Past simple (الماضي البسيط)</td>
+                            <td>Present simple (المضارع البسيط)</td>
+                            <td>Future simple (المستقبل البسيط)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">Continuous</span></td>
+                            <td>Past continuous (الماضي المستمر)</td>
+                            <td>Present continuous (المضارع المستمر)</td>
+                            <td>Future continuous (المستقبل المستمر)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">Perfect</span></td>
+                            <td>Past perfect (الماضي التام)</td>
+                            <td>Present perfect (المضارع التام)</td>
+                            <td>Future perfect (المستقبل التام)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="highlight">Perfect continuous</span></td>
+                            <td>Past perfect continuous (الماضي التام المستمر)</td>
+                            <td>Present perfect continuous (المضارع التام المستمر)</td>
+                            <td>Future perfect continuous (المستقبل التام المستمر)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3><i class="fas fa-lightbulb"></i> مفهوم الأزمنة البسيطة</h3>
+            <p style="font-size: 1.8rem;">الأزمنة البسيطة هي أبسط شكل للفعل في اللغة الإنجليزية. تستخدم للدلالة على الزمن بشكل عام دون إضافة معلومات إضافية عن وقت الفعل.</p>
+            
+            <div class="example">
+                <p class="english">"أنا أمس لعبت كرة" (في اللغة العربية) تعني أن الشيء تم في الماضي بدون تحديد وقت محدد.</p>
+            </div>
+            
+            <div class="grammar-point">
+                <h5><i class="fas fa-arrow-right"></i> الماضي البسيط:</h5>
+                <p style="font-size: 1.8rem;">صيغة الفعل في الماضي (أكل -> أكل، لعب -> لعب، كتب -> كتب)</p>
+            </div>
+            
+            <div class="grammar-point">
+                <h5><i class="fas fa-arrow-right"></i> المضارع البسيط:</h5>
+                <p style="font-size: 1.8rem;">حدث يحدث بشكل عام في المضارع (علي يمارس كرة القدم)</p>
+            </div>
+            
+            <div class="grammar-point">
+                <h5><i class="fas fa-arrow-right"></i> المستقبل البسيط:</h5>
+                <p style="font-size: 1.8rem;">حدث سيحدث في المستقبل (سأقابل علي)</p>
+            </div>
+            
+            <p style="font-size: 1.8rem;">تستخدم الأزمنة البسيطة مع الأحداث التي تحدث أكثر من مرة (العادات والحقائق):</p>
+            <ul style="margin: 15px 0 15px 30px; list-style-type: none;">
+                <li style="margin: 8px 0;"><i class="fas fa-history" style="color: #e94057; margin-left: 10px;"></i> <span class="highlight">الماضي البسيط:</span> للعادات في الماضي</li>
+                <li style="margin: 8px 0;"><i class="fas fa-clock" style="color: #f27121; margin-left: 10px;"></i> <span class="highlight">المضارع البسيط:</span> للعادات والحقائق في الحاضر</li>
+                <li style="margin: 8px 0;"><i class="fas fa-hourglass-half" style="color: #4a90e2; margin-left: 10px;"></i> <span class="highlight">المستقبل البسيط:</span> للأحداث التي ستحدث في المستقبل</li>
+            </ul>
+            
+            <div class="example" style="background: rgba(40, 45, 70, 0.6); border-right: 4px solid #4a90e2;">
+                <p class="arabic"><i class="fas fa-exclamation-triangle"></i> <strong>ملاحظة مهمة:</strong> لا توجد "عادات في المستقبل" لأن العادة يجب أن تكون متكررة، والمستقبل لم يحصل بعد.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3><i class="fas fa-cogs"></i> التركيب النحوي للأزمنة البسيطة</h3>
+            
+            <h4><i class="fas fa-history"></i> الماضي البسيط (Past simple)</h4>
+            <div class="grammar-point">
+                <h5><i class="fas fa-check-circle"></i> الأفعال المنتظمة:</h5>
+                <p style="font-size: 1.8rem;">تضاف (ed) في النهاية</p>
+                <ul style="margin: 10px 0 10px 30px;">
+                    <li><span class="highlight">liked</span> (أعجب)</li>
+                    <li><span class="highlight">watched</span> (شاهد)</li>
+                    <li><span class="highlight">played</span> (لعب)</li>
+                    <li><span class="highlight">tried</span> (حاول)</li>
+                </ul>
+            </div>
+            
+            <div class="grammar-point">
+                <h5><i class="fas fa-exclamation-triangle"></i> الأفعال غير المنتظمة:</h5>
+                <p style="font-size: 1.8rem;">تتغير صيغتها</p>
+                <ul style="margin: 10px 0 10px 30px;">
+                    <li><span class="highlight">eat -> ate</span> (أكل -> أكل)</li>
+                    <li><span class="highlight">see -> saw</span> (رأى -> رأى)</li>
+                </ul>
+            </div>
+            
+            <h4><i class="fas fa-clock"></i> المضارع البسيط (Present simple)</h4>
+            <div class="grammar-point">
+                <h5><i class="fas fa-users"></i> مع الضمائر (I, you, we, they):</h5>
+                <p style="font-size: 1.8rem;">تستخدم الفعل في صيغة المصدر</p>
+                <ul style="margin: 10px 0 10px 30px;">
+                    <li><span class="highlight">I like</span> (أنا أعجب)</li>
+                    <li><span class="highlight">I play</span> (أنا ألعب)</li>
+                    <li><span class="highlight">I try</span> (أنا أحاول)</li>
+                </ul>
+            </div>
+            
+            <div class="grammar-point">
+                <h5><i class="fas fa-user"></i> مع الضمائر (he, she, it):</h5>
+                <p style="font-size: 1.8rem;">تضاف (s/es/ies) للفعل</p>
+                <ul style="margin: 10px 0 10px 30px;">
+                    <li><span class="highlight">he likes</span> (هو يعجب)</li>
+                    <li><span class="highlight">she plays</span> (هي تلعب)</li>
+                </ul>
+            </div>
+            
+            <h4><i class="fas fa-hourglass-half"></i> المستقبل البسيط (Future simple)</h4>
+            <div class="grammar-point">
+                <h5><i class="fas fa-arrow-right"></i> التركيب:</h5>
+                <p style="font-size: 1.8rem;">يضاف (will) قبل الفعل في صيغة المصدر Subj + will + inf</p>
+                <ul style="margin: 10px 0 10px 30px;">
+                    <li><span class="highlight">I will travel</span> (سأسافر)</li>
+                    <li><span class="highlight">He will travel</span> (هو سيسافر)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3><i class="fas fa-comment"></i> الجملة الخبرية (Declarative sentence)</h3>
+            
+            <h4><i class="fas fa-history"></i> الماضي البسيط</h4>
+            <div class="example">
+                <p class="english">He didn't eat.</p>
+                <p class="translation">(هو لم يأكل)</p>
+            </div>
+            <div class="example">
+                <p class="english">I didn't eat salad.</p>
+                <p class="translation">(أنا لم آكل سلطة)</p>
+            </div>
+            
+            <h4><i class="fas fa-clock"></i> المضارع البسيط</h4>
+            <div class="example">
+                <p class="english">He doesn't eat salad.</p>
+                <p class="translation">(هو لا يأكل سلطة)</p>
+            </div>
+            <div class="example">
+                <p class="english">I don't eat salad.</p>
+                <p class="translation">(أنا لا آكل سلطة)</p>
+            </div>
+            
+            <h4><i class="fas fa-hourglass-half"></i> المستقبل البسيط</h4>
+            <div class="example">
+                <p class="english">I will travel.</p>
+                <p class="translation">(سأسافر)</p>
+            </div>
+            <div class="example">
+                <p class="english">He won't travel.</p>
+                <p class="translation">(هو لن يسافر)</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3><i class="fas fa-question-circle"></i> الجملة الاستفهامية (Interrogative/question sentence)</h3>
+            
+            <h4><i class="fas fa-history"></i> الماضي البسيط</h4>
+            <div class="grammar-point">
+                <h5><i class="fas fa-arrow-right"></i> التركيب:</h5>
+                <p style="font-size: 1.8rem;"><span class="highlight">?Did + subject + inf</span></p>
+                                <p style="font-size: 1.8rem;"><span class="highlight">?wh + did + sub + inf</span></p>
 
-    <div class="cta">
-      <button onclick="alert('تم حفظ الواجب!')">أرسل الواجب</button>
+            </div>
+            <div class="example">
+                <p class="english">Did he eat lunch?</p>
+                <p class="translation">(هل أكل هو الغداء؟)</p>
+            </div>
+            <div class="example">
+                <p class="english">What did he eat?</p>
+                <p class="translation">(ماذا أكل هو؟)</p>
+            </div>
+            <div class="example">
+                <p class="english">What did you watch?</p>
+                <p class="translation">(ماذا شاهدتَ؟)</p>
+            </div>
+            
+            <h4><i class="fas fa-clock"></i> المضارع البسيط</h4>
+            <div class="grammar-point">
+                <h5><i class="fas fa-arrow-right"></i> التركيب:</h5>
+                <p style="font-size: 1.8rem;"><span class="highlight">?Do/Does + subject + inf</span></p>
+                                <p style="font-size: 1.8rem;"><span class="highlight">?wh + do?does + subj + inf</span></p>
+
+            </div>
+            <div class="example">
+                <p class="english">Do you watch TV?</p>
+                <p class="translation">(هل تشاهد التلفاز؟)</p>
+            </div>
+            <div class="example">
+                <p class="english">Does he eat fish?</p>
+                <p class="translation">(هل يأكل هو السمك؟)</p>
+            </div>
+            <div class="example">
+                <p class="english">What does he eat?</p>
+                <p class="translation">(ماذا يأكل هو؟)</p>
+            </div>
+            
+            <h4><i class="fas fa-hourglass-half"></i> المستقبل البسيط</h4>
+            <div class="grammar-point">
+                <h5><i class="fas fa-arrow-right"></i> التركيب:</h5>
+                <p style="font-size: 1.8rem;"><span class="highlight">?Will + subject + inf</span></p>
+                                <p style="font-size: 1.8rem;"><span class="highlight">?wh + will + subj + inf</span></p>
+
+            </div>
+            <div class="example">
+                <p class="english">Will you come to school?</p>
+                <p class="translation">(هل ستأتي إلى المدرسة؟)</p>
+            </div>
+            <div class="example">
+                <p class="english">When will you come to school?</p>
+                <p class="translation">(متى ستأتي إلى المدرسة؟)</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3><i class="fas fa-book"></i> المفاهيم الأساسية</h3>
+            
+            <div class="example">
+                <p class="arabic"><i class="fas fa-info-circle"></i> <strong>بدون مرجع زمني، يكون الزمن الافتراضي هو المضارع البسيط.</strong></p>
+                <p class="english">مثال: English Movies on MBC2</p>
+                <p class="translation">(أمثلة: أفلام إنجليزية على MBC2)</p>
+                <ul style="margin: 10px 0 10px 30px;">
+                    <li>A-watch (تصح)</li>
+                    <li>B-watched</li>
+                    <li>C-watches</li>
+                    <li>D- didn't watch</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <p class="arabic"><i class="fas fa-sync-alt"></i> <strong>الماضي البسيط والمضارع البسيط وجهان لعملة واحدة، إلا أن أحدهما يستخدم مع مرجع زمني ماضي والآخر مع مرجع زمني حاضر.</strong></p>
+            </div>
+            
+            <div class="example">
+                <p class="english">Ali always sleeps early.</p>
+                <p class="translation">(علي دائماً ينام مبكراً) - مضارع بسيط</p>
+            </div>
+            <div class="example">
+                <p class="english">Ali always slept early when he was young.</p>
+                <p class="translation">(علي دائماً كان ينام مبكراً عندما كان صغيراً) - ماضي بسيط</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3><i class="fas fa-times-circle"></i> النفي</h3>
+            
+            <h4><i class="fas fa-history"></i> الماضي البسيط</h4>
+            <div class="grammar-point">
+                <h5><i class="fas fa-arrow-right"></i> التركيب:</h5>
+                <p style="font-size: 1.8rem;"><span class="highlight">Subj + didn't + verb inf</span></p>
+            </div>
+            <div class="example">
+                <p class="english">He didn't eat.</p>
+                <p class="translation">(هو لم يأكل)</p>
+            </div>
+            
+            <h4><i class="fas fa-clock"></i> المضارع البسيط</h4>
+            <div class="grammar-point">
+                <h5><i class="fas fa-arrow-right"></i> التركيب:</h5>
+                <p style="font-size: 1.8rem;"><span class="highlight">He/she/it + doesn't + inf</span></p>
+            </div>
+            <div class="example">
+                <p class="english">He doesn't eat salad.</p>
+                <p class="translation">(هو لا يأكل سلطة)</p>
+            </div>
+            <div class="example">
+                <p class="english">I don't eat salad.</p>
+                <p class="translation">(أنا لا آكل سلطة)</p>
+            </div>
+            
+            <h4><i class="fas fa-hourglass-half"></i> المستقبل البسيط</h4>
+            <div class="grammar-point">
+                <h5><i class="fas fa-arrow-right"></i> التركيب:</h5>
+                <p style="font-size: 1.8rem;"><span class="highlight">Subj + won't + inf</span></p>
+            </div>
+            <div class="example">
+                <p class="english">I won't travel.</p>
+                <p class="translation">(لن أسافر)</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3><i class="fas fa-question"></i> الأسئلة</h3>
+            
+            <h4><i class="fas fa-history"></i> الماضي البسيط</h4>
+            <div class="grammar-point">
+                <h5><i class="fas fa-arrow-right"></i> التركيب:</h5>
+                <p style="font-size: 1.8rem;"><span class="highlight">?Did + sub + inf</span></p>
+            </div>
+            <div class="example">
+                <p class="english">Did he eat lunch?</p>
+                <p class="translation">(هل أكل هو الغداء؟)</p>
+            </div>
+            <div class="example">
+                <p class="english">What did he eat?</p>
+                <p class="translation">(ماذا أكل هو؟)</p>
+            </div>
+            
+            <h4><i class="fas fa-clock"></i> المضارع البسيط</h4>
+            <div class="grammar-point">
+                <h5><i class="fas fa-arrow-right"></i> التركيب:</h5>
+                <p style="font-size: 1.8rem;"><span class="highlight">?Does/Do + subj + inf</span></p>
+            </div>
+            <div class="example">
+                <p class="english">Do you watch TV?</p>
+                <p class="translation">(هل تشاهد التلفاز؟)</p>
+            </div>
+            <div class="example">
+                <p class="english">Does he eat fish?</p>
+                <p class="translation">(هل يأكل هو السمك؟)</p>
+            </div>
+            <div class="example">
+                <p class="english">What does he eat?</p>
+                <p class="translation">(ماذا يأكل هو؟)</p>
+            </div>
+            
+            <h4><i class="fas fa-hourglass-half"></i> المستقبل البسيط</h4>
+            <div class="grammar-point">
+                <h5><i class="fas fa-arrow-right"></i> التركيب:</h5>
+                <p style="font-size: 1.8rem;"><span class="highlight">?Will + subj + inf</span></p>
+            </div>
+            <div class="example">
+                <p class="english">Will you come to school?</p>
+                <p class="translation">(هل ستأتي إلى المدرسة؟)</p>
+            </div>
+            <div class="example">
+                <p class="english">When will you come to school?</p>
+                <p class="translation">(متى ستأتي إلى المدرسة؟)</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3><i class="fas fa-gamepad"></i> تمارين تطبيقية</h3>
+            
+            <h4><i class="fas fa-users"></i> لعبة الأدوار (Role play)</h4>
+            <div class="dialogue">
+                <p><span class="speaker">Ali:</span> <span class="text">Hello, Saif. Can I ask you some questions about Sports?</span></p>
+                <p class="translation">(مرحباً، سيف. هل يمكنني أن أسألك بعض الأسئلة عن الرياضة؟)</p>
+                
+                <p><span class="speaker">Saif:</span> <span class="text">Sure, go ahead.</span></p>
+                <p class="translation">(بالطبع، تفضل.)</p>
+                
+                <p><span class="speaker">Ali:</span> <span class="text">I was Curious, do you practice any kind of sports?</span></p>
+                <p class="translation">(كنت فضولياً، هل تمارس أي نوع من الرياضة؟)</p>
+                
+                <p><span class="speaker">Saif:</span> <span class="text">Oh yeah, of course I practice sports.</span></p>
+                <p class="translation">(أوه نعم، بالطبع أمارس الرياضة.)</p>
+                
+                <p><span class="speaker">Ali:</span> <span class="text">Great then, what sport do you practice?</span></p>
+                <p class="translation">(رائع، ما الرياضة التي تمارسها؟)</p>
+                
+                <p><span class="speaker">Saif:</span> <span class="text">I...</span></p>
+                <p class="translation">(أنا...)</p>
+                
+                <p><span class="speaker">Ali:</span> <span class="text">Nice, Tennis is such a nice one. When did you start it?</span></p>
+                <p class="translation">(رائع، التنس رياضة جميلة. متى بدأتها؟)</p>
+                
+                <p><span class="speaker">Saif:</span> <span class="text">I started it when I was young, maybe 5 years ago.</span></p>
+                <p class="translation">(بدأتها عندما كنت صغيراً، ربما منذ 5 سنوات.)</p>
+                
+                <p><span class="speaker">Ali:</span> <span class="text">okay, and when do you play it?</span></p>
+                <p class="translation">(حسناً، ومتى تلعبها؟)</p>
+                
+                <p><span class="speaker">Saif:</span> <span class="text">I play it on Thursdays and Wednesdays.</span></p>
+                <p class="translation">(ألعبها أيام الخميس والأربعاء.)</p>
+                
+                <p><span class="speaker">Ali:</span> <span class="text">And who do you play it with?</span></p>
+                <p class="translation">(ومن تلعبها معه؟)</p>
+                
+                <p><span class="speaker">Saif:</span> <span class="text">My friends most of the times.</span></p>
+                <p class="translation">(أصدقائي في معظم الأوقات.)</p>
+                
+                <p><span class="speaker">Ali:</span> <span class="text">When did you last play it?</span></p>
+                <p class="translation">(متى لعبتها آخر مرة؟)</p>
+                
+                <p><span class="speaker">Saif:</span> <span class="text">Last time was on Thursday.</span></p>
+                <p class="translation">(كانت آخر مرة يوم الخميس.)</p>
+                
+                <p><span class="speaker">Ali:</span> <span class="text">Do you play professionally? I mean, do you play in a team?</span></p>
+                <p class="translation">(هل تلعب بشكل احترافي؟ أقصد، هل تلعب في فريق؟)</p>
+                
+                <p><span class="speaker">Saif:</span> <span class="text">No, it's just a hobby.</span></p>
+                <p class="translation">(لا، إنها مجرد هواية.)</p>
+                
+                <p><span class="speaker">Ali:</span> <span class="text">When will your next match be?</span></p>
+                <p class="translation">(متى ستكون مباراتك القادمة؟)</p>
+                
+                <p><span class="speaker">Saif:</span> <span class="text">Next Tuesday.</span></p>
+                <p class="translation">(الثلاثاء القادم.)</p>
+                
+                <p><span class="speaker">Ali:</span> <span class="text">Cool, where can we meet?</span></p>
+                <p class="translation">(رائع، أين يمكننا اللقاء؟)</p>
+                
+                <p><span class="speaker">Saif:</span> <span class="text">We can meet in the sports club.</span></p>
+                <p class="translation">(يمكننا اللقاء في نادي الرياضة.)</p>
+                
+                <p><span class="speaker">Ali:</span> <span class="text">Great then, see you there.</span></p>
+                <p class="translation">(رائع، أراك هناك.)</p>
+                
+                <p><span class="speaker">Saif:</span> <span class="text">looking forward to it/ can't wait.</span></p>
+                <p class="translation">(أتشوق لذلك / لا أستطيع الانتظار.)</p>
+            </div>
+            
+            <h4><i class="fas fa-edit"></i> التمرين 1: إعادة كتابة الجملة باستخدام الأزمنة البسيطة</h4>
+            <div class="exercise">
+                <p style="font-size: 1.8rem;">1. Ali eats scrambled eggs.</p>
+                <div class="answer">
+                    <h5><i class="fas fa-history"></i> Simple past:</h5>
+                    <p style="font-size: 1.8rem;">ِAli ate scrambled eggs.</p>
+                    <p class="translation">(علي أكل بيض مخفوق.)</p>
+                </div>
+                <div class="answer">
+                    <h5><i class="fas fa-hourglass-half"></i> Simple future:</h5>
+                    <p style="font-size: 1.8rem;">Ali will eat scrambled eggs.</p>
+                    <p class="translation">(علي سيأكل بيض مخفوق.)</p>
+                </div>
+                
+                <p style="margin-top: 20px; font-size: 1.8rem;">2. Ali and I will win the race.</p>
+                <div class="answer">
+                    <h5><i class="fas fa-clock"></i> Simple present:</h5>
+                    <p style="font-size: 1.8rem;">Ali and I win the race.</p>
+                    <p class="translation">(علي وأنا نربح السباق.)</p>
+                </div>
+                <div class="answer">
+                    <h5><i class="fas fa-history"></i> Simple past:</h5>
+                    <p style="font-size: 1.8rem;">ِAli and I won the race.</p>
+                    <p class="translation">(علي وأنا ربحنا السباق.)</p>
+                </div>
+            </div>
+            
+            <h4><i class="fas fa-check-square"></i> التمرين 2: اختيار الزمن الصحيح</h4>
+            <div class="exercise">
+                <p style="font-size: 1.8rem;">1. Yesterday, Marion yelled at Jacob to stop running.</p>
+                <p style="font-size: 1.8rem;"><span class="highlight">a. yelled</span>   b. yells     c. will yell</p>
+                <p class="translation">(بالأمس، صرخت ماريون على جاكوب كي يتوقف عن الركض.)</p>
+                
+                <p style="margin-top: 15px; font-size: 1.8rem;">2. Cathy bakes cookies every week.</p>
+                <p style="font-size: 1.8rem;">a. baked    <span class="highlight">b. bakes</span>      c. will bake</p>
+                <p class="translation">(كاتي تخبز الكوكيز كل أسبوع.)</p>
+                
+                <p style="margin-top: 15px; font-size: 1.8rem;">3. Tomorrow, Charles will buy a new basketball to Claudia.</p>
+                <p style="font-size: 1.8rem;">a. bought     b. buys     <span class="highlight">c. will buy</span></p>
+                <p class="translation">(غداً، سيشتري تشارلز كرة سلة جديدة لكلاوديا.)</p>
+                
+                <p style="margin-top: 15px; font-size: 1.8rem;">4. Last night, Glenn painted a picture of a cat.</p>
+                <p style="font-size: 1.8rem;"><span class="highlight">a. painted</span>   b. paints        c. will paint</p>
+                <p class="translation">(الليلة الماضية، رسم جلين صورة قطة.)</p>
+                
+                <p style="margin-top: 15px; font-size: 1.8rem;">5. Mark carries the baby to the car every day.</p>
+                <p style="font-size: 1.8rem;">a. carried      <span class="highlight">b. carries</span>       c. will carry</p>
+                <p class="translation">(مارك يحمل الطفل إلى السيارة كل يوم.)</p>
+            </div>
+            
+            <h4><i class="fas fa-check"></i> التمرين 3: تحديد الزمن الصحيح</h4>
+            <div class="exercise">
+                <p style="font-size: 1.8rem;">1. Sheryl played with her dog. <span class="highlight">(Simple past)</span></p>
+                <p class="translation">(شيريل لعبت مع كلبها.)</p>
+                
+                <p style="font-size: 1.8rem;">2. Harry will go with Bob to the movies. <span class="highlight">(Simple future)</span></p>
+                <p class="translation">(هاري سيذهب مع بوب إلى السينما.)</p>
+                
+                <p style="font-size: 1.8rem;">3. Leslie was happy to be here. <span class="highlight">(Simple past)</span></p>
+                <p class="translation">(ليزلي كانت سعيدة بالتواجد هنا.)</p>
+                
+                <p style="font-size: 1.8rem;">4. Anne writes stories for her friends. <span class="highlight">(Simple present)</span></p>
+                <p class="translation">(آن تكتب قصصاً لأصدقائها.)</p>
+                
+                <p style="font-size: 1.8rem;">5. Tom is a resourceful student. <span class="highlight">(Simple present)</span></p>
+                <p class="translation">(توم طالب مبتكر.)</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p style="font-size: 1.8rem;"><i class="fas fa-crown"></i> دليل احترافي للأزمنة البسيطة في اللغة الإنجليزية <i class="fas fa-crown"></i></p>
+            <p style="margin-top: 10px; font-size: 1.5rem;">تم التصميم بعناية لتقديم شرح فخم وملكي لمحتوى تعليمي قيم</p>
+        </div>
     </div>
-  </div>
 </body>
 </html>
