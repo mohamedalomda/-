@@ -1,1353 +1,722 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Tenses Guide</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>Summer Course 2025 - Perfect Tenses</title>
     <style>
-        :root {
-            --primary: #001f3f;
-            --secondary: #003366;
-            --accent: #0056b3;
-            --gold: #0077cc;
-            --light: #e6f2ff;
-            --dark: #000000;
-            --gray: #cccccc;
-            --success: #4d94ff;
-            --danger: #ff4d4d;
-            --purple: #5d9abb;
-            --blue: #0077cc;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+        
         body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.8;
-            color: var(--light);
-            background: #000000;
+            background: linear-gradient(135deg, #16a085, #2ecc71);
             min-height: 100vh;
-            background-attachment: fixed;
-            font-size: 1.2rem;
-        }
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
             padding: 20px;
+            color: #333;
+            line-height: 1.6;
         }
-        header {
-            text-align: center;
-            padding: 60px 0;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--light);
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
-            margin-bottom: 40px;
-            box-shadow: 0 20px 50px rgba(0, 119, 204, 0.3);
-            position: relative;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            border: 1px solid rgba(0, 119, 204, 0.3);
-        }
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>');
-            opacity: 0.1;
-            pointer-events: none;
-        }
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-            position: relative;
-            display: inline-block;
-        }
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gold);
-            border-radius: 2px;
-        }
-        .subtitle {
-            font-size: 1.6rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 20px auto 0;
-            font-weight: 300;
-            position: relative;
-        }
-        .content-section {
-            background: rgba(0, 31, 63, 0.8);
-            border-radius: 20px;
-            padding: 50px;
-            margin-bottom: 50px;
-            box-shadow: 0 20px 40px rgba(0, 119, 204, 0.2);
-            border: 1px solid rgba(0, 119, 204, 0.3);
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition);
             backdrop-filter: blur(10px);
         }
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--gold), var(--blue));
-        }
-        .content-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 60px rgba(0, 119, 204, 0.4);
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--gold);
-            margin-bottom: 40px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--gold);
-            display: inline-block;
-            font-size: 3rem;
+        
+        header {
+            background: linear-gradient(to right, #27ae60, #2ecc71);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
             position: relative;
         }
-        h2::before {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--blue);
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
         }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin: 30px 0 20px;
+            color: #27ae60;
+            text-align: center;
+            border-bottom: 3px solid #2ecc71;
+            padding-bottom: 10px;
+            margin: 0 40px;
+        }
+        
         h3 {
-            color: var(--gold);
-            margin: 40px 0 25px 0;
-            font-size: 2rem;
-            font-weight: 600;
+            font-size: 1.8rem;
+            color: #27ae60;
+            margin: 25px 0 15px;
+            text-align: center;
         }
-        h4 {
-            color: var(--purple);
-            margin: 25px 0 20px 0;
-            font-size: 1.7rem;
-            font-weight: 600;
+        
+        .subtitle {
+            font-size: 1.8rem;
+            color: #e74c3c;
+            text-align: center;
+            margin: 15px 0;
+            font-weight: bold;
         }
-        p {
-            margin-bottom: 25px;
-            font-size: 1.3rem;
-            color: var(--light);
+        
+        .content {
+            padding: 30px;
         }
-        .grid {
+        
+        .tense-grid {
             display: grid;
-            gap: 40px;
-            margin: 40px 0;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
         }
-        .card {
-            background: rgba(0, 51, 102, 0.8);
-            padding: 35px;
+        
+        .tense-card {
+            background: white;
             border-radius: 15px;
-            border-left: 5px solid var(--blue);
-            box-shadow: 0 8px 25px rgba(0, 119, 204, 0.3);
-            transition: var(--transition);
-            border: 1px solid rgba(0, 119, 204, 0.4);
-            backdrop-filter: blur(5px);
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e0e0e0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0, 119, 204, 0.5);
+        
+        .tense-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
+        
+        .tense-card h4 {
+            color: #27ae60;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        
+        .tense-card p {
+            margin: 10px 0;
+            color: #555;
+        }
+        
+        .tense-card .arabic {
+            color: #2c3e50;
+            font-weight: bold;
+            margin: 8px 0;
+            font-size: 1.1rem;
+        }
+        
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 40px 0;
-            box-shadow: 0 10px 30px rgba(0, 119, 204, 0.3);
+            margin: 25px 0;
+            background: white;
             border-radius: 15px;
             overflow: hidden;
-            border: 1px solid rgba(0, 119, 204, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        th, td {
-            padding: 25px;
-            text-align: left;
-            border-bottom: 1px solid rgba(0, 119, 204, 0.3);
-            transition: var(--transition);
-        }
+        
         th {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--light);
-            font-weight: 600;
-            font-size: 1.3rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        tr:nth-child(even) {
-            background: rgba(0, 31, 63, 0.5);
-        }
-        tr:hover {
-            background: rgba(0, 119, 204, 0.2);
-            transform: scale(1.01);
-        }
-        .example {
-            background: rgba(0, 119, 204, 0.2);
-            padding: 25px;
-            border-radius: 12px;
-            margin: 25px 0;
-            border-left: 5px solid var(--blue);
-            font-family: 'Courier New', monospace;
-            font-size: 1.3rem;
-            position: relative;
-            border: 1px solid rgba(0, 119, 204, 0.4);
-        }
-        .example::before {
-            content: '»';
-            position: absolute;
-            left: 15px;
-            color: var(--blue);
-            font-size: 1.8rem;
-            top: 15px;
-        }
-        .arabic-translation {
-            background: rgba(0, 119, 204, 0.3);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 15px;
-            border-right: 5px solid var(--gold);
-            font-style: italic;
+            background: linear-gradient(to right, #27ae60, #2ecc71);
+            color: white;
+            text-align: center;
+            padding: 15px;
             font-size: 1.2rem;
-            color: var(--light);
-            border: 1px solid rgba(0, 119, 204, 0.5);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .quiz {
-            background: rgba(77, 148, 255, 0.2);
-            padding: 40px;
-            border-radius: 20px;
-            margin: 40px 0;
-            border: 3px solid var(--success);
-            box-shadow: 0 15px 40px rgba(77, 148, 255, 0.2);
-            border-left: 5px solid var(--success);
+        
+        td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
         }
-        .quiz h3 {
-            color: var(--success);
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e8f5e8;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8e6cf, #dcedc8);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #27ae60;
+        }
+        
+        .highlight p {
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+        
+        .markers {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
             gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
         }
-        .quiz h3::before {
-            content: '🎯';
-            font-size: 1.5rem;
+        
+        .marker {
+            background: #e8f5e8;
+            color: #27ae60;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-weight: 600;
+            border: 2px solid #c8e6c9;
         }
+        
+        .practice-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .question {
+            font-size: 1.3rem;
+            margin: 15px 0;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
         .options {
             display: grid;
-            gap: 20px;
-            margin: 25px 0;
-        }
-        .option {
-            padding: 22px;
-            background: rgba(0, 51, 102, 0.8);
-            border: 2px solid rgba(0, 119, 204, 0.5);
-            border-radius: 12px;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-            padding-left: 70px;
-            font-size: 1.3rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-        .option::before {
-            content: attr(data-letter);
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            border: 2px solid var(--gray);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: var(--gray);
-            font-size: 1.1rem;
-        }
-        .option:hover {
-            border-color: var(--blue);
-            transform: translateX(8px);
-            box-shadow: 0 8px 25px rgba(0, 119, 204, 0.4);
-        }
-        .option.correct {
-            border-color: var(--success);
-            background: rgba(77, 148, 255, 0.3);
-            color: var(--success);
-        }
-        .option.correct::before {
-            background: var(--success);
-            color: var(--light);
-            border-color: var(--success);
-        }
-        .option.wrong {
-            border-color: var(--danger);
-            background: rgba(255, 77, 77, 0.2);
-            color: var(--danger);
-        }
-        .option.wrong::before {
-            background: var(--danger);
-            color: var(--light);
-            border-color: var(--danger);
-        }
-        .stative-verbs {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-        .verb-category {
-            background: rgba(0, 51, 102, 0.8);
-            padding: 30px;
-            border-radius: 15px;
-            border-top: 5px solid var(--purple);
-            box-shadow: 0 10px 30px rgba(102, 0, 204, 0.3);
-            border: 1px solid rgba(102, 0, 204, 0.4);
-            transition: var(--transition);
-            backdrop-filter: blur(5px);
-        }
-        .verb-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(102, 0, 204, 0.4);
-        }
-        .verb-category h4 {
-            color: var(--purple);
-            margin-bottom: 20px;
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 600;
-            position: relative;
-        }
-        .verb-category h4::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 3px;
-            background: var(--purple);
-            border-radius: 2px;
-        }
-        .verbs {
-            display: flex;
-            flex-wrap: wrap;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 15px;
-            justify-content: center;
-        }
-        .verb {
-            background: rgba(0, 119, 204, 0.4);
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(0, 119, 204, 0.6);
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-        .verb::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transform: translateX(-100%);
-        }
-        .verb:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-        .verb:hover::after {
-            animation: shine 1s;
-        }
-        @keyframes shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        .time-indicators {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 25px 0;
-        }
-        .indicator {
-            background: rgba(0, 119, 204, 0.4);
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-size: 1.2rem;
-            color: var(--light);
-            border: 2px solid rgba(0, 119, 204, 0.6);
-            font-weight: 500;
-            box-shadow: 0 4px 15px rgba(0, 119, 204, 0.3);
-            transition: var(--transition);
-        }
-        .indicator:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0, 119, 204, 0.4);
-        }
-        .highlight {
-            background: linear-gradient(120deg, var(--gold), #0099ff);
-            color: var(--dark);
-            padding: 6px 15px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 12px rgba(0, 119, 204, 0.4);
-        }
-        .translation-container {
             margin-top: 15px;
-            padding: 20px;
-            background: rgba(0, 31, 63, 0.6);
-            border-radius: 10px;
-            border-right: 4px solid var(--gray);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            border: 1px solid rgba(204, 204, 204, 0.3);
         }
+        
+        .option {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .option:hover {
+            border-color: #27ae60;
+            transform: scale(1.02);
+        }
+        
+        .arabic-text {
+            color: #2c3e50;
+            font-weight: bold;
+            margin: 10px 0;
+            font-size: 1.2rem;
+            text-align: right;
+            direction: rtl;
+        }
+        
+        .assignment {
+            background: #e8f5e8;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 3px solid #c8e6c9;
+        }
+        
+        .assignment h3 {
+            color: #27ae60;
+            text-align: center;
+        }
+        
+        .assignment ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+        
+        .assignment li {
+            margin: 15px 0;
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+        
         footer {
             text-align: center;
-            padding: 60px 30px;
-            color: var(--gray);
-            margin-top: 60px;
-            border-top: 2px solid rgba(0, 119, 204, 0.3);
-            font-size: 1.3rem;
+            padding: 30px;
+            background: #27ae60;
+            color: white;
+            font-size: 1.2rem;
+            margin-top: 30px;
         }
-        footer h3 {
-            color: var(--gold);
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-            font-weight: 600;
+        
+        .translation {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 5px;
+            font-size: 0.95rem;
         }
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 2.2;
+        
+        .solved {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
         }
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-            display: block;
+        
+        .solved-answer {
+            color: #155724;
+            font-weight: bold;
+            font-size: 1.1rem;
         }
-        .footer-logo span {
-            color: var(--gold);
+        
+        .correct {
+            border: 3px solid #28a745 !important;
+            background-color: #d4edda !important;
         }
+        
+        .explanation {
+            background: #e3f2fd;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+            font-size: 0.95rem;
+            color: #1565c0;
+        }
+        
         @media (max-width: 768px) {
             h1 {
-                font-size: 3.5rem;
-            }
-            .subtitle {
-                font-size: 1.4rem;
-            }
-            .container {
-                padding: 15px;
-            }
-            .content-section {
-                padding: 35px;
-                margin-bottom: 40px;
-            }
-            h2 {
                 font-size: 2.5rem;
             }
-            .grid {
+            
+            h2 {
+                font-size: 1.8rem;
+                margin: 0 20px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .tense-grid {
                 grid-template-columns: 1fr;
             }
-            .card {
-                padding: 30px;
-            }
-            table {
-                font-size: 1.1rem;
-            }
-            th, td {
-                padding: 20px 15px;
-            }
-        }
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 3rem;
-            }
-            .content-section {
-                padding: 30px;
-            }
-            .example, .arabic-translation {
-                font-size: 1.1rem;
-            }
-            .option {
-                font-size: 1.2rem;
-                padding: 20px;
-                padding-left: 60px;
-            }
-            .option::before {
-                width: 35px;
-                height: 35px;
-                font-size: 1rem;
-            }
-        }
-        /* Animation for page load */
-        .container {
-            opacity: 0;
-            animation: fadeIn 0.8s ease forwards;
-        }
-        .content-section {
-            opacity: 0;
-            animation: fadeIn 0.6s ease forwards;
-        }
-        /* Staggered animation for content */
-        #overview {
-            animation-delay: 0.1s;
-        }
-        #continuous {
-            animation-delay: 0.2s;
-        }
-        #simple {
-            animation-delay: 0.3s;
-        }
-        #stative {
-            animation-delay: 0.4s;
-        }
-        #practice {
-            animation-delay: 0.5s;
-        }
-        #assignments {
-            animation-delay: 0.6s;
-        }
-        /* Icons for better visual appeal */
-        h2::before, h3::before {
-            content: '✦';
-            color: var(--gold);
-            margin-right: 10px;
-        }
-        h3::before {
-            font-size: 1.2rem;
-        }
-        /* Special styling for the header icons */
-        header h1 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-        header h1::after {
-            display: none;
-        }
-        .icon {
-            font-size: 3rem;
-            color: var(--gold);
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-        }
-        /* Enhanced card styling */
-        .card h3 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            position: relative;
-            padding-left: 40px;
-        }
-        .card h3::before {
-            content: '📌';
-            font-size: 1.5rem;
-            position: absolute;
-            left: 0;
-        }
-        /* Special styling for quiz options */
-        .options .option:nth-child(1)::before {
-            content: 'A';
-        }
-        .options .option:nth-child(2)::before {
-            content: 'B';
-        }
-        .options .option:nth-child(3)::before {
-            content: 'C';
-        }
-        /* Arabic text styling */
-        .arabic-translation {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            direction: rtl;
-            text-align: right;
-            padding-right: 20px;
-        }
-        /* Enhanced example styling */
-        .example {
-            border-left: 5px solid var(--gold);
-        }
-        .example::before {
-            color: var(--gold);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1><span class="icon">📚</span> English Tenses Guide <span class="icon">🎓</span></h1>
-            <p class="subtitle">A comprehensive and elegant guide to mastering English tenses with professional presentation and detailed explanations in both English and Arabic.</p>
+            <h1>Summer Course 2025</h1>
+            <h2>Lecture 7: The Perfect Tenses</h2>
         </header>
-        <div id="overview" class="content-section">
-            <h2>📖 Tense System Overview</h2>
-            <p><br> English tenses are categorized by <span class="highlight">time</span> (Past, Present, Future) and <span class="highlight">aspect</span> (Simple, Continuous, Perfect, Perfect Continuous). This sophisticated system allows for precise expression of temporal relationships.</p>
-            <div class="grid">
-                <div class="card">
-                    <h3>⏱️ Time Dimensions</h3>
-                    <ul>
-                        <li><strong>Past:</strong> Actions that happened before now</li>
-                        <div class="arabic-translation">الماضي: الأفعال التي حدثت قبل الآن</div>
-                        <li><strong>Present:</strong> Actions happening now or generally true</li>
-                        <div class="arabic-translation">الحاضر: الأفعال التي تحدث الآن أو صحيحة بشكل عام</div>
-                        <li><strong>Future:</strong> Actions that will happen after now</li>
-                        <div class="arabic-translation">المستقبل: الأفعال التي ستحدث بعد الآن</div>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>🔍 Aspect Types</h3>
-                    <ul>
-                        <li><strong>Simple:</strong> General, habitual, or completed actions</li>
-                        <div class="arabic-translation">البسيط: أفعال عامة، عادة، أو منتهية</div>
-                        <li><strong>Continuous:</strong> Ongoing, temporary actions</li>
-                        <div class="arabic-translation">المستمر: أفعال جارية، مؤقتة</div>
-                        <li><strong>Perfect:</strong> Completed actions with present relevance</li>
-                        <div class="arabic-translation">التام: أفعال منتهية لها صلة بالحاضر</div>
-                        <li><strong>Perfect Continuous:</strong> Duration of ongoing actions</li>
-                        <div class="arabic-translation">التام المستمر: مدة الأفعال الجارية</div>
-                    </ul>
-                </div>
-            </div>
-            <h3>📋 Complete Tense System</h3>
+        
+        <div class="content">
+            <h2>English Tenses Overview</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Time</th>
-                        <th>Simple</th>
-                        <th>Continuous</th>
-                        <th>Perfect</th>
-                        <th>Perfect Continuous</th>
+                        <th>Family / Time</th>
+                        <th>Past</th>
+                        <th>Present</th>
+                        <th>Future</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Past</strong></td>
-                        <td>Past Simple<br><div class="arabic-translation">الماضي البسيط</div></td>
-                        <td>Past Continuous<br><div class="arabic-translation">الماضي المستمر</div></td>
-                        <td>Past Perfect<br><div class="arabic-translation">الماضي التام</div></td>
-                        <td>Past Perfect Continuous<br><div class="arabic-translation">الماضي التام المستمر</div></td>
+                        <td><strong>Simple</strong></td>
+                        <td>Past simple<br><span class="translation">الماضي البسيط</span></td>
+                        <td>Present simple<br><span class="translation">المضارع البسيط</span></td>
+                        <td>Future simple<br><span class="translation">المستقبل البسيط</span></td>
                     </tr>
                     <tr>
-                        <td><strong>Present</strong></td>
-                        <td>Present Simple<br><div class="arabic-translation">الحاضر البسيط</div></td>
-                        <td>Present Continuous<br><div class="arabic-translation">الحاضر المستمر</div></td>
-                        <td>Present Perfect<br><div class="arabic-translation">الحاضر التام</div></td>
-                        <td>Present Perfect Continuous<br><div class="arabic-translation">الحاضر التام المستمر</div></td>
+                        <td><strong>Continuous</strong></td>
+                        <td>Past continuous<br><span class="translation">الماضي المستمر</span></td>
+                        <td>Present continuous<br><span class="translation">المضارع المستمر</span></td>
+                        <td>Future continuous<br><span class="translation">المستقبل المستمر</span></td>
                     </tr>
                     <tr>
-                        <td><strong>Future</strong></td>
-                        <td>Future Simple<br><div class="arabic-translation">المستقبل البسيط</div></td>
-                        <td>Future Continuous<br><div class="arabic-translation">المستقبل المستمر</div></td>
-                        <td>Future Perfect<br><div class="arabic-translation">المستقبل التام</div></td>
-                        <td>Future Perfect Continuous<br><div class="arabic-translation">المستقبل التام المستمر</div></td>
+                        <td><strong>Perfect</strong></td>
+                        <td>Past perfect<br><span class="translation">الماضي التام</span></td>
+                        <td>Present perfect<br><span class="translation">المضارع التام</span></td>
+                        <td>Future perfect<br><span class="translation">المستقبل التام</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Perfect continuous</strong></td>
+                        <td>Past perfect continuous<br><span class="translation">الماضي التام المستمر</span></td>
+                        <td>Present perfect continuous<br><span class="translation">المضارع التام المستمر</span></td>
+                        <td>Future perfect continuous<br><span class="translation">المستقبل التام المستمر</span></td>
                     </tr>
                 </tbody>
             </table>
-            <div class="card">
-                <h3>💡 Fundamental Concept</h3>
-                <p><strong>Simple tenses</strong> are used for general, repeated, or frequent actions - actions that occur regularly or are generally true. They represent timeless truths and habitual behaviors.</p>
-                <div class="arabic-translation">الأزمنة البسيطة تستخدم مع الأفعال العامة أو المتكررة</div>
-                <p><strong>Continuous tenses</strong> are used for momentary or temporary actions - actions that are in progress at a specific time. They emphasize the ongoing nature and duration of activities.</p>
-                <div class="arabic-translation">الأزمنة المستمرة تستخدم مع الأفعال اللحظية أو المؤقتة</div>
-            </div>
-        </div>
-        <div id="continuous" class="content-section">
-            <h2>🔄 Continuous Tenses</h2>
-            <p><br>Continuous tenses focus on the <strong>duration</strong> and <strong>progress</strong> of an action. They emphasize that an action is/was/will be in progress at a specific time, highlighting the temporary and ongoing nature of events.</p>
-            <div class="arabic-translation">تُركز الأزمنة المستمرة على مدة الفعل وتقدمه. وتؤكد أن الفعل كان/يكون/سيكون قيد التنفيذ في وقت محدد</div>
-            <div class="card">
-                <h3>📌 Key Characteristics</h3>
-                <ul>
-                    <li>Actions in progress at a specific time</li>
-                    <div class="arabic-translation">أفعال قيد التنفيذ في وقت محدد</div>
-                    <li>Temporary situations (not permanent states)</li>
-                    <div class="arabic-translation">مواقف مؤقتة (ليست حالات دائمة)</div>
-                    <li>Changing or developing situations</li>
-                    <div class="arabic-translation">موقف يتغير أو يتطور</div>
-                    <li>Actions that are interrupted by another action</li>
-                    <div class="arabic-translation">أفعال تنقطع بفعل آخر</div>
-                </ul>
-            </div>
-            <h3>📊 Continuous Tenses Comparison</h3>
+            
+            <h2>Perfect Tenses</h2>
+            <div class="subtitle">الزمنه التامه/المنتهيه</div>
+            <p style="text-align: center; margin: 20px 0; font-size: 1.2rem; color: #2c3e50;">
+                These tenses focus on the completion/ending of the verb. The verb is completed and done but it has more depth and adds specifications more than simple tenses.
+            </p>
+            <p style="text-align: center; margin: 10px 0; font-size: 1.1rem; color: #7f8c8d;" class="translation">
+                تركز هذه الأزمنة على اكتمال/انتهاء الفعل. الفعل مكتمل وتمت، لكنها تضيف عمقًا ومواصفات أكثر من الأزمنة البسيطة.
+            </p>
+            <p style="text-align: center; margin: 20px 0; font-size: 1.2rem; color: #2c3e50;" class="arabic-text">
+                الأزمنه دي بتركز على انتهاء الفعل و تمامه و لكن يعطي معلومات اضافيه أكثر من الأزمنه البسيطه
+            </p>
+            
             <table>
                 <thead>
                     <tr>
-                        <th>Past Continuous</th>
-                        <th>Present Continuous</th>
-                        <th>Future Continuous</th>
+                        <th>Past Perfect</th>
+                        <th>Present Perfect</th>
+                        <th>Future Perfect</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Something was happening in the past, continued for a certain time, or took time in the past                         <div class="arabic-translation">حدث شيء ما في الماضي، واستمر لفترة معينة، أو استغرق وقتاً في الماضي</div>
-</td>
-                        <td>A momentary action happening now or a temporary action continuing for a certain period                        <div class="arabic-translation">فعل لحظي يحدث الآن أو فعل مؤقت يستمر لفترة معينة</div>
-</td>
-                        <td>Something will continue to happen or will take time in the future                        <div class="arabic-translation">سيستمر حدوث شيء ما أو سيستغرق وقتاً في المستقبل</div>
-</td>
+                        <td>فعل تم و انتهى قبل فعل آخر في الماضي أو انتهي أتم قبل وقت ماضي by/before<br><span class="translation">An action that was completed before another action in the past or completed before a specific past time</span></td>
+                        <td>فعل انتهي و لكن له اثر على الحاضر أو انتهي حالا دلوقتي أو انتهي و لكن غير محدد للوقت لأنه يعبر عن تجربه<br><span class="translation">An action that has finished but has an effect on the present, or just finished, or completed but time is unspecified because it expresses an experience</span></td>
+                        <td>شيء سوف ينتهي لتم قبل وقت معين في المستقبل<br><span class="translation">Something that will be completed before a specific time in the future</span></td>
+                    </tr>
+                    <tr>
+                        <td>قبل ما انام .... ذاكوت<br><span class="translation">Before I slept... I had studied</span></td>
+                        <td>إذا اتعلمت انجليزي في المدرسه لذلك استطيع أن أكلم اللغه الانجليزية<br><span class="translation">If I learned English at school, so I can speak English now</span></td>
+                        <td>بعد شهرين هكون خلاص بدات دراسه<br><span class="translation">After two months, I will have already started studying</span></td>
+                    </tr>
+                    <tr>
+                        <td>بعد أن ذاكوت ... نمت<br><span class="translation">After I had studied... I slept</span></td>
+                        <td>إذا اسمه مخاص مذاكره حالا<br><span class="translation">If he has just finished studying</span></td>
+                        <td>بعد 3 شهور هكون بالفعل سافرت<br><span class="translation">After 3 months, I will have actually traveled</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: center; font-weight: bold; color: #27ae60;">بنت مصر مشروعات كثير عبر السنوات السابقه<br><span class="translation">Egypt has implemented many projects over the previous years</span></td>
                     </tr>
                 </tbody>
             </table>
-            <h3>📝 Declarative Sentences</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>✅ Past Continuous</h4>
-                    <p><strong>Structure:</strong> Subject + was/were + verb-ing</p>
-                    <div class="arabic-translation">التركيب: الفاعل + was/were + الفعل + ing</div>
-                    <p><strong>Examples:</strong></p>
-                    <div class="example">ّ Yesterday at 5, I was studying English.
-                        <div class="arabic-translation">كنت أدرس الإنجليزية في الساعة 5 البارحة</div>
-                    </div>
-                    <div class="example">ّ While we were studying, he was sleeping.
-                        <div class="arabic-translation">بينما كنا ندرس، كان هو ينام</div>
-                    </div>
-                    <p><strong>Subject Agreement:</strong></p>
-                    <ul>
-                        <li>I/he/she/it + was</li>
-                        <div class="arabic-translation">أنا/هو/هي/هو + was</div>
-                        <li>We/they/you + were</li>
-                        <div class="arabic-translation">نحن/هم/أنتم + were</div>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>✅ Present Continuous</h4>
-                    <p><strong>Structure:</strong> Subject + am/is/are + verb-ing</p>
-                    <div class="arabic-translation">التركيب: الفاعل + am/is/are + الفعل + ing</div>
-                    <p><strong>Examples:</strong></p>
-                    <div class="example">ّ I am teaching English at the moment.
-                        <div class="arabic-translation">أنا أُدرّس الإنجليزية في هذه اللحظة</div>
-                    </div>
-                    <div class="example">ّ He is watching TV now.
-                        <div class="arabic-translation">هو يشاهد التلفاز الآن</div>
-                    </div>
-                    <p><strong>Subject Agreement:</strong></p>
-                    <ul>
-                        <li>I + am</li>
-                        <div class="arabic-translation">أنا + am</div>
-                        <li>He/She/It (3rd person) + is</li>
-                        <div class="arabic-translation">هو/هي/هو (المفرد) + is</div>
-                        <li>We/You/They + are</li>
-                        <div class="arabic-translation">نحن/أنتم/هم + are</div>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>✅ Future Continuous</h4>
-                    <p><strong>Structure:</strong> Subject + will be + verb-ing</p>
-                    <div class="arabic-translation">التركيب: الفاعل + will be + الفعل + ing</div>
-                    <p><strong>Example:</strong></p>
-                    <div class="example">ّ At 6 PM tomorrow, I will be studying English.
-                        <div class="arabic-translation">بكره الساعة 6 هكون مالزليت بذاكر</div>
-                    </div>
-                </div>
-            </div>
-            <h3>🚫 Negative Sentences</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>Past Continuous Negative</h4>
-                    <p>Subject + wasn't/weren't + verb-ing</p>
-                    <div class="arabic-translation">الفاعل + wasn't/weren't + الفعل + ing</div>
-                    <div class="example">ّ He wasn't eating when we called him.
-                        <div class="arabic-translation">لم يكن يأكل عندما اتصلنا به</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <h4>Present Continuous Negative</h4>
-                    <p>Subject + am/is/are not + verb-ing</p>
-                    <div class="arabic-translation">الفاعل + am/is/are not + الفعل + ing</div>
-                    <div class="example">ّ I am not studying at the moment.
-                        <div class="arabic-translation">أنا لست أدرس في هذه اللحظة</div>
-                    </div>
-                    <div class="example">ّ We aren't watching TV now.
-                        <div class="arabic-translation">نحن لا نشاهد التلفاز الآن</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <h4>Future Continuous Negative</h4>
-                    <p>Subject + won't be + verb-ing</p>
-                    <div class="arabic-translation">الفاعل + won't be + الفعل + ing</div>
-                    <div class="example">ّ I won't be travelling tomorrow.
-                        <div class="arabic-translation">لن أسافر غداً</div>
-                    </div>
-                </div>
-            </div>
-            <h3>❓ Interrogative Sentences</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>Past Continuous Questions</h4>
-                    <p>Was/Were + subject + verb-ing?</p>
-                    <div class="arabic-translation">Was/Were + الفاعل + الفعل + ing؟</div>
-                    <div class="example">ّ Were you sleeping when I called?
-                        <div class="arabic-translation">هل كنت نائماً عندما اتصلت؟</div>
-                    </div>
-                    <p>What was/were + subject + doing?</p>
-                    <div class="arabic-translation">What was/were + الفاعل + doing؟</div>
-                    <div class="example">ّ What were you doing when I called?
-                        <div class="arabic-translation">ماذا كنت تفعل عندما اتصلت؟</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <h4>Present Continuous Questions</h4>
-                    <p>Am/Is/Are + subject + verb-ing?</p>
-                    <div class="arabic-translation">Am/Is/Are + الفاعل + الفعل + ing؟</div>
-                    <div class="example">ّ Are you studying now?
-                        <div class="arabic-translation">هل أنت تدرس الآن؟</div>
-                    </div>
-                    <p>What am/is/are + subject + doing?</p>
-                    <div class="arabic-translation">What am/is/are + الفاعل + doing؟</div>
-                    <div class="example">ّ What are you doing?
-                        <div class="arabic-translation">ماذا أنت تفعل؟</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <h4>Future Continuous Questions</h4>
-                    <p>Will + subject + be + verb-ing?</p>
-                    <div class="arabic-translation">Will + الفاعل + be + الفعل + ing؟</div>
-                    <div class="example">ّ Will you be going to school?
-                        <div class="arabic-translation">هل ستذهب إلى المدرسة؟</div>
-                    </div>
-                    <p>What will + subject + be + doing?</p>
-                    <div class="arabic-translation">What will + الفاعل + be + doing؟</div>
-                    <div class="example">ّ When will you be visiting us?
-                        <div class="arabic-translation">متى ستزورنا؟</div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <h3>⏱️ Time Indicators</h3>
-                <div class="time-indicators">
-                    <span class="indicator">at 5 PM yesterday
-                        <div class="arabic-translation">في الساعة 5 البارحة</div>
-                    </span>
-                    <span class="indicator">while
-                        <div class="arabic-translation">بينما</div>
-                    </span>
-                    <span class="indicator">when
-                        <div class="arabic-translation">عندما</div>
-                    </span>
-                    <span class="indicator">at the moment
-                        <div class="arabic-translation">في هذه اللحظة</div>
-                    </span>
-                    <span class="indicator">now
-                        <div class="arabic-translation">الآن</div>
-                    </span>
-                    <span class="indicator">tomorrow at 6
-                        <div class="arabic-translation">غداً في الساعة 6</div>
-                    </span>
-                    <span class="indicator">this time next week
-                        <div class="arabic-translation">في هذا الوقت الأسبوع القادم</div>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div id="simple" class="content-section">
-            <h2>🎯 Simple Tenses</h2>
-            <p><br>Simple tenses are used to speak about actions generally, habitually, or as facts. They describe completed actions or general truths, representing timeless statements and habitual behaviors.</p>
-            <div class="arabic-translation">تُستخدم الأزمنة البسيطة للتحدث عن الأفعال بشكل عام، عادة، أو كحقائق. وتُصف الأفعال المنتهية أو الحقائق العامة</div>
-            <div class="card">
-                <h3>📌 Key Characteristics</h3>
-                <ul>
-                    <li>General truths and facts</li>
-                    <div class="arabic-translation">الحقائق والحقائق العامة</div>
-                    <li>Habitual or repeated actions</li>
-                    <div class="arabic-translation">الأفعال العادية أو المتكررة</div>
-                    <li>Completed actions in the past</li>
-                    <div class="arabic-translation">أفعال منتهية في الماضي</div>
-                    <li>Future plans or predictions</li>
-                    <div class="arabic-translation">خطط أو تنبؤات مستقبلية</div>
-                </ul>
-            </div>
-            <h3>📊 Simple vs Continuous Comparison</h3>
+            
+            <h2>Perfect Declarative Sentences</h2>
+            <div class="subtitle">الأزمنه التامه</div>
             <table>
                 <thead>
                     <tr>
-                        <th>Simple Tense</th>
-                        <th>Continuous Tense</th>
+                        <th>Past Perfect</th>
+                        <th>Present Perfect</th>
+                        <th>Future Simple</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Mom cooks for us every day.</strong><br><em>General habit - happens regularly</em>
-                            <div class="arabic-translation">تُطبخ لنا أمي كل يوم. عادة عامة - تحدث بانتظام</div>
-                        </td>
-                        <td><strong>Mom is cooking.</strong><br><em>Temporary action - happening now</em>
-                            <div class="arabic-translation">أمّي تطبخ. فعل مؤقت - يحدث الآن</div>
-                        </td>
+                        <td>Subj + Had + pp<br><span class="translation">الفاعل + had + التصريف الثالث</span></td>
+                        <td>Subj + have/has + pp<br><span class="translation">الفاعل + have/has + التصريف الثالث</span></td>
+                        <td>Subj + will have + pp<br><span class="translation">الفاعل + will have + التصريف الثالث</span></td>
                     </tr>
                     <tr>
-                        <td><strong>Ali walks to school.</strong><br><em>General routine</em>
-                            <div class="arabic-translation">علي يمشي إلى المدرسة. روتين عام</div>
-                        </td>
-                        <td><strong>Ali is walking to school.</strong><br><em>Specific action happening now</em>
-                            <div class="arabic-translation">علي يمشي إلى المدرسة. فعل محدد يحدث الآن</div>
-                        </td>
+                        <td>I had eaten before I went out<br><span class="translation">لقد أكلت قبل أن أخرج</span></td>
+                        <td>I have just done my hw<br><span class="translation">لقد انتهيت للتو من واجبي</span></td>
+                        <td>I will have travelled to Alex by 5 tomorrow<br><span class="translation">سأكون قد سافرت إلى الإسكندرية بحلول الساعة 5 غدًا</span></td>
+                    </tr>
+                    <tr>
+                        <td>She had started school by last October<br><span class="translation">لقد بدأت المدرسة بحلول أكتوبر الماضي</span></td>
+                        <td>She has already eaten lunch<br><span class="translation">لقد أكلت بالفعل الغداء</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>We have met so many people recently<br><span class="translation">التقينا بالعديد من الأشخاص مؤخرًا</span></td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>
-            <div class="quiz">
-                <h3>Let's Practise: Choose the Correct Option</h3>
-                <p><strong>علي يذهب الي المدرسة مشياً علي الأقدام</strong></p>
+            
+            <h2>Past Perfect Markers</h2>
+            <div class="markers">
+                <span class="marker">before<br><span class="translation">قبل</span></span>
+                <span class="marker">by evening<br><span class="translation">بحلول المساء</span></span>
+                <span class="marker">hardly... when<br><span class="translation">ما أن... حتى</span></span>
+                <span class="marker">never before<br><span class="translation">من قبل أبدًا</span></span>
+                <span class="marker">no sooner... than<br><span class="translation">ما إن... حتى</span></span>
+                <span class="marker">before the day<br><span class="translation">قبل اليوم</span></span>
+                <span class="marker">by that time<br><span class="translation">بحلول ذلك الوقت</span></span>
+                <span class="marker">before the evening<br><span class="translation">قبل المساء</span></span>
+            </div>
+            
+            <h2>Present Perfect Time Expressions</h2>
+            <div class="tense-grid">
+                <div class="tense-card">
+                    <h4>just<br><span class="translation">للتو</span></h4>
+                    <p>To express a very recent action.<br><span class="translation">للتعبير عن فعل حديث جدًا</span></p>
+                    <p>"He has just left the office."<br><span class="translation">"لقد غادر المكتب للتو."</span></p>
+                </div>
+                <div class="tense-card">
+                    <h4>already<br><span class="translation">بالفعل</span></h4>
+                    <p>To express something happened earlier than expected.<br><span class="translation">للتعبير عن شيء حدث مبكرًا أكثر مما كان متوقعًا</span></p>
+                    <p>"She has already finished her homework."<br><span class="translation">"لقد أنهت بالفعل واجبها المدرسي."</span></p>
+                </div>
+                <div class="tense-card">
+                    <h4>since<br><span class="translation">منذ</span></h4>
+                    <p>To express the starting point of an action.<br><span class="translation">للتعبير عن نقطة بداية الفعل</span></p>
+                    <p>"He has worked here since 2015."<br><span class="translation">"يعمل هنا منذ عام 2015."</span></p>
+                </div>
+                <div class="tense-card">
+                    <h4>for<br><span class="translation">لمدة</span></h4>
+                    <p>To express the duration of time an action has lasted.<br><span class="translation">للتعبير عن مدة الزمن التي استمر فيها الفعل</span></p>
+                    <p>"I have lived here for ten years."<br><span class="translation">"أعيش هنا منذ عشر سنوات."</span></p>
+                </div>
+                <div class="tense-card">
+                    <h4>ever<br><span class="translation">أبدًا</span></h4>
+                    <p>To ask about life experiences.<br><span class="translation">للسؤال عن التجارب الحياتية</span></p>
+                    <p>"Have you ever visited New York?"<br><span class="translation">"هل زرت نيويورك من قبل؟"</span></p>
+                </div>
+                <div class="tense-card">
+                    <h4>never<br><span class="translation">أبدًا</span></h4>
+                    <p>To talk about things that haven't happened at all.<br><span class="translation">للتحدث عن أشياء لم تحدث على الإطلاق</span></p>
+                    <p>"I have never eaten octopus."<br><span class="translation">"أنا لم آكل الأخطبوط من قبل."</span></p>
+                </div>
+                <div class="tense-card">
+                    <h4>yet<br><span class="translation">بعد</span></h4>
+                    <p>Used in negative sentences or questions to talk about actions that haven't happened but are expected to happen.<br><span class="translation">تُستخدم في الجمل المنفية أو الأسئلة للتحدث عن أفعال لم تحدث ولكن من المتوقع حدوثها</span></p>
+                    <p>"They haven't arrived yet."<br><span class="translation">"لم يصلوا بعد."</span></p>
+                </div>
+                <div class="tense-card">
+                    <h4>so far<br><span class="translation">حتى الآن</span></h4>
+                    <p>To express progress or results up to the present.<br><span class="translation">للتعبير عن التقدم أو النتائج حتى الوقت الحالي</span></p>
+                    <p>"We have collected $1,000 so far."<br><span class="translation">"لقد جمعنا 1000 دولار حتى الآن."</span></p>
+                </div>
+                <div class="tense-card">
+                    <h4>recently<br><span class="translation">مؤخرًا</span></h4>
+                    <p>To express actions or changes that occurred in the near past.<br><span class="translation">للتعبير عن أفعال أو تغييرات حدثت في الماضي القريب</span></p>
+                    <p>"I have recently joined the gym."<br><span class="translation">"لقد انضممت مؤخرًا إلى النادي الرياضي."</span></p>
+                </div>
+                <div class="tense-card">
+                    <h4>lately<br><span class="translation">في الآونة الأخيرة</span></h4>
+                    <p>To describe actions or situations that have occurred frequently or continuously in the recent past.<br><span class="translation">لوصف الأفعال أو المواقف التي حدثت بشكل متكرر أو مستمر في الماضي القريب</span></p>
+                    <p>"Have you been feeling tired lately?"<br><span class="translation">"هل شعرت بالتعب في الآونة الأخيرة؟"</span></p>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <h3> Fundamental Concept</h3>
+                <p>Difference between past simple and present perfect is that past simple has no relation to present while present perfect has a connection to present / effect on it of some sort.<br><span class="translation">الفرق بين الماضي البسيط والماضي التام هو أن الماضي البسيط ليس له علاقة بالحاضر، بينما المضارع التام له ارتباط بالحاضر/أثر ما عليه</span></p>
+                <p class="arabic-text">الفرق بين الماضي البسيط و المضارع التام ان المضارع التام الفعل انتهي و لكن له اثر او نتيجه علي الجمله، الجمله مازالت مضارع علي الرغم من انتهاء الفعل</p>
+                <p><strong>Example:</strong> I ate dinner an hour ago. vs I have eaten dinner so I'm not hungry<br><span class="translation"><strong>مثال:</strong> تناولت العشاء منذ ساعة. مقابل لقد تناولت العشاء لذلك لست جائعًا</span></p>
+            </div>
+            
+            <h2>Perfect Negative Sentences</h2>
+            <div class="subtitle">الازمه التامه</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Past Perfect</th>
+                        <th>Present Perfect</th>
+                        <th>Future Simple</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Subj + Hadn't + pp<br><span class="translation">الفاعل + hadn't + التصريف الثالث</span></td>
+                        <td>Subj + haven't/hasn't + pp<br><span class="translation">الفاعل + haven't/hasn't + التصريف الثالث</span></td>
+                        <td>Subj + won't + have + pp<br><span class="translation">الفاعل + won't + have + التصريف الثالث</span></td>
+                    </tr>
+                    <tr>
+                        <td>I hadn't eaten before I went out<br><span class="translation">لم أكن قد أكلت قبل أن أخرج</span></td>
+                        <td>I haven't done my hw yet<br><span class="translation">لم أقم بواجبي بعد</span></td>
+                        <td>I won't have travelled to Alex by 5 tomorrow<br><span class="translation">لن أكون قد سافرت إلى الإسكندرية بحلول الساعة 5 غدًا</span></td>
+                    </tr>
+                    <tr>
+                        <td>She hadn't started school by last October<br><span class="translation">لم تكن قد بدأت المدرسة بحلول أكتوبر الماضي</span></td>
+                        <td>She hasn't eaten lunch so far<br><span class="translation">لم تأكل الغداء حتى الآن</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2>Perfect Interrogative Sentences</h2>
+            <div class="subtitle">جمله السؤال</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Past Simple</th>
+                        <th>Present Simple</th>
+                        <th>Future Simple</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>-Had + subj + pp? <br>had you gone out after dinner?<br><span class="translation">-هل + الفاعل + had + التصريف الثالث؟<br>هل خرجت بعد العشاء؟</span></td>
+                        <td>-have/has + pp? <br>-Have you seen Ali?<br><span class="translation">-have/has + التصريف الثالث؟<br>-هل رأيت علي؟</span></td>
+                        <td>Will + subj + have + pp? <br>Will you have gone to school tomorrow by 4?<br><span class="translation">Will + الفاعل + have + التصريف الثالث؟<br>هل ستكون قد ذهبت إلى المدرسة غدًا بحلول الساعة 4؟</span></td>
+                    </tr>
+                    <tr>
+                        <td>Wh+ had+subj +pp ? <br>What had you gone?<br><span class="translation">Wh+ had+الفاعل + التصريف الثالث؟<br>أين كنت قد ذهبت؟</span></td>
+                        <td>-Wh+ have/has+ pp? <br>What have done after dinner?<br><span class="translation">-Wh+ have/has+ التصريف الثالث؟<br>ماذا فعلت بعد العشاء؟</span></td>
+                        <td>Wh+ will + subj + have + pp? <br>When Will you have finished exams?<br><span class="translation">Wh+ will + الفاعل + have + التصريف الثالث؟<br>متى ستكون قد انتهيت من الامتحانات؟</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="practice-section">
+                <h2>Practice Exercises - Solved</h2>
+                
+                <div class="question">1. انا لعبت كوره قبل ما اخرج امبارح</div>
+                <div class="arabic-text">I played football before I went out yesterday</div>
                 <div class="options">
-                    <div class="option" data-letter="">
-                        <div>A- All is walking to school on foot</div>
-                        <div class="arabic-translation">علي هو يمشي إلى المدرسة مشياً</div>
-                    </div>
-                    <div class="option correct" data-letter="">
-                        <div>B- All walks to school on foot</div>
-                        <div class="arabic-translation">علي يذهب إلى المدرسة مشياً (الصحيح)</div>
-                    </div>
-                    <div class="option" data-letter="">
-                        <div>C- All walked to school on foot</div>
-                        <div class="arabic-translation">علي ذهب إلى المدرسة مشياً</div>
-                    </div>
+                    <div class="option">A- I was playing Football before I go out yesterday<br><span class="translation">كنت ألعب كرة القدم قبل أن أخرج أمس</span></div>
+                    <div class="option">B- I have played football before I went out yesterday<br><span class="translation">لقد لعبت كرة القدم قبل أن أخرج أمس</span></div>
+                    <div class="option correct">D- I had played football before I went out yesterday<br><span class="translation">كنت قد لعبت كرة القدم قبل أن أخرج أمس</span></div>
                 </div>
-            </div>
-            <div class="quiz">
-                <h3>Let's Practise: Past Tense</h3>
-                <p><strong>أنا كنت نايم الساعة 5 البارحه</strong></p>
+                <div class="explanation">
+                    <strong>Explanation:</strong> We use Past Perfect (had played) because the action of playing football was completed before another past action (going out). The time marker "before" indicates that one action happened prior to another in the past.
+                    <br><strong>الشرح:</strong> نستخدم الماضي التام (had played) لأن فعل لعب كرة القدم اكتمل قبل فعل ماضي آخر (الخروج). علامة الزمن "قبل" تشير إلى أن الفعل حدث قبل الآخر في الماضي.
+                </div>
+                
+                <div class="question">2. علي خسر الكثير من الاموال عبر السنين</div>
+                <div class="arabic-text">Ali lost a lot of money over the years</div>
                 <div class="options">
-                    <div class="option" data-letter="">
-                        <div>A- I slept yesterday at 5</div>
-                        <div class="arabic-translation">نمت البارحة في الساعة 5</div>
-                    </div>
-                    <div class="option" data-letter="">
-                        <div>B- I am sleeping yesterday at 5</div>
-                        <div class="arabic-translation">أنا أنام البارحة في الساعة 5</div>
-                    </div>
-                    <div class="option correct" data-letter="">
-                        <div>C- I was sleeping yesterday at 5</div>
-                        <div class="arabic-translation">كنت أنام البارحة في الساعة 5 (الصحيح)</div>
-                    </div>
+                    <div class="option">A- Ali lost a lot of money over the years<br><span class="translation">خسر علي الكثير من المال على مر السنين</span></div>
+                    <div class="option">B- Ali had lost a lot of money over the years<br><span class="translation">كان علي قد خسر الكثير من المال على مر السنين</span></div>
+                    <div class="option correct">D- Ali has lost a lot of money over the years<br><span class="translation">لقد خسر علي الكثير من المال على مر السنين</span></div>
                 </div>
-            </div>
-            <div class="quiz">
-                <h3>Let's Practise: Future Tense</h3>
-                <p><strong>بكره الساعة 6 هكون مالزليت بذاكر</strong></p>
+                <div class="explanation">
+                    <strong>Explanation:</strong> We use Present Perfect (has lost) because the action started in the past and continues to the present, or the exact time is not specified. "Over the years" indicates a period that extends to the present moment.
+                    <br><strong>الشرح:</strong> نستخدم المضارع التام (has lost) لأن الفعل بدأ في الماضي ويستمر حتى الحاضر، أو لأن الوقت الدقيق غير محدد. "على مر السنين" تشير إلى فترة تمتد حتى اللحظة الحالية.
+                </div>
+                
+                <div class="question">3. سوف أكون رايت علي قبل ان تائي غدا</div>
+                <div class="arabic-text">I will have seen Ali before you come tomorrow</div>
                 <div class="options">
-                    <div class="option" data-letter="">
-                        <div>A- tomorrow at 6 I study</div>
-                        <div class="arabic-translation">غداً في الساعة 6 أدرس</div>
-                    </div>
-                    <div class="option" data-letter="">
-                        <div>B- tomorrow at 6 I will study</div>
-                        <div class="arabic-translation">غداً في الساعة 6 سأدرس</div>
-                    </div>
-                    <div class="option correct" data-letter="">
-                        <div>C- tomorrow at 6 I will be studying</div>
-                        <div class="arabic-translation">غداً في الساعة 6 سأكون أدرس (الصحيح)</div>
-                    </div>
+                    <div class="option">A- I will see Ali before you come tomorrow<br><span class="translation">سأرى علي قبل أن تأتي غدًا</span></div>
+                    <div class="option">B- I will be seeing Ali before you come tomorrow<br><span class="translation">سأكون أرى علي قبل أن تأتي غدًا</span></div>
+                    <div class="option correct">D- I will have seen Ali before you come tomorrow<br><span class="translation">سأكون قد رأيت علي قبل أن تأتي غدًا</span></div>
+                </div>
+                <div class="explanation">
+                    <strong>Explanation:</strong> We use Future Perfect (will have seen) because the action of seeing Ali will be completed before another future action (you coming). This tense is used for actions that will be finished before a specific time in the future.
+                    <br><strong>الشرح:</strong> نستخدم المستقبل التام (will have seen) لأن فعل رؤية علي سينتهي قبل فعل مستقبلي آخر (قدومك). يُستخدم هذا الزمن للأفعال التي ستنتهي قبل وقت محدد في المستقبل.
+                </div>
+                
+                <div class="question">4. لا لم اكل حتى الآن</div>
+                <div class="arabic-text">No, I haven't eaten so far</div>
+                <div class="options">
+                    <div class="option">A- no, I didn't eat so far<br><span class="translation">لا، لم آكل حتى الآن</span></div>
+                    <div class="option">B- no, I hadn't eaten so far<br><span class="translation">لا، لم أكن قد أكلت حتى الآن</span></div>
+                    <div class="option correct">D- no, I haven't eaten so far<br><span class="translation">لا، لم آكل بعد</span></div>
+                </div>
+                <div class="explanation">
+                    <strong>Explanation:</strong> We use Present Perfect (haven't eaten) with "yet" or "so far" to talk about actions that haven't happened but are expected to happen. This tense connects the past to the present moment.
+                    <br><strong>الشرح:</strong> نستخدم المضارع التام (haven't eaten) مع "yet" أو "so far" للتحدث عن أفعال لم تحدث ولكن من المتوقع حدوثها. هذا الزمن يربط الماضي باللحظة الحالية.
+                </div>
+                
+                <div class="question">5. لا لم اكل إلا عندما علي حضر</div>
+                <div class="arabic-text">No, I hadn't eaten until Ali came</div>
+                <div class="options">
+                    <div class="option">A- no, I didn't eat until Ali Comes<br><span class="translation">لا، لم آكل حتى يأتي علي</span></div>
+                    <div class="option correct">B- no, I hadn't eaten until Ali came<br><span class="translation">لا، لم أكن قد أكلت حتى جاء علي</span></div>
+                    <div class="option">D- no, I haven't eaten until Ali came<br><span class="translation">لا، لم آكل حتى جاء علي</span></div>
+                </div>
+                <div class="explanation">
+                    <strong>Explanation:</strong> We use Past Perfect (hadn't eaten) because the action of not eating continued up to a specific point in the past (when Ali came). The Past Perfect is used for an action that was incomplete up to a certain point in the past.
+                    <br><strong>الشرح:</strong> نستخدم الماضي التام (hadn't eaten) لأن فعل عدم الأكل استمر حتى نقطة محددة في الماضي (عندما جاء علي). يُستخدم الماضي التام للفعل الذي كان غير مكتمل حتى نقطة معينة في الماضي.
+                </div>
+                
+                <div class="question">6. هو انت عمرك رزت الأقصر؟</div>
+                <div class="arabic-text">Have you ever visited Luxor?</div>
+                <div class="options">
+                    <div class="option">A- do you ever visit Luxor?<br><span class="translation">هل تزور الأقصر من وقت لآخر؟</span></div>
+                    <div class="option">B- did you ever visit Luxor?<br><span class="translation">هل زرت الأقصر من قبل؟</span></div>
+                    <div class="option correct">C- Have you ever visited Luxor?<br><span class="translation">هل سبق لك أن زرت الأقصر؟</span></div>
+                </div>
+                <div class="explanation">
+                    <strong>Explanation:</strong> We use Present Perfect (Have you ever visited) with "ever" to ask about life experiences at any time up to now. This is the correct tense for asking if someone has had a particular experience in their life.
+                    <br><strong>الشرح:</strong> نستخدم المضارع التام (Have you ever visited) مع "ever" للسؤال عن التجارب الحياتية في أي وقت حتى الآن. هذا هو الزمن الصحيح للسؤال عما إذا كان شخص ما قد مر بتجربة معينة في حياته.
+                </div>
+                
+                <div class="question">7. انت رحت فين امبارح ؟ / اين ذهبت امس ؟</div>
+                <div class="arabic-text">Where did you go yesterday?</div>
+                <div class="options">
+                    <div class="option correct">A- where did you go yesterday?<br><span class="translation">أين ذهبت بالأمس؟</span></div>
+                    <div class="option">B- where have you gone yesterday?<br><span class="translation">أين ذهبت بالأمس؟</span></div>
+                    <div class="option">C- where had you gone yesterday?<br><span class="translation">أين كنت قد ذهبت بالأمس؟</span></div>
+                </div>
+                <div class="explanation">
+                    <strong>Explanation:</strong> We use Past Simple (did you go) because the time is specified ("yesterday"). When we mention a specific time in the past, we use Past Simple, not Present Perfect.
+                    <br><strong>الشرح:</strong> نستخدم الماضي البسيط (did you go) لأن الوقت محدد ("بالأمس"). عندما نذكر وقتًا محددًا في الماضي، نستخدم الماضي البسيط وليس المضارع التام.
+                </div>
+                
+                <div class="question">8. عملت ايه بعد ما خرجت ؟</div>
+                <div class="arabic-text">What had you done after you went out?</div>
+                <div class="options">
+                    <div class="option">A- what did you do after you went out?<br><span class="translation">ماذا فعلت بعد أن خرجت؟</span></div>
+                    <div class="option">B- what have you done after you went out?<br><span class="translation">ماذا فعلت بعد أن خرجت؟</span></div>
+                    <div class="option correct">C- what had you done after you went out?<br><span class="translation">ماذا كنت قد فعلت بعد أن خرجت؟</span></div>
+                </div>
+                <div class="explanation">
+                    <strong>Explanation:</strong> We use Past Perfect (had you done) because we're asking about an action that was completed before another past action. The sequence of events requires Past Perfect to show which action happened first.
+                    <br><strong>الشرح:</strong> نستخدم الماضي التام (had you done) لأننا نسأل عن فعل اكتمل قبل فعل ماضي آخر. تسلسل الأحداث يتطلب الماضي التام لإظهار أي فعل حدث أولاً.
+                </div>
+                
+                <div class="question">9. انا لم اري علي من فترة طويلة</div>
+                <div class="arabic-text">I haven't seen Ali for a long time</div>
+                <div class="options">
+                    <div class="option">A- I hadn't seen Ali for a long time<br><span class="translation">لم أكن قد رأيت علي منذ فترة طويلة</span></div>
+                    <div class="option">B- I don't see Ali for a long time<br><span class="translation">لا أرى علي منذ فترة طويلة</span></div>
+                    <div class="option correct">C- I haven't seen Ali for a long time<br><span class="translation">لم أرَ علي منذ فترة طويلة</span></div>
+                </div>
+                <div class="explanation">
+                    <strong>Explanation:</strong> We use Present Perfect (haven't seen) with "for a long time" because the action started in the past and continues to the present. This tense is used with duration expressions that extend to the current moment.
+                    <br><strong>الشرح:</strong> نستخدم المضارع التام (haven't seen) مع "for a long time" لأن الفعل بدأ في الماضي ويستمر حتى الحاضر. يُستخدم هذا الزمن مع تعبيرات المدة التي تمتد حتى اللحظة الحالية.
+                </div>
+                
+                <div class="question">10. متي ستكون خلاص اتخرجت من الجامعه ؟</div>
+                <div class="arabic-text">When will you have graduated university?</div>
+                <div class="options">
+                    <div class="option">A- when have you graduated university?<br><span class="translation">متى تخرجت من الجامعة؟</span></div>
+                    <div class="option">B- when will you graduate university?<br><span class="translation">متى ستتخرج من الجامعة؟</span></div>
+                    <div class="option correct">C- when will you have graduated university?<br><span class="translation">متى ستكون قد تخرجت من الجامعة؟</span></div>
+                </div>
+                <div class="explanation">
+                    <strong>Explanation:</strong> We use Future Perfect (will you have graduated) because we're asking about the completion of an action before a specific future time. This tense is used for actions that will be finished at some point in the future.
+                    <br><strong>الشرح:</strong> نستخدم المستقبل التام (will you have graduated) لأننا نسأل عن اكتمال فعل قبل وقت محدد في المستقبل. يُستخدم هذا الزمن للأفعال التي ستنتهي عند نقطة ما في المستقبل.
                 </div>
             </div>
-        </div>
-        <div id="stative" class="content-section">
-            <h2>🛑 Stative Verbs</h2>
-            <div class="card">
-                <h3>📌 Important Concept</h3>
-                <p><br>Not all verbs can be used in continuous tenses! <strong>Stative verbs</strong> describe states, not actions, so they're typically used in simple tenses. These verbs represent conditions rather than activities.</p>
-                <div class="arabic-translation">ليس كل الأفعال يمكن استخدامها في الأزمنة المستمرة! أفعال الحالة تصف الحالات، وليس الأفعال، لذلك تُستخدم عادة في الأزمنة البسيطة</div>
-                <p>Stative verbs focus on <strong>state</strong> rather than <strong>duration</strong> or <strong>progress</strong>. They express conditions, relationships, emotions, and perceptions.</p>
-                <div class="arabic-translation">تركز أفعال الحالة على الحالة بدلاً من المدة أو التقدم</div>
-            </div>
-            <h3>📋 Categories of Stative Verbs</h3>
-            <div class="stative-verbs">
-                <div class="verb-category">
-                    <h4>Possession & Measurements</h4>
-                    <div class="verbs">
-                        <span class="verb">have
-                            <div class="arabic-translation">يملك</div>
-                        </span>
-                        <span class="verb">belong
-                            <div class="arabic-translation">ينتمي</div>
-                        </span>
-                        <span class="verb">consist
-                            <div class="arabic-translation">يتكون</div>
-                        </span>
-                        <span class="verb">contain
-                            <div class="arabic-translation">يحتوي</div>
-                        </span>
-                        <span class="verb">cost
-                            <div class="arabic-translation">يكلف</div>
-                        </span>
-                        <span class="verb">depend
-                            <div class="arabic-translation">يعتمد</div>
-                        </span>
-                        <span class="verb">fit
-                            <div class="arabic-translation">يناسب</div>
-                        </span>
-                        <span class="verb">include
-                            <div class="arabic-translation">يشمل</div>
-                        </span>
-                        <span class="verb">involve
-                            <div class="arabic-translation">يتضمن</div>
-                        </span>
-                        <span class="verb">measure
-                            <div class="arabic-translation">يقيس</div>
-                        </span>
-                        <span class="verb">owe
-                            <div class="arabic-translation">يدين</div>
-                        </span>
-                        <span class="verb">own
-                            <div class="arabic-translation">يمتلك</div>
-                        </span>
-                        <span class="verb">possess
-                            <div class="arabic-translation">يملك</div>
-                        </span>
-                        <span class="verb">weigh
-                            <div class="arabic-translation">يوزن</div>
-                        </span>
-                    </div>
-                </div>
-                <div class="verb-category">
-                    <h4>Thoughts & Opinions</h4>
-                    <div class="verbs">
-                        <span class="verb">agree
-                            <div class="arabic-translation">يوافق</div>
-                        </span>
-                        <span class="verb">believe
-                            <div class="arabic-translation">يؤمن</div>
-                        </span>
-                        <span class="verb">concern
-                            <div class="arabic-translation">يشغل</div>
-                        </span>
-                        <span class="verb">disagree
-                            <div class="arabic-translation">يختلف</div>
-                        </span>
-                        <span class="verb">doubt
-                            <div class="arabic-translation">يشك</div>
-                        </span>
-                        <span class="verb">forget
-                            <div class="arabic-translation">ينسى</div>
-                        </span>
-                        <span class="verb">imagine
-                            <div class="arabic-translation">يتصور</div>
-                        </span>
-                        <span class="verb">know
-                            <div class="arabic-translation">يعرف</div>
-                        </span>
-                        <span class="verb">mean
-                            <div class="arabic-translation">يعني</div>
-                        </span>
-                        <span class="verb">promise
-                            <div class="arabic-translation">يعد</div>
-                        </span>
-                        <span class="verb">realise
-                            <div class="arabic-translation">يدرك</div>
-                        </span>
-                        <span class="verb">recognise
-                            <div class="arabic-translation">يعرف</div>
-                        </span>
-                        <span class="verb">remember
-                            <div class="arabic-translation">يتذكر</div>
-                        </span>
-                        <span class="verb">suppose
-                            <div class="arabic-translation">أفترض</div>
-                        </span>
-                    </div>
-                </div>
-                <div class="verb-category">
-                    <h4>Senses & Perceptions</h4>
-                    <div class="verbs">
-                        <span class="verb">be
-                            <div class="arabic-translation">يكون</div>
-                        </span>
-                        <span class="verb">appear
-                            <div class="arabic-translation">يظهر</div>
-                        </span>
-                        <span class="verb">feel
-                            <div class="arabic-translation">يشعر</div>
-                        </span>
-                        <span class="verb">hear
-                            <div class="arabic-translation">يسمع</div>
-                        </span>
-                        <span class="verb">look
-                            <div class="arabic-translation">يبدو</div>
-                        </span>
-                        <span class="verb">see
-                            <div class="arabic-translation">يرى</div>
-                        </span>
-                        <span class="verb">seem
-                            <div class="arabic-translation">يبدو</div>
-                        </span>
-                        <span class="verb">smell
-                            <div class="arabic-translation">يشم</div>
-                        </span>
-                        <span class="verb">sound
-                            <div class="arabic-translation">يبدو</div>
-                        </span>
-                        <span class="verb">taste
-                            <div class="arabic-translation">يتذوق</div>
-                        </span>
-                        <span class="verb">mind
-                            <div class="arabic-translation">يهم</div>
-                        </span>
-                    </div>
-                </div>
-                <div class="verb-category">
-                    <h4>Preferences & Feelings</h4>
-                    <div class="verbs">
-                        <span class="verb">appreciate
-                            <div class="arabic-translation">يقدّر</div>
-                        </span>
-                        <span class="verb">care
-                            <div class="arabic-translation">يهمه</div>
-                        </span>
-                        <span class="verb">deserve
-                            <div class="arabic-translation">يستحق</div>
-                        </span>
-                        <span class="verb">desire
-                            <div class="arabic-translation">يرغب</div>
-                        </span>
-                        <span class="verb">dislike
-                            <div class="arabic-translation">يكره</div>
-                        </span>
-                        <span class="verb">enjoy
-                            <div class="arabic-translation">يستمتع</div>
-                        </span>
-                        <span class="verb">hate
-                            <div class="arabic-translation">يكره</div>
-                        </span>
-                        <span class="verb">hope
-                            <div class="arabic-translation">يتمنى</div>
-                        </span>
-                        <span class="verb">like
-                            <div class="arabic-translation">يحب</div>
-                        </span>
-                        <span class="verb">love
-                            <div class="arabic-translation">يحب</div>
-                        </span>
-                        <span class="verb">need
-                            <div class="arabic-translation">يحتاج</div>
-                        </span>
-                        <span class="verb">prefer
-                            <div class="arabic-translation">يفضل</div>
-                        </span>
-                        <span class="verb">want
-                            <div class="arabic-translation">يريد</div>
-                        </span>
-                        <span class="verb">wish
-                            <div class="arabic-translation">يتمنى</div>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <h3>💡 Important Exceptions</h3>
-                <p><br>Some stative verbs can be used in continuous tenses with a <strong>different meaning</strong>, creating a dynamic interpretation rather than a static state:</p>
-                <div class="arabic-translation">يمكن استخدام بعض أفعال الحالة في الأزمنة المستمرة بمعنى مختلف</div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Verb</th>
-                            <th>Stative (Simple) Meaning</th>
-                            <th>Dynamic (Continuous) Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>have</strong></td>
-                            <td>Possession: "I have a car."
-                                <div class="arabic-translation">الملكية: "أنا أملك سيارة"</div>
-                            </td>
-                            <td>Experiencing: "I'm having a great time!"
-                                <div class="arabic-translation">التجربة: "أنا أقضي وقتاً رائعاً!"</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>think</strong></td>
-                            <td>Opinion: "I think he's right."
-                                <div class="arabic-translation">الرأي: "أعتقد أنه على حق"</div>
-                            </td>
-                            <td>Mental process: "I'm thinking about the problem."
-                                <div class="arabic-translation">العملية الذهنية: "أنا أفكر في المشكلة"</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>see</strong></td>
-                            <td>Perception: "I see a bird."
-                                <div class="arabic-translation">الإدراك: "أرى طائراً"</div>
-                            </td>
-                            <td>Meeting: "I'm seeing my friend tomorrow."
-                                <div class="arabic-translation">اللقاء: "أنا ألتقي بصديقي غداً"</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>feel</strong></td>
-                            <td>Emotion: "I feel happy."
-                                <div class="arabic-translation">المشاعر: "أنا أشعر بالسعادة"</div>
-                            </td>
-                            <td>Touching: "I'm feeling the fabric."
-                                <div class="arabic-translation">اللمس: "أنا أشعر بالقماش"</div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div id="practice" class="content-section">
-            <h2>🎯 Practice Exercises</h2>
-            <div class="quiz">
-                <h3>Let's Practice: Correct the Mistakes</h3>
-                <p>Identify and correct the errors in these sentences to master proper tense usage:</p>
-                <p><strong>1. Ali plays football this year.</strong></p>
-                <div class="example">❌ Incorrect: "plays" (simple present for temporary situation)
-                    <div class="arabic-translation">خطأ: "plays" (زمن مضارع بسيط لوضع مؤقت)</div>
-                </div>
-                <div class="example">✅ Correct: "Ali <strong>is playing</strong> football this year." (temporary activity)
-                    <div class="arabic-translation">الصحيح: "علي يلعب كرة القدم هذا العام" (نشاط مؤقت)</div>
-                </div>
-                <p><strong>2. We were sleeping early yesterday.</strong></p>
-                <div class="example">❌ Incorrect: "were sleeping" (past continuous for completed action)
-                    <div class="arabic-translation">خطأ: "were sleeping" (ماضي مستمر لفعل منتهي)</div>
-                </div>
-                <div class="example">✅ Correct: "We <strong>slept</strong> early yesterday." (completed action)
-                    <div class="arabic-translation">الصحيح: "نمنا مبكراً البارحة" (فعل منتهي)</div>
-                </div>
-                <p><strong>3. They were understanding the lesson when I explained it.</strong></p>
-                <div class="example">❌ Incorrect: "were understanding" (stative verb in continuous)
-                    <div class="arabic-translation">خطأ: "were understanding" (فعل حالة في زمن مستمر)</div>
-                </div>
-                <div class="example">✅ Correct: "They <strong>understood</strong> the lesson when I explained it." (stative verb in simple tense)
-                    <div class="arabic-translation">الصحيح: "فهموا الدرس عندما شرحته" (فعل حالة في زمن بسيط)</div>
-                </div>
-            </div>
-            <div class="quiz">
-                <h3>Let's Practice: Arabic to English</h3>
-                <p>Translate these Arabic sentences correctly to demonstrate your mastery:</p>
-                <p><strong>عنوان عماني؟</strong></p>
-                <div class="example">Is this your address?
-                    <div class="arabic-translation">هل هذا عنوانك؟</div>
-                </div>
-                <p><strong>الجاش ساعتين كل اليوم</strong></p>
-                <div class="example">I study for two hours every day. (Present Simple)
-                    <div class="arabic-translation">أدرس ساعتين كل يوم. (زمن المضارع البسيط)</div>
-                </div>
-                <p><strong>الخباديم. انا خذكر الجاش الساعة و</strong></p>
-                <div class="example">Right now, I am studying. (Present Continuous)
-                    <div class="arabic-translation">الآن، أنا أدرس. (زمن المضارع المستمر)</div>
-                </div>
-                <p><strong>امبارح انا تأكيدت الجاش</strong></p>
-                <div class="example">Yesterday, I studied. (Past Simple)
-                    <div class="arabic-translation">أمس، درست. (زمن الماضي البسيط)</div>
-                </div>
-                <p><strong>امبارح الساعة و كنت بذكر الجاش</strong></p>
-                <div class="example">Yesterday at this time, I was studying. (Past Continuous)
-                    <div class="arabic-translation">أمس في هذا الوقت، كنت أدرس. (زمن الماضي المستمر)</div>
-                </div>
-            </div>
-        </div>
-        <div id="assignments" class="content-section">
-            <h2>📝 Assignments</h2>
-            <div class="card">
-                <h3>Assignment 1: Present Simple vs Present Continuous</h3>
-                <p>Transform the sentences into Present Simple or Present Continuous as indicated to demonstrate your understanding of temporal aspects:</p>
-                <ol>
-                    <li>She <strong>is playing</strong> the piano now. (Present Continuous)
-                        <div class="arabic-translation">هي تلعب البيانو الآن. (زمن المضارع المستمر)</div>
-                    </li>
-                    <li>He <strong>goes</strong> to school every day. (Present Simple)
-                        <div class="arabic-translation">هو يذهب إلى المدرسة كل يوم. (زمن المضارع البسيط)</div>
-                    </li>
-                    <li>They <strong>are watching</strong> a movie right now. (Present Continuous)
-                        <div class="arabic-translation">هم يشاهدون فيلماً الآن. (زمن المضارع المستمر)</div>
-                    </li>
-                    <li>I <strong>am eating</strong> lunch at this moment. (Present Continuous)
-                        <div class="arabic-translation">أنا آكل الغداء في هذه اللحظة. (زمن المضارع المستمر)</div>
-                    </li>
-                    <li>We <strong>visit</strong> the museum every summer. (Present Simple)
-                        <div class="arabic-translation">نحن نزور المتحف كل صيف. (زمن المضارع البسيط)</div>
-                    </li>
-                    <li>She <strong>reads</strong> a book every evening. (Present Simple)
-                        <div class="arabic-translation">هي تقرأ كتاباً كل مساء. (زمن المضارع البسيط)</div>
-                    </li>
-                    <li>He <strong>is cleaning</strong> his room right now. (Present Continuous)
-                        <div class="arabic-translation">هو ينظف غرفته الآن. (زمن المضارع المستمر)</div>
-                    </li>
-                    <li>They <strong>play</strong> soccer every weekend. (Present Simple)
-                        <div class="arabic-translation">هم يلعبون كرة القدم كل عطلة نهاية أسبوع. (زمن المضارع البسيط)</div>
-                    </li>
+            
+            <div class="assignment">
+                <h3>Assignment 1 - Solved</h3>
+                <p>Solutions to the blanks with Present Perfect or Past Perfect Tenses</p>
+                <ol style="margin: 20px 0; padding-left: 30px;">
+                    <li class="solved">John <span class="solved-answer">had not visited</span> me that day before you called.<br><span class="translation">جون لم يكن قد زارني ذلك اليوم قبل أن تتصل</span></li>
+                    <li class="solved">Her wounds <span class="solved-answer">have healed</span> almost completely. She can start exercising as early as tomorrow.<br><span class="translation">لقد تعافت جروحها بشكل شبه تام. يمكنها البدء في ممارسة التمارين بدءًا من الغد</span></li>
+                    <li class="solved">Did you hear that Ben was fired last month even though he <span class="solved-answer">had worked</span> in almost every department.<br><span class="translation">هل سمعت أن بن تم فصله الشهر الماضي على الرغم من أنه كان قد عمل في كل الأقسام تقريبًا</span></li>
+                    <li class="solved">I <span class="solved-answer">had seen</span> many pictures of the pyramids before I went to Egypt last summer. Pictures are a little misleading, they are smaller than they look.<br><span class="translation">لقد رأيت العديد من صور الأهرامات قبل أن أسافر إلى مصر الصيف الماضي. الصور مضللة بعض الشيء، فهي أصغر مما تبدو</span></li>
+                    <li class="solved">Sarah <span class="solved-answer">has climbed</span> Mount Everest. She is such an adventurous person.<br><span class="translation">لقد تسلقت سارة جبل إيفرست. إنها شخصية مغامرة للغاية</span></li>
+                    <li class="solved">Susan <span class="solved-answer">had graduated</span> from Harvard and had traveled around the world by the time she was twenty-five.<br><span class="translation">كانت سوزان قد تخرجت من هارفارد وسافرت حول العالم بحلول الوقت الذي بلغت فيه خمسة وعشرين عامًا</span></li>
+                    <li class="solved">Before my trip to Paris two years ago, I <span class="solved-answer">had never been</span> to France.<br><span class="translation">قبل رحلتي إلى باريس قبل عامين، لم أكن قد زرت فرنسا من قبل</span></li>
+                    <li class="solved">When we finally stopped him, the squirrel <span class="solved-answer">had already eaten</span> twenty nuts.<br><span class="translation">عندما توقفنا أخيرًا، كان السنجاب قد أكل بالفعل عشرين جوزة</span></li>
+                    <li class="solved">We need more time because Alen <span class="solved-answer">has not done</span> the decorating yet.<br><span class="translation">نحتاج إلى المزيد من الوقت لأن علاء لم يقم بالديكور بعد</span></li>
+                    <li class="solved">You look tired. How long <span class="solved-answer">have you been running</span>?<br><span class="translation">تبدو متعبًا. كم من الوقت كنت تركض؟</span></li>
                 </ol>
             </div>
-            <div class="card">
-                <h3>Assignment 2: Past Simple and Past Continuous</h3>
-                <ol>
-                    <li>My granny <strong>broke</strong> her leg last week. (Past Simple)
-                        <div class="arabic-translation">جدتي كسرت ساقها الأسبوع الماضي. (زمن الماضي البسيط)</div>
-                    </li>
-                    <li>I <strong>was not watching</strong> the match on TV at 9 o'clock. (Past Continuous)
-                        <div class="arabic-translation">لم أكن أشاهد المباراة على التلفاز في الساعة 9. (زمن الماضي المستمر)</div>
-                    </li>
-                    <li>I <strong>heard</strong> a noise, while I <strong>was doing</strong> my homework. (Past Simple + Past Continuous)
-                        <div class="arabic-translation">سمعت ضجة، بينما كنت أقوم بواجباتي المنزلية. (زمن الماضي البسيط + زمن الماضي المستمر)</div>
-                    </li>
-                    <li>What time <strong>did</strong> your parents <strong>get</strong> home last night? (Past Simple)
-                        <div class="arabic-translation">في أي وقت عاد والداك إلى المنزل الليلة الماضية؟ (زمن الماضي البسيط)</div>
-                    </li>
-                    <li>What <strong>were</strong> you <strong>doing</strong> this time last Friday? (Past Continuous)
-                        <div class="arabic-translation">ماذا كنت تفعل في هذا الوقت الجمعة الماضية؟ (زمن الماضي المستمر)</div>
-                    </li>
-                    <li>My mum <strong>was preparing</strong> lunch while my brother and I <strong>were going to dinner</strong>. (Past Continuous + Past Continuous)
-                        <div class="arabic-translation">كانت أمي تعد الغداء بينما كان أخي وأنا نذهب للعشاء. (زمن الماضي المستمر + زمن الماضي المستمر)</div>
-                    </li>
-                </ol>
-            </div>
-            <div class="card">
-                <h3>Assignment 3: Additional Practice</h3>
-                <p>Complete these tasks to reinforce your understanding and achieve mastery of English tenses:</p>
+            
+            <div class="assignment">
+                <h3>Homework</h3>
                 <ul>
-                    <li>Review irregular verbs list
-                        <div class="arabic-translation">راجع قائمة الأفعال الشاذة</div>
-                    </li>
-                    <li>Watch educational videos about English tenses
-                        <div class="arabic-translation">شاهد مقاطع تعليمية عن أزمنة الإنجليزية</div>
-                    </li>
-                    <li>Write 10 sentences in present simple and 10 in present continuous with their translations
-                        <div class="arabic-translation">اكتب 10 جمل في الزمن البسيط و10 في الزمن المستمر مع ترجماتها</div>
-                    </li>
-                    <li>Write 10 sentences in past continuous and 10 in past simple with their translations
-                        <div class="arabic-translation">اكتب 10 جمل في الماضي المستمر و10 في الماضي البسيط مع ترجماتها</div>
-                    </li>
+                    <li>Study perfect tenses and their key timewords<br><span class="translation">ادرس أزمنة المضارع التام وكلماتها الزمنية المفتاحية</span></li>
+                    <li class="arabic-text">ذاكر كويس الازمه التامه و كلمتها الزمنيه</li>
+                    <li>Write 5 sentences about each of the 9 tenses that you have studied in every tense family/aspect?<br><span class="translation">اكتب 5 جمل عن كل واحدة من الأزمنة التسعة التي درستها في كل عائلة زمنية/جوانب</span></li>
+                    <li class="arabic-text">اكتب 5 جمل لكل واحد من الازمه البسيطه المستمره و التامه</li>
                 </ul>
             </div>
         </div>
+        
         <footer>
-            <span class="footer-logo">English Tenses Guide <span>🎓</span></span>
-            <div class="footer-content">
-                <h3>Premium Grammar Resource</h3>
-                <p>© 2025 English Tenses Guide | Crafted with precision for advanced language learners</p>
-                <p>Master the nuances of English tenses through comprehensive study and consistent practice. Focus on understanding the subtle differences between simple and continuous aspects for accurate and sophisticated communication.</p>
-                <p>Designed with elegance and functionality to enhance your learning experience.</p>
-            </div>
+            Summer Course 2025 - English Grammar Mastery | Perfect Tenses Lecture
         </footer>
     </div>
 </body>
 </html>
+```
