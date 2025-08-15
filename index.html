@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +16,8 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: #e6e6e6;
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
+            color: #01579b;
         }
 
         .container {
@@ -26,9 +25,9 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            background: #0a0a0a;
-            border: 1px solid #4a4a6a;
-            box-shadow: 0 0 30px rgba(74, 74, 106, 0.5);
+            background: #ffffff;
+            border: 1px solid #80deea;
+            box-shadow: 0 0 30px rgba(0, 174, 239, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -40,8 +39,8 @@
             left: 0;
             right: 0;
             height: 5px;
-            background: linear-gradient(90deg, #c0c0c0, #ffffff, #c0c0c0);
-            box-shadow: 0 0 10px #ffffff;
+            background: linear-gradient(90deg, #b2ebf2, #ffffff, #b2ebf2);
+            box-shadow: 0 0 10px rgba(0, 174, 239, 0.5);
         }
 
         .container::after {
@@ -51,18 +50,18 @@
             left: 0;
             right: 0;
             height: 5px;
-            background: linear-gradient(90deg, #c0c0c0, #ffffff, #c0c0c0);
-            box-shadow: 0 0 10px #ffffff;
+            background: linear-gradient(90deg, #b2ebf2, #ffffff, #b2ebf2);
+            box-shadow: 0 0 10px rgba(0, 174, 239, 0.5);
         }
 
         .header {
-            background: linear-gradient(90deg, #1a1a2e, #16213e);
+            background: linear-gradient(90deg, #0277bd, #0288d1);
             color: #ffffff;
-            padding: 25px;
+            padding: 30px;
             text-align: center;
             position: relative;
-            border-bottom: 1px solid #4a4a6a;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-bottom: 1px solid #80deea;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .header::after {
@@ -72,64 +71,66 @@
             left: 10%;
             right: 10%;
             height: 2px;
-            background: linear-gradient(90deg, transparent, #c0c0c0, transparent);
+            background: linear-gradient(90deg, transparent, #ffffff, transparent);
         }
 
         .header h1 {
-            font-size: 2.8rem;
+            font-size: 3.5rem;
             font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
             color: #ffffff;
         }
 
         .header h2 {
-            font-size: 1.7rem;
+            font-size: 2rem;
             font-weight: 400;
             opacity: 0.9;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
-        .crown-icon {
-            font-size: 1.2rem;
-            color: #ffd700;
-            margin: 0 10px;
+        .snowflake-icon {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin: 0 15px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
 
         .content {
             flex: 1;
-            padding: 30px;
+            padding: 40px;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 35px;
         }
 
         .section {
-            background: rgba(30, 30, 50, 0.7);
-            border-radius: 18px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            border: 1px solid #4a4a6a;
+            background: rgba(232, 245, 255, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0, 174, 239, 0.2);
+            border: 1px solid #b2ebf2;
             backdrop-filter: blur(10px);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 3px solid #0288d1;
         }
 
         .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 174, 239, 0.3);
         }
 
         .section-title {
-            color: #c0c0c0;
-            font-size: 2rem;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
+            color: #01579b;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
             text-align: center;
             position: relative;
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .section-title::after {
@@ -138,161 +139,168 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #c0c0c0, transparent);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #0288d1, transparent);
         }
 
         .section-title span {
             position: relative;
             z-index: 1;
-            background: rgba(30, 30, 50, 0.7);
-            padding: 0 20px;
+            background: rgba(232, 245, 255, 0.8);
+            padding: 0 30px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            background: rgba(20, 20, 30, 0.8);
-            border-radius: 12px;
+            margin: 30px 0;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            border: 1px solid #4a4a6a;
+            box-shadow: 0 12px 35px rgba(0, 174, 239, 0.2);
+            border: 1px solid #b2ebf2;
         }
 
         th, td {
-            padding: 16px;
+            padding: 22px;
             text-align: left;
-            border: 1px solid #4a4a6a;
+            border: 1px solid #b2ebf2;
             transition: background 0.3s ease;
         }
 
         th {
-            background: linear-gradient(90deg, #1a1a2e, #16213e);
+            background: linear-gradient(90deg, #0277bd, #0288d1);
             color: #ffffff;
             font-weight: 600;
-            font-size: 1.1rem;
-            text-shadow: 0 0 5px rgba(192, 192, 192, 0.5);
+            font-size: 1.4rem;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
         }
 
         tr:nth-child(even) {
-            background-color: rgba(40, 40, 60, 0.5);
+            background-color: rgba(224, 247, 250, 0.6);
         }
 
         tr:hover {
-            background-color: rgba(74, 74, 106, 0.4);
-            transform: scale(1.02);
+            background-color: rgba(178, 235, 242, 0.7);
+            transform: scale(1.03);
             transition: all 0.3s ease;
         }
 
         .examples {
-            background: rgba(40, 40, 60, 0.6);
-            padding: 20px;
-            border-radius: 12px;
-            margin: 20px 0;
-            border-left: 4px solid #c0c0c0;
-            border-right: 4px solid #c0c0c0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background: rgba(224, 247, 250, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #0288d1;
+            border-right: 5px solid #0288d1;
+            box-shadow: 0 8px 25px rgba(0, 174, 239, 0.1);
         }
 
         .examples p {
-            margin: 12px 0;
-            line-height: 1.8;
-            color: #e6e6e6;
+            margin: 18px 0;
+            line-height: 2.2;
+            color: #01579b;
+            font-size: 1.3rem;
         }
 
         .bilingual {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px dashed #4a4a6a;
+            padding: 15px 0;
+            border-bottom: 2px dashed #b2ebf2;
         }
 
         .english {
             flex: 1;
             font-weight: 500;
-            color: #ffffff;
+            color: #01579b;
+            font-size: 1.4rem;
         }
 
         .arabic {
             flex: 1;
             text-align: right;
             font-weight: 500;
-            color: #43a0ff;
+            color: #0288d1;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             direction: rtl;
+            font-size: 1.4rem;
         }
 
         .assignment {
-            background: rgba(35, 35, 55, 0.7);
-            border-left: 4px solid #c0c0c0;
-            border-right: 4px solid #c0c0c0;
+            background: rgba(232, 245, 255, 0.8);
+            border-left: 5px solid #0288d1;
+            border-right: 5px solid #0288d1;
         }
 
         .assignment ol, .assignment ul {
-            margin: 15px 0;
-            padding-left: 30px;
+            margin: 20px 0;
+            padding-left: 40px;
         }
 
         .assignment li {
-            margin: 12px 0;
-            line-height: 1.8;
-            color: #e6e6e6;
+            margin: 18px 0;
+            line-height: 2.2;
+            color: #01579b;
+            font-size: 1.3rem;
         }
 
         .answer {
-            color: #43a0ff;
+            color: #0288d1;
             font-weight: 600;
-            text-shadow: 0 0 5px rgba(67, 160, 255, 0.5);
+            text-shadow: 0 0 8px rgba(2, 136, 209, 0.3);
+            font-size: 1.4rem;
         }
 
         .translation {
-            background: rgba(40, 60, 80, 0.5);
-            padding: 12px;
-            border-radius: 8px;
-            margin: 10px 0;
-            font-size: 0.95em;
-            color: #64b5f6;
-            border: 1px solid #4a4a6a;
-            border-right: 3px solid #43a0ff;
+            background: rgba(200, 230, 255, 0.6);
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 1.2rem;
+            color: #0288d1;
+            border: 2px solid #b2ebf2;
+            border-right: 4px solid #0288d1;
         }
 
         .score-card {
-            background: linear-gradient(135deg, rgba(30, 30, 50, 0.9), rgba(40, 40, 60, 0.9));
-            color: #ffffff;
-            padding: 35px;
-            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(232, 245, 255, 0.9), rgba(200, 230, 255, 0.9));
+            color: #01579b;
+            padding: 50px;
+            border-radius: 20px;
             text-align: center;
-            margin: 25px 0;
-            border: 1px solid #4a4a6a;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            margin: 35px 0;
+            border: 1px solid #b2ebf2;
+            box-shadow: 0 15px 40px rgba(0, 174, 239, 0.3);
+            border-top: 3px solid #0288d1;
         }
 
         .score-card h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #c0c0c0;
-            text-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: #01579b;
+            text-shadow: 0 0 15px rgba(2, 136, 209, 0.3);
         }
 
         .score-card p {
-            font-size: 1.3rem;
-            margin: 15px 0;
-            line-height: 2;
-            color: #ffffff;
+            font-size: 1.8rem;
+            margin: 20px 0;
+            line-height: 2.5;
+            color: #01579b;
         }
 
         .footer {
             text-align: center;
-            padding: 20px;
-            color: #c0c0c0;
-            font-size: 1rem;
-            background: rgba(10, 10, 10, 0.9);
-            border-top: 1px solid #4a4a6a;
+            padding: 30px;
+            color: #01579b;
+            font-size: 1.4rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-top: 1px solid #b2ebf2;
             margin-top: auto;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            border-bottom: 3px solid #0288d1;
         }
 
         .footer::before {
@@ -301,25 +309,20 @@
             top: 0;
             left: 10%;
             right: 10%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #c0c0c0, transparent);
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #0288d1, transparent);
         }
 
-        .silver-accent {
-            color: #c0c0c0;
-            text-shadow: 0 0 5px rgba(192, 192, 192, 0.5);
-        }
-
-        .gold-accent {
-            color: #ffd700;
-            text-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
+        .ice-accent {
+            color: #0288d1;
+            text-shadow: 0 0 8px rgba(2, 136, 209, 0.5);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1><span class="crown-icon">♔</span> Summer Course Lecture 8 <span class="crown-icon">♔</span></h1>
+            <h1><span class="snowflake-icon">❄</span> Summer Course Lecture 8 <span class="snowflake-icon">❄</span></h1>
             <h2>English Tenses Summary</h2>
         </div>
         
@@ -366,9 +369,9 @@
 
             <div class="section">
                 <h3 class="section-title"><span>Simple Tense</span></h3>
-                <p><strong>When to use:</strong> عند التحدث عن حدوث الفعل بشكل عام. عند التحدث عن فعل يحدث أكثر من مرة (متكرر). عند التحدث عن فعل دائم او عادة.</p>
+                <p style="font-size: 1.4rem; margin-bottom: 20px;"><strong>When to use:</strong> عند التحدث عن حدوث الفعل بشكل عام. عند التحدث عن فعل يحدث أكثر من مرة (متكرر). عند التحدث عن فعل دائم او عادة.</p>
                 <div class="examples">
-                    <p><strong>Examples:</strong></p>
+                    <p style="font-size: 1.6rem;"><strong>Examples:</strong></p>
                     <div class="bilingual">
                         <div class="english">Ali plays Football.</div>
                         <div class="arabic">علي يلعب كرة القدم.</div>
@@ -394,9 +397,9 @@
 
             <div class="section">
                 <h3 class="section-title"><span>Continuous Tense</span></h3>
-                <p><strong>When to use:</strong> بشكل عام تستخدم الأزمنة المستمرة للتركيز على المدة الزمنية ووقت بشكل عام تستخدم مع الأفعال اللحظية او المؤقت التي تحدث مرة واحدة.</p>
+                <p style="font-size: 1.4rem; margin-bottom: 20px;"><strong>When to use:</strong> بشكل عام تستخدم الأزمنة المستمرة للتركيز على المدة الزمنية ووقت بشكل عام تستخدم مع الأفعال اللحظية او المؤقت التي تحدث مرة واحدة.</p>
                 <div class="examples">
-                    <p><strong>Examples:</strong></p>
+                    <p style="font-size: 1.6rem;"><strong>Examples:</strong></p>
                     <div class="bilingual">
                         <div class="english">Ali is playing Football at present.</div>
                         <div class="arabic">علي يلعب كرة القدم الآن.</div>
@@ -418,9 +421,9 @@
 
             <div class="section">
                 <h3 class="section-title"><span>Perfect Tense</span></h3>
-                <p><strong>When to use:</strong> بشكل عام نستخدم هذه الأزمنة للتركيز على انتهاء او تمام الفعل سواء في ماضي او مضارع او مستقبل.</p>
+                <p style="font-size: 1.4rem; margin-bottom: 20px;"><strong>When to use:</strong> بشكل عام نستخدم هذه الأزمنة للتركيز على انتهاء او تمام الفعل سواء في ماضي او مضارع او مستقبل.</p>
                 <div class="examples">
-                    <p><strong>Examples:</strong></p>
+                    <p style="font-size: 1.6rem;"><strong>Examples:</strong></p>
                     <div class="bilingual">
                         <div class="english">Ali has played football since he was 5.</div>
                         <div class="arabic">لقد لعب علي كرة القدم منذ أن كان عمره 5 سنوات.</div>
@@ -479,49 +482,49 @@
             <div class="section assignment">
                 <h3 class="section-title"><span>Assignment 1 - Answers with Arabic Translation</span></h3>
                 <ol>
-                    <li>Andy is tired because he <span class="answer">has been working</span> (WORK) <strong>7 days a week</strong>.
+                    <li style="font-size: 1.4rem;">Andy is tired because he <span class="answer">has been working</span> (WORK) <strong>7 days a week</strong>.
                         <div class="translation">أندي متعب لأنه كان يعمل 7 أيام في الأسبوع.</div>
                     </li>
-                    <li>By 1960 most of the Britain's old colonies <span class="answer">had become</span> (BECOME) <strong>independent</strong>.
+                    <li style="font-size: 1.4rem;">By 1960 most of the Britain's old colonies <span class="answer">had become</span> (BECOME) <strong>independent</strong>.
                         <div class="translation">بحلول عام 1960 كانت معظم المستعمرات القديمة لبريطانيا قد أصبحت مستقلة.</div>
                     </li>
-                    <li>David broke his leg when he <span class="answer">was skiing</span> (SKI) <strong>last week</strong>.
+                    <li style="font-size: 1.4rem;">David broke his leg when he <span class="answer">was skiing</span> (SKI) <strong>last week</strong>.
                         <div class="translation">كسر ديفيد ساقه عندما كان يتزلج الأسبوع الماضي.</div>
                     </li>
-                    <li><span class="answer">Did</span> you <span class="answer">have</span> (HAVE) <strong>a nice time in Rome during your last holiday</strong>?
+                    <li style="font-size: 1.4rem;"><span class="answer">Did</span> you <span class="answer">have</span> (HAVE) <strong>a nice time in Rome during your last holiday</strong>?
                         <div class="translation">هل قضيت وقتًا لطيفًا في روما خلال عطلتك الأخيرة؟</div>
                     </li>
-                    <li><span class="answer">Have</span> you <span class="answer">finished</span> (FINISH) <strong>your homework yet</strong>?
+                    <li style="font-size: 1.4rem;"><span class="answer">Have</span> you <span class="answer">finished</span> (FINISH) <strong>your homework yet</strong>?
                         <div class="translation">هل انتهيت من واجبك المدرسي بعد؟</div>
                     </li>
-                    <li>He <span class="answer">has been working</span> (WORK) <strong>at his computer for the last 6 hours</strong>.
+                    <li style="font-size: 1.4rem;">He <span class="answer">has been working</span> (WORK) <strong>at his computer for the last 6 hours</strong>.
                         <div class="translation">لقد كان يعمل على حاسوبه لمدة 6 ساعات متواصلة.</div>
                     </li>
-                    <li>For how long <span class="answer">has</span> she <span class="answer">had</span> (HAVE) <strong>her car</strong>?
+                    <li style="font-size: 1.4rem;">For how long <span class="answer">has</span> she <span class="answer">had</span> (HAVE) <strong>her car</strong>?
                         <div class="translation">منذ متى وهي تمتلك هذه السيارة؟</div>
                     </li>
-                    <li>How many people <span class="answer">died</span> (DIE) <strong>in the fire yesterday</strong>?
+                    <li style="font-size: 1.4rem;">How many people <span class="answer">died</span> (DIE) <strong>in the fire yesterday</strong>?
                         <div class="translation">كم عدد الأشخاص الذين ماتوا في الحريق أمس؟</div>
                     </li>
-                    <li>I <span class="answer">don't know</span> (NOT/KNOW) <strong>much about art, but I like some artists</strong>.
+                    <li style="font-size: 1.4rem;">I <span class="answer">don't know</span> (NOT/KNOW) <strong>much about art, but I like some artists</strong>.
                         <div class="translation">أنا لا أعرف الكثير عن الفن، لكنني أحب بعض الفنانين.</div>
                     </li>
-                    <li>I <span class="answer">had been waiting</span> (WAIT) <strong>for ages. At last, the bus arrived</strong>.
+                    <li style="font-size: 1.4rem;">I <span class="answer">had been waiting</span> (WAIT) <strong>for ages. At last, the bus arrived</strong>.
                         <div class="translation">لقد كنت أنتظر منذ زمن بعيد. أخيرًا، وصل الحافلة.</div>
                     </li>
-                    <li>I <span class="answer">received</span> (RECEIVE) <strong>a postcard from Jane yesterday</strong>.
+                    <li style="font-size: 1.4rem;">I <span class="answer">received</span> (RECEIVE) <strong>a postcard from Jane yesterday</strong>.
                         <div class="translation">تلقيت بطاقة بريدية من جين أمس.</div>
                     </li>
-                    <li>Tom and Sam <span class="answer">will play</span> (play) <strong>soccer next Sunday</strong>.
+                    <li style="font-size: 1.4rem;">Tom and Sam <span class="answer">will play</span> (play) <strong>soccer next Sunday</strong>.
                         <div class="translation">سيلعب توم وسام كرة القدم يوم الأحد القادم.</div>
                     </li>
-                    <li>I <span class="answer">have never been</span> (NEVER/BE) <strong>sailing, what is it like</strong>?
+                    <li style="font-size: 1.4rem;">I <span class="answer">have never been</span> (NEVER/BE) <strong>sailing, what is it like</strong>?
                         <div class="translation">أنا لم أذهب للإبحار من قبل، كيف يكون؟</div>
                     </li>
-                    <li>She <span class="answer">is riding</span> (RIDE) <strong>her bike in the park at the moment</strong>.
+                    <li style="font-size: 1.4rem;">She <span class="answer">is riding</span> (RIDE) <strong>her bike in the park at the moment</strong>.
                         <div class="translation">هي الآن تركب دراجتها في الحديقة.</div>
                     </li>
-                    <li>It <span class="answer">was raining</span> (RAIN) <strong>when I got up</strong>.
+                    <li style="font-size: 1.4rem;">It <span class="answer">was raining</span> (RAIN) <strong>when I got up</strong>.
                         <div class="translation">كان المطر يهطل عندما استيقظت.</div>
                     </li>
                 </ol>
@@ -529,45 +532,45 @@
 
             <div class="section assignment">
                 <h3 class="section-title"><span>Assignment 2 - Bilingual Examples</span></h3>
-                <p>Write 10 how to say "ازاي تقول" and translate them to English (write 5 questions and 5 declarative statements):</p>
+                <p style="font-size: 1.4rem; margin-bottom: 20px;">Write 10 how to say "ازاي تقول" and translate them to English (write 5 questions and 5 declarative statements):</p>
                 <ul>
-                    <li class="bilingual">
+                    <li class="bilingual" style="font-size: 1.4rem;">
                         <div class="english">How do you say "مرحبا" in English?</div>
                         <div class="arabic">كيف تقول "مرحبا" بالإنجليزية؟</div>
                     </li>
-                    <li class="bilingual">
+                    <li class="bilingual" style="font-size: 1.4rem;">
                         <div class="english">How do you say "Hello" in Arabic?</div>
                         <div class="arabic">كيف تقول "Hello" بالعربية؟</div>
                     </li>
-                    <li class="bilingual">
+                    <li class="bilingual" style="font-size: 1.4rem;">
                         <div class="english">How do you say "شكراً" in English?</div>
                         <div class="arabic">كيف تقول "شكراً" بالإنجليزية؟</div>
                     </li>
-                    <li class="bilingual">
+                    <li class="bilingual" style="font-size: 1.4rem;">
                         <div class="english">How do you say "Thank you" in Arabic?</div>
                         <div class="arabic">كيف تقول "Thank you" بالعربية؟</div>
                     </li>
-                    <li class="bilingual">
+                    <li class="bilingual" style="font-size: 1.4rem;">
                         <div class="english">How do you say "من فضلك" in English?</div>
                         <div class="arabic">كيف تقول "من فضلك" بالإنجليزية؟</div>
                     </li>
-                    <li class="bilingual">
+                    <li class="bilingual" style="font-size: 1.4rem;">
                         <div class="english">I say "Hello" when I meet someone.</div>
                         <div class="arabic">أنا أقول "مرحباً" عندما ألتقي بشخص ما.</div>
                     </li>
-                    <li class="bilingual">
+                    <li class="bilingual" style="font-size: 1.4rem;">
                         <div class="english">I say "Thank you" when someone helps me.</div>
                         <div class="arabic">أنا أقول "شكراً" عندما يساعدني أحد.</div>
                     </li>
-                    <li class="bilingual">
+                    <li class="bilingual" style="font-size: 1.4rem;">
                         <div class="english">I say "Please" when I ask for something.</div>
                         <div class="arabic">أنا أقول "من فضلك" عندما أطلب شيئاً.</div>
                     </li>
-                    <li class="bilingual">
+                    <li class="bilingual" style="font-size: 1.4rem;">
                         <div class="english">I say "Goodbye" when I leave.</div>
                         <div class="arabic">أنا أقول "مع السلامة" عندما أرحل.</div>
                     </li>
-                    <li class="bilingual">
+                    <li class="bilingual" style="font-size: 1.4rem;">
                         <div class="english">I say "What time is it" when I need to know the time.</div>
                         <div class="arabic">أنا أقول "كم الساعة" عندما أحتاج لمعرفة الوقت.</div>
                     </li>
@@ -576,9 +579,8 @@
         </div>
         
         <div class="footer">
-            <span class="silver-accent">♔</span> 2023 Royal English Academy <span class="silver-accent">♔</span> | Lecture 8: Tenses Summary | <span class="gold-accent">Excellence in Education</span> <span class="silver-accent">♔</span>
+            <span class="ice-accent">❄</span> 2023 Ice Crystal English Academy <span class="ice-accent">❄</span> | Lecture 8: Tenses Summary | <span class="ice-accent">Excellence in Education</span> <span class="ice-accent">❄</span>
         </div>
     </div>
 </body>
 </html>
-```
