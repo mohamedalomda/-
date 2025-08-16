@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,22 +15,24 @@
 
         body, html {
             width: 100%;
-            height: 100%;
-            overflow: hidden;
+            min-height: 100vh;
+            overflow-y: auto;
             background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
             color: #01579b;
+            scroll-behavior: smooth;
         }
 
         .container {
             width: 100%;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             background: #ffffff;
             border: 1px solid #80deea;
             box-shadow: 0 0 30px rgba(0, 174, 239, 0.3);
             position: relative;
-            overflow: hidden;
+            margin: 20px auto;
+            max-width: 1200px;
         }
 
         .container::before {
@@ -54,53 +57,9 @@
             box-shadow: 0 0 10px rgba(0, 174, 239, 0.5);
         }
 
-        .header {
-            background: linear-gradient(90deg, #0277bd, #0288d1);
-            color: #ffffff;
-            padding: 30px;
-            text-align: center;
-            position: relative;
-            border-bottom: 1px solid #80deea;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 10%;
-            right: 10%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #ffffff, transparent);
-        }
-
-        .header h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: 3px;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-            color: #ffffff;
-        }
-
-        .header h2 {
-            font-size: 2rem;
-            font-weight: 400;
-            opacity: 0.9;
-            letter-spacing: 2px;
-        }
-
-        .snowflake-icon {
-            font-size: 1.5rem;
-            color: #ffffff;
-            margin: 0 15px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-        }
-
         .content {
             flex: 1;
             padding: 40px;
-            overflow-y: auto;
             display: flex;
             flex-direction: column;
             gap: 35px;
@@ -115,7 +74,26 @@
             backdrop-filter: blur(10px);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-top: 3px solid #0288d1;
+            animation: fadeInUp 0.8s ease-out;
         }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.3s; }
+        .section:nth-child(5) { animation-delay: 0.4s; }
+        .section:nth-child(6) { animation-delay: 0.5s; }
+        .section:nth-child(7) { animation-delay: 0.6s; }
 
         .section:hover {
             transform: translateY(-8px);
@@ -160,6 +138,18 @@
             overflow: hidden;
             box-shadow: 0 12px 35px rgba(0, 174, 239, 0.2);
             border: 1px solid #b2ebf2;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         th, td {
@@ -195,6 +185,13 @@
             border-left: 5px solid #0288d1;
             border-right: 5px solid #0288d1;
             box-shadow: 0 8px 25px rgba(0, 174, 239, 0.1);
+            animation: pulse 0.8s ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
         }
 
         .examples p {
@@ -210,6 +207,12 @@
             align-items: center;
             padding: 15px 0;
             border-bottom: 2px dashed #b2ebf2;
+            transition: all 0.3s ease;
+        }
+
+        .bilingual:hover {
+            background-color: rgba(178, 235, 242, 0.3);
+            transform: translateX(10px);
         }
 
         .english {
@@ -245,6 +248,12 @@
             line-height: 2.2;
             color: #01579b;
             font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .assignment li:hover {
+            color: #0288d1;
+            transform: translateX(5px);
         }
 
         .answer {
@@ -263,69 +272,57 @@
             color: #0288d1;
             border: 2px solid #b2ebf2;
             border-right: 4px solid #0288d1;
+            animation: highlight 2s ease-in-out infinite alternate;
         }
 
-        .score-card {
-            background: linear-gradient(135deg, rgba(232, 245, 255, 0.9), rgba(200, 230, 255, 0.9));
-            color: #01579b;
-            padding: 50px;
-            border-radius: 20px;
-            text-align: center;
-            margin: 35px 0;
-            border: 1px solid #b2ebf2;
-            box-shadow: 0 15px 40px rgba(0, 174, 239, 0.3);
-            border-top: 3px solid #0288d1;
+        @keyframes highlight {
+            from { background-color: rgba(200, 230, 255, 0.6); }
+            to { background-color: rgba(178, 235, 242, 0.8); }
         }
 
-        .score-card h3 {
-            font-size: 2.8rem;
-            margin-bottom: 30px;
-            color: #01579b;
-            text-shadow: 0 0 15px rgba(2, 136, 209, 0.3);
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(90deg, #0277bd, #0288d1);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 174, 239, 0.4);
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.3s ease;
         }
 
-        .score-card p {
-            font-size: 1.8rem;
-            margin: 20px 0;
-            line-height: 2.5;
-            color: #01579b;
+        .back-to-top.visible {
+            opacity: 1;
         }
 
-        .footer {
-            text-align: center;
-            padding: 30px;
-            color: #01579b;
-            font-size: 1.4rem;
-            background: rgba(255, 255, 255, 0.9);
-            border-top: 1px solid #b2ebf2;
-            margin-top: auto;
-            letter-spacing: 2px;
-            border-bottom: 3px solid #0288d1;
+        .back-to-top:hover {
+            transform: scale(1.1);
+            background: linear-gradient(90deg, #0288d1, #039be5);
         }
 
-        .footer::before {
-            content: '';
-            position: absolute;
+        .progress-bar {
+            position: fixed;
             top: 0;
-            left: 10%;
-            right: 10%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #0288d1, transparent);
-        }
-
-        .ice-accent {
-            color: #0288d1;
-            text-shadow: 0 0 8px rgba(2, 136, 209, 0.5);
+            left: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #0277bd, #0288d1);
+            z-index: 1001;
+            transition: width 0.1s ease;
+            box-shadow: 0 0 10px rgba(2, 136, 209, 0.5);
         }
     </style>
 </head>
 <body>
+    <div class="progress-bar" id="progressBar"></div>
     <div class="container">
-        <div class="header">
-            <h1><span class="snowflake-icon">❄</span> Summer Course Lecture 8 <span class="snowflake-icon">❄</span></h1>
-            <h2>English Tenses Summary</h2>
-        </div>
-        
         <div class="content">
             <div class="section">
                 <h3 class="section-title"><span>Tenses Overview</span></h3>
@@ -577,10 +574,56 @@
                 </ul>
             </div>
         </div>
-        
-        <div class="footer">
-            <span class="ice-accent">❄</span> 2023 Ice Crystal English Academy <span class="ice-accent">❄</span> | Lecture 8: Tenses Summary | <span class="ice-accent">Excellence in Education</span> <span class="ice-accent">❄</span>
-        </div>
     </div>
+
+    <div class="back-to-top" id="backToTop">
+        ↑
+    </div>
+
+    <script>
+        // Progress bar functionality
+        const progressBar = document.getElementById('progressBar');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.offsetHeight;
+            const winHeight = window.innerHeight;
+            const scrollPercent = scrollTop / (docHeight - winHeight);
+            const scrollPercentRounded = Math.round(scrollPercent * 100);
+            
+            progressBar.style.width = scrollPercentRounded + '%';
+            
+            // Show/hide back to top button
+            if (scrollTop > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Back to top functionality
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add subtle animation to sections on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 200 * index);
+            });
+        });
+    </script>
 </body>
 </html>
+```
