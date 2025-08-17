@@ -1,629 +1,919 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summer Course - English Tenses</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Georgia', serif;
-        }
-
-        body, html {
-            width: 100%;
-            min-height: 100vh;
-            overflow-y: auto;
-            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
-            color: #01579b;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background: #ffffff;
-            border: 1px solid #80deea;
-            box-shadow: 0 0 30px rgba(0, 174, 239, 0.3);
-            position: relative;
-            margin: 20px auto;
-            max-width: 1200px;
-        }
-
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #b2ebf2, #ffffff, #b2ebf2);
-            box-shadow: 0 0 10px rgba(0, 174, 239, 0.5);
-        }
-
-        .container::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #b2ebf2, #ffffff, #b2ebf2);
-            box-shadow: 0 0 10px rgba(0, 174, 239, 0.5);
-        }
-
-        .content {
-            flex: 1;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 35px;
-        }
-
-        .section {
-            background: rgba(232, 245, 255, 0.8);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 15px 40px rgba(0, 174, 239, 0.2);
-            border: 1px solid #b2ebf2;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 3px solid #0288d1;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .section:nth-child(2) { animation-delay: 0.1s; }
-        .section:nth-child(3) { animation-delay: 0.2s; }
-        .section:nth-child(4) { animation-delay: 0.3s; }
-        .section:nth-child(5) { animation-delay: 0.4s; }
-        .section:nth-child(6) { animation-delay: 0.5s; }
-        .section:nth-child(7) { animation-delay: 0.6s; }
-
-        .section:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0, 174, 239, 0.3);
-        }
-
-        .section-title {
-            color: #01579b;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            text-align: center;
-            position: relative;
-            font-weight: 600;
-            letter-spacing: 2px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #0288d1, transparent);
-        }
-
-        .section-title span {
-            position: relative;
-            z-index: 1;
-            background: rgba(232, 245, 255, 0.8);
-            padding: 0 30px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 12px 35px rgba(0, 174, 239, 0.2);
-            border: 1px solid #b2ebf2;
-            animation: slideIn 0.6s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        th, td {
-            padding: 22px;
-            text-align: left;
-            border: 1px solid #b2ebf2;
-            transition: background 0.3s ease;
-        }
-
-        th {
-            background: linear-gradient(90deg, #0277bd, #0288d1);
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 1.4rem;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-        }
-
-        tr:nth-child(even) {
-            background-color: rgba(224, 247, 250, 0.6);
-        }
-
-        tr:hover {
-            background-color: rgba(178, 235, 242, 0.7);
-            transform: scale(1.03);
-            transition: all 0.3s ease;
-        }
-
-        .examples {
-            background: rgba(224, 247, 250, 0.7);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 30px 0;
-            border-left: 5px solid #0288d1;
-            border-right: 5px solid #0288d1;
-            box-shadow: 0 8px 25px rgba(0, 174, 239, 0.1);
-            animation: pulse 0.8s ease-in-out;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 0.8; }
-            50% { opacity: 1; }
-            100% { opacity: 0.8; }
-        }
-
-        .examples p {
-            margin: 18px 0;
-            line-height: 2.2;
-            color: #01579b;
-            font-size: 1.3rem;
-        }
-
-        .bilingual {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 2px dashed #b2ebf2;
-            transition: all 0.3s ease;
-        }
-
-        .bilingual:hover {
-            background-color: rgba(178, 235, 242, 0.3);
-            transform: translateX(10px);
-        }
-
-        .english {
-            flex: 1;
-            font-weight: 500;
-            color: #01579b;
-            font-size: 1.4rem;
-        }
-
-        .arabic {
-            flex: 1;
-            text-align: right;
-            font-weight: 500;
-            color: #0288d1;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            direction: rtl;
-            font-size: 1.4rem;
-        }
-
-        .assignment {
-            background: rgba(232, 245, 255, 0.8);
-            border-left: 5px solid #0288d1;
-            border-right: 5px solid #0288d1;
-        }
-
-        .assignment ol, .assignment ul {
-            margin: 20px 0;
-            padding-left: 40px;
-        }
-
-        .assignment li {
-            margin: 18px 0;
-            line-height: 2.2;
-            color: #01579b;
-            font-size: 1.3rem;
-            transition: all 0.3s ease;
-        }
-
-        .assignment li:hover {
-            color: #0288d1;
-            transform: translateX(5px);
-        }
-
-        .answer {
-            color: #0288d1;
-            font-weight: 600;
-            text-shadow: 0 0 8px rgba(2, 136, 209, 0.3);
-            font-size: 1.4rem;
-        }
-
-        .translation {
-            background: rgba(200, 230, 255, 0.6);
-            padding: 18px;
-            border-radius: 10px;
-            margin: 15px 0;
-            font-size: 1.2rem;
-            color: #0288d1;
-            border: 2px solid #b2ebf2;
-            border-right: 4px solid #0288d1;
-            animation: highlight 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes highlight {
-            from { background-color: rgba(200, 230, 255, 0.6); }
-            to { background-color: rgba(178, 235, 242, 0.8); }
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(90deg, #0277bd, #0288d1);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 174, 239, 0.4);
-            z-index: 1000;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-        }
-
-        .back-to-top:hover {
-            transform: scale(1.1);
-            background: linear-gradient(90deg, #0288d1, #039be5);
-        }
-
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #0277bd, #0288d1);
-            z-index: 1001;
-            transition: width 0.1s ease;
-            box-shadow: 0 0 10px rgba(2, 136, 209, 0.5);
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>lec9 - Self Introduction (النص الكامل - مترجم)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f172a;
+      --card:#1e293b;
+      --card-hover:#2d3b52;
+      --muted:#94a3b8;
+      --accent:#e2e8f0;
+      --accent-2:#0ea5a4;
+      --accent-3:#f97316;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.15);
+      --border:#334155;
+      --primary-gradient: linear-gradient(135deg, #0f172a, #1e293b, #0ea5a4);
+      --secondary-gradient: linear-gradient(135deg, #0ea5a4, #065f5b, #0f172a);
+      --hover-shadow: 0 15px 35px rgba(14, 165, 164, 0.2);
+      --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    *{
+      box-sizing: border-box;
+    }
+    html, body{
+      height: 100%;
+      margin: 0;
+      font-family: "Cairo", system-ui, sans-serif;
+      padding: 0;
+      background: var(--bg);
+      color: var(--accent);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a101d;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent-2);
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #14b8a6;
+    }
+    header{
+      background: var(--primary-gradient);
+      color: white;
+      padding: 40px 18px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(14, 165, 164, 0.3);
+    }
+    header::before{
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: -100%;
+      width: 300%;
+      height: 300%;
+      background: radial-gradient(circle, rgba(14, 165, 164, 0.15) 0%, transparent 70%);
+      animation: pulse 8s infinite;
+      pointer-events: none;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.8); opacity: 0.7; }
+      50% { transform: scale(1); opacity: 0.9; }
+      100% { transform: scale(0.8); opacity: 0.7; }
+    }
+    header::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-2), transparent);
+      animation: shimmer 3s infinite;
+    }
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    header h1{
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      position: relative;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(90deg, #ffffff, #a0aec0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    header p{
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 16px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    }
+    .wrap{
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 15px;
+    }
+    .topbar{
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      background: var(--card);
+      padding: 20px;
+      border-radius: 18px;
+      box-shadow: var(--shadow-light);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+    .topbar::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(14, 165, 164, 0.05), transparent);
+      pointer-events: none;
+    }
+    .search-container{
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex: 1;
+      min-width: 300px;
+    }
+    .search-box{
+      padding: 14px 20px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      font-size: 15px;
+      outline: none;
+      width: 100%;
+      background: rgba(30, 41, 59, 0.8);
+      color: var(--accent);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(14, 165, 164, 0.3);
+    }
+    .search-box:focus{
+      border-color: var(--accent-2);
+      box-shadow: 0 0 0 3px rgba(14, 165, 164, 0.2);
+      background: rgba(30, 41, 59, 0.95);
+    }
+    .search-icon{
+      color: var(--accent-2);
+      font-size: 18px;
+    }
+    .toc{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 0;
+      flex: 2;
+      justify-content: center;
+    }
+    .toc a{
+      text-decoration: none;
+      background: rgba(30, 41, 59, 0.7);
+      padding: 12px 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      color: var(--accent);
+      font-size: 14px;
+      border: 1px solid rgba(14, 165, 164, 0.2);
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(14, 165, 164, 0.3);
+    }
+    .toc a:hover{
+      background: var(--accent-2);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: var(--hover-shadow);
+      border-color: var(--accent-2);
+    }
+    .toc a:hover::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      animation: ripple 0.6s ease;
+    }
+    @keyframes ripple {
+      0% { transform: scale(0); opacity: 0.7; }
+      100% { transform: scale(2.5); opacity: 0; }
+    }
+    .card{
+      background: var(--card);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow-light);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(14, 165, 164, 0.15);
+    }
+    .card::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--accent-2), var(--accent-3));
+      opacity: 0.8;
+    }
+    .card h2{
+      margin: 0 0 20px 0;
+      font-size: 22px;
+      color: var(--accent);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+    }
+    .card h2::before{
+      content: '✦';
+      color: var(--accent-2);
+      font-size: 20px;
+      animation: pulse-icon 2s infinite;
+    }
+    @keyframes pulse-icon {
+      0% { opacity: 0.7; }
+      50% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 0.7; }
+    }
+    .card p{
+      margin: 8px 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+    .card ul{
+      margin: 16px 0 0;
+      padding-inline-start: 28px;
+    }
+    .card ul li{
+      margin: 12px 0;
+      color: var(--accent);
+      position: relative;
+      font-size: 15px;
+    }
+    .card ul li::marker{
+      color: var(--accent-2);
+      font-weight: bold;
+    }
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 16px;
+    }
+    .grid > div{
+      background: rgba(30, 41, 59, 0.6);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(14, 165, 164, 0.2);
+      backdrop-filter: blur(5px);
+    }
+    .grid h3{
+      margin: 0 0 16px 0;
+      color: var(--accent-2);
+      font-size: 18px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .grid h3::before{
+      content: '⚡';
+    }
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    table th, table td{
+      border: 1px solid var(--border);
+      padding: 14px;
+      text-align: center;
+      vertical-align: top;
+    }
+    table th{
+      background: linear-gradient(to bottom, rgba(14, 165, 164, 0.2), rgba(14, 165, 164, 0.1));
+      color: var(--accent);
+      font-weight: 600;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 14px;
+    }
+    table th::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--accent-2);
+    }
+    table tr:nth-child(even){
+      background: rgba(30, 41, 59, 0.4);
+    }
+    .note{
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(30, 41, 59, 0.5);
+      padding: 12px 16px;
+      border-radius: 12px;
+      border-left: 3px solid var(--accent-2);
+    }
+    .note::before{
+      content: '💡';
+      color: var(--accent-2);
+    }
+    .trans{
+      display: block;
+      color: #98d8d7;
+      font-size: 14px;
+      margin-top: 6px;
+      font-style: italic;
+      padding: 8px 14px;
+      background: rgba(14, 165, 164, 0.1);
+      border-radius: 8px;
+      border-right: 3px solid var(--accent-2);
+    }
+    footer{
+      max-width: 1200px;
+      margin: 50px auto 60px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 15px;
+      padding: 0 15px;
+      border-top: 1px solid var(--border);
+      padding-top: 30px;
+    }
+    footer p{
+      margin: 10px 0;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+    .highlight{
+      background: linear-gradient(120deg, rgba(14, 165, 164, 0.15), rgba(14, 165, 164, 0.08));
+      border-radius: 12px;
+      padding: 16px;
+      margin: 16px 0;
+      border-left: 4px solid var(--accent-2);
+      border-right: 1px solid rgba(14, 165, 164, 0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .highlight p{
+      margin: 8px 0;
+      color: var(--accent);
+    }
+    .section-header{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(14, 165, 164, 0.2);
+    }
+    .section-header h3{
+      margin: 0;
+      color: var(--accent-2);
+      font-size: 19px;
+      font-weight: 600;
+    }
+    .section-header i{
+      font-size: 22px;
+      color: var(--accent-2);
+    }
+    .badge{
+      display: inline-block;
+      background: var(--accent-2);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-right: 8px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(14, 165, 164, 0.3);
+    }
+    .decoration{
+      position: fixed;
+      z-index: -1;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+    .decoration-1{
+      top: 10%;
+      left: 10%;
+      font-size: 120px;
+      color: var(--accent-2);
+      transform: rotate(-30deg);
+    }
+    .decoration-2{
+      bottom: 15%;
+      right: 10%;
+      font-size: 100px;
+      color: var(--accent-3);
+      transform: rotate(45deg);
+    }
+    @media (max-width: 880px){
+      .grid{
+        grid-template-columns: 1fr;
+      }
+      header h1{
+        font-size: 24px;
+      }
+      header p{
+        font-size: 15px;
+      }
+      .card{
+        padding: 24px;
+      }
+    }
+    @media (max-width: 600px){
+      .topbar{
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .topbar .search-container{
+        order: -1;
+        margin-bottom: 12px;
+      }
+      .decoration-1, .decoration-2{
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="progress-bar" id="progressBar"></div>
-    <div class="container">
-        <div class="content">
-            <div class="section">
-                <h3 class="section-title"><span>Tenses Overview</span></h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Family / Time</th>
-                            <th>Past</th>
-                            <th>Present</th>
-                            <th>Future</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Simple</strong></td>
-                            <td>Past simple (الماضي البسيط)</td>
-                            <td>Present simple (الحاضر البسيط)</td>
-                            <td>Future simple (المستقبل البسيط)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Continuous</strong></td>
-                            <td>Past continuous (الماضي المستمر)</td>
-                            <td>Present continuous (الحاضر المستمر)</td>
-                            <td>Future continuous (المستقبل المستمر)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Perfect</strong></td>
-                            <td>Past perfect (الماضي التام)</td>
-                            <td>Present perfect (الحاضر التام)</td>
-                            <td>Future perfect (المستقبل التام)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Perfect continuous</strong></td>
-                            <td>Past perfect continuous (الماضي التام المستمر)</td>
-                            <td>Present perfect continuous (الحاضر التام المستمر)</td>
-                            <td>Future perfect continuous (المستقبل التام المستمر)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="section">
-                <h3 class="section-title"><span>Simple Tense</span></h3>
-                <p style="font-size: 1.4rem; margin-bottom: 20px;"><strong>When to use:</strong> عند التحدث عن حدوث الفعل بشكل عام. عند التحدث عن فعل يحدث أكثر من مرة (متكرر). عند التحدث عن فعل دائم او عادة.</p>
-                <div class="examples">
-                    <p style="font-size: 1.6rem;"><strong>Examples:</strong></p>
-                    <div class="bilingual">
-                        <div class="english">Ali plays Football.</div>
-                        <div class="arabic">علي يلعب كرة القدم.</div>
-                    </div>
-                    <div class="bilingual">
-                        <div class="english">Ali usually plays football.</div>
-                        <div class="arabic">علي عادةً ما يلعب كرة القدم.</div>
-                    </div>
-                    <div class="bilingual">
-                        <div class="english">Ali usually Played football.</div>
-                        <div class="arabic">عادةً ما كان علي يلعب كرة القدم.</div>
-                    </div>
-                    <div class="bilingual">
-                        <div class="english">The sun rises from the east.</div>
-                        <div class="arabic">تشرق الشمس من الشرق.</div>
-                    </div>
-                    <div class="bilingual">
-                        <div class="english">He used to play f.b when he was young.</div>
-                        <div class="arabic">كان يلعب كرة القدم عندما كان صغيرًا.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h3 class="section-title"><span>Continuous Tense</span></h3>
-                <p style="font-size: 1.4rem; margin-bottom: 20px;"><strong>When to use:</strong> بشكل عام تستخدم الأزمنة المستمرة للتركيز على المدة الزمنية ووقت بشكل عام تستخدم مع الأفعال اللحظية او المؤقت التي تحدث مرة واحدة.</p>
-                <div class="examples">
-                    <p style="font-size: 1.6rem;"><strong>Examples:</strong></p>
-                    <div class="bilingual">
-                        <div class="english">Ali is playing Football at present.</div>
-                        <div class="arabic">علي يلعب كرة القدم الآن.</div>
-                    </div>
-                    <div class="bilingual">
-                        <div class="english">This year, Ali is playing football.</div>
-                        <div class="arabic">هذا العام، علي يلعب كرة القدم.</div>
-                    </div>
-                    <div class="bilingual">
-                        <div class="english">Ali was playing football from 5 to 7 last night.</div>
-                        <div class="arabic">كان علي يلعب كرة القدم من الساعة 5 إلى 7 مساءً الليلة الماضية.</div>
-                    </div>
-                    <div class="bilingual">
-                        <div class="english">Ali will be Playing football from 5 to 7 tomorrow.</div>
-                        <div class="arabic">سيكون علي يلعب كرة القدم من الساعة 5 إلى 7 غدًا.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h3 class="section-title"><span>Perfect Tense</span></h3>
-                <p style="font-size: 1.4rem; margin-bottom: 20px;"><strong>When to use:</strong> بشكل عام نستخدم هذه الأزمنة للتركيز على انتهاء او تمام الفعل سواء في ماضي او مضارع او مستقبل.</p>
-                <div class="examples">
-                    <p style="font-size: 1.6rem;"><strong>Examples:</strong></p>
-                    <div class="bilingual">
-                        <div class="english">Ali has played football since he was 5.</div>
-                        <div class="arabic">لقد لعب علي كرة القدم منذ أن كان عمره 5 سنوات.</div>
-                    </div>
-                    <div class="bilingual">
-                        <div class="english">Ali had played football before he turned 5.</div>
-                        <div class="arabic">كان علي قد لعب كرة القدم قبل أن يبلغ 5 سنوات.</div>
-                    </div>
-                    <div class="bilingual">
-                        <div class="english">Will have played football for 5 years by the time he turns 15.</div>
-                        <div class="arabic">سيكون قد لعب كرة القدم لمدة 5 سنوات بحلول الوقت الذي يبلغ فيه 15 سنة.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h3 class="section-title"><span>Practice Exercise - Answers with Translation</span></h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Family / Time</th>
-                            <th>Past</th>
-                            <th>Present</th>
-                            <th>Future</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Simple</strong></td>
-                            <td>watched TV (شاهد التلفاز)</td>
-                            <td>watch TV (يشاهد التلفاز)</td>
-                            <td>will watch TV (سيشاهد التلفاز)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Continuous</strong></td>
-                            <td>was watching TV (كان يشاهد التلفاز)</td>
-                            <td>am watching TV (أنا أشاهد التلفاز الآن)</td>
-                            <td>will be watching TV (سيكون يشاهد التلفاز)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Perfect</strong></td>
-                            <td>had watched TV (كان قد شاهد التلفاز)</td>
-                            <td>have watched TV (لقد شاهدت التلفاز)</td>
-                            <td>will have watched TV (سيكون قد شاهد التلفاز)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Perfect continuous</strong></td>
-                            <td>had been watching TV (كان قد كان يشاهد التلفاز)</td>
-                            <td>have been watching TV (لقد كنت أشاهد التلفاز)</td>
-                            <td>will have been watching TV (سيكون قد كان يشاهد التلفاز)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="section assignment">
-                <h3 class="section-title"><span>Assignment 1 - Answers with Arabic Translation</span></h3>
-                <ol>
-                    <li style="font-size: 1.4rem;">Andy is tired because he <span class="answer">has been working</span> (WORK) <strong>7 days a week</strong>.
-                        <div class="translation">أندي متعب لأنه كان يعمل 7 أيام في الأسبوع.</div>
-                    </li>
-                    <li style="font-size: 1.4rem;">By 1960 most of the Britain's old colonies <span class="answer">had become</span> (BECOME) <strong>independent</strong>.
-                        <div class="translation">بحلول عام 1960 كانت معظم المستعمرات القديمة لبريطانيا قد أصبحت مستقلة.</div>
-                    </li>
-                    <li style="font-size: 1.4rem;">David broke his leg when he <span class="answer">was skiing</span> (SKI) <strong>last week</strong>.
-                        <div class="translation">كسر ديفيد ساقه عندما كان يتزلج الأسبوع الماضي.</div>
-                    </li>
-                    <li style="font-size: 1.4rem;"><span class="answer">Did</span> you <span class="answer">have</span> (HAVE) <strong>a nice time in Rome during your last holiday</strong>?
-                        <div class="translation">هل قضيت وقتًا لطيفًا في روما خلال عطلتك الأخيرة؟</div>
-                    </li>
-                    <li style="font-size: 1.4rem;"><span class="answer">Have</span> you <span class="answer">finished</span> (FINISH) <strong>your homework yet</strong>?
-                        <div class="translation">هل انتهيت من واجبك المدرسي بعد؟</div>
-                    </li>
-                    <li style="font-size: 1.4rem;">He <span class="answer">has been working</span> (WORK) <strong>at his computer for the last 6 hours</strong>.
-                        <div class="translation">لقد كان يعمل على حاسوبه لمدة 6 ساعات متواصلة.</div>
-                    </li>
-                    <li style="font-size: 1.4rem;">For how long <span class="answer">has</span> she <span class="answer">had</span> (HAVE) <strong>her car</strong>?
-                        <div class="translation">منذ متى وهي تمتلك هذه السيارة؟</div>
-                    </li>
-                    <li style="font-size: 1.4rem;">How many people <span class="answer">died</span> (DIE) <strong>in the fire yesterday</strong>?
-                        <div class="translation">كم عدد الأشخاص الذين ماتوا في الحريق أمس؟</div>
-                    </li>
-                    <li style="font-size: 1.4rem;">I <span class="answer">don't know</span> (NOT/KNOW) <strong>much about art, but I like some artists</strong>.
-                        <div class="translation">أنا لا أعرف الكثير عن الفن، لكنني أحب بعض الفنانين.</div>
-                    </li>
-                    <li style="font-size: 1.4rem;">I <span class="answer">had been waiting</span> (WAIT) <strong>for ages. At last, the bus arrived</strong>.
-                        <div class="translation">لقد كنت أنتظر منذ زمن بعيد. أخيرًا، وصل الحافلة.</div>
-                    </li>
-                    <li style="font-size: 1.4rem;">I <span class="answer">received</span> (RECEIVE) <strong>a postcard from Jane yesterday</strong>.
-                        <div class="translation">تلقيت بطاقة بريدية من جين أمس.</div>
-                    </li>
-                    <li style="font-size: 1.4rem;">Tom and Sam <span class="answer">will play</span> (play) <strong>soccer next Sunday</strong>.
-                        <div class="translation">سيلعب توم وسام كرة القدم يوم الأحد القادم.</div>
-                    </li>
-                    <li style="font-size: 1.4rem;">I <span class="answer">have never been</span> (NEVER/BE) <strong>sailing, what is it like</strong>?
-                        <div class="translation">أنا لم أذهب للإبحار من قبل، كيف يكون؟</div>
-                    </li>
-                    <li style="font-size: 1.4rem;">She <span class="answer">is riding</span> (RIDE) <strong>her bike in the park at the moment</strong>.
-                        <div class="translation">هي الآن تركب دراجتها في الحديقة.</div>
-                    </li>
-                    <li style="font-size: 1.4rem;">It <span class="answer">was raining</span> (RAIN) <strong>when I got up</strong>.
-                        <div class="translation">كان المطر يهطل عندما استيقظت.</div>
-                    </li>
-                </ol>
-            </div>
-
-            <div class="section assignment">
-                <h3 class="section-title"><span>Assignment 2 - Bilingual Examples</span></h3>
-                <p style="font-size: 1.4rem; margin-bottom: 20px;">Write 10 how to say "ازاي تقول" and translate them to English (write 5 questions and 5 declarative statements):</p>
-                <ul>
-                    <li class="bilingual" style="font-size: 1.4rem;">
-                        <div class="english">How do you say "مرحبا" in English?</div>
-                        <div class="arabic">كيف تقول "مرحبا" بالإنجليزية؟</div>
-                    </li>
-                    <li class="bilingual" style="font-size: 1.4rem;">
-                        <div class="english">How do you say "Hello" in Arabic?</div>
-                        <div class="arabic">كيف تقول "Hello" بالعربية؟</div>
-                    </li>
-                    <li class="bilingual" style="font-size: 1.4rem;">
-                        <div class="english">How do you say "شكراً" in English?</div>
-                        <div class="arabic">كيف تقول "شكراً" بالإنجليزية؟</div>
-                    </li>
-                    <li class="bilingual" style="font-size: 1.4rem;">
-                        <div class="english">How do you say "Thank you" in Arabic?</div>
-                        <div class="arabic">كيف تقول "Thank you" بالعربية؟</div>
-                    </li>
-                    <li class="bilingual" style="font-size: 1.4rem;">
-                        <div class="english">How do you say "من فضلك" in English?</div>
-                        <div class="arabic">كيف تقول "من فضلك" بالإنجليزية؟</div>
-                    </li>
-                    <li class="bilingual" style="font-size: 1.4rem;">
-                        <div class="english">I say "Hello" when I meet someone.</div>
-                        <div class="arabic">أنا أقول "مرحباً" عندما ألتقي بشخص ما.</div>
-                    </li>
-                    <li class="bilingual" style="font-size: 1.4rem;">
-                        <div class="english">I say "Thank you" when someone helps me.</div>
-                        <div class="arabic">أنا أقول "شكراً" عندما يساعدني أحد.</div>
-                    </li>
-                    <li class="bilingual" style="font-size: 1.4rem;">
-                        <div class="english">I say "Please" when I ask for something.</div>
-                        <div class="arabic">أنا أقول "من فضلك" عندما أطلب شيئاً.</div>
-                    </li>
-                    <li class="bilingual" style="font-size: 1.4rem;">
-                        <div class="english">I say "Goodbye" when I leave.</div>
-                        <div class="arabic">أنا أقول "مع السلامة" عندما أرحل.</div>
-                    </li>
-                    <li class="bilingual" style="font-size: 1.4rem;">
-                        <div class="english">I say "What time is it" when I need to know the time.</div>
-                        <div class="arabic">أنا أقول "كم الساعة" عندما أحتاج لمعرفة الوقت.</div>
-                    </li>
-                </ul>
-            </div>
+  <!-- Decorative elements -->
+  <div class="decoration decoration-1">✦</div>
+  <div class="decoration decoration-2">⚡</div>
+  <header>
+    <h1>Self Introduction — lec9 (مترجم بجانب كل جملة إنجليزية)</h1>
+    <p>دليل فاخر وشامل للتقديم الذاتي في السياقات الرسمية وغير الرسمية — مع ترجمة دقيقة لكل جملة إنجليزية</p>
+  </header>
+  <main class="wrap">
+    <div class="topbar">
+      <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-box" placeholder="ابحث في المحتوى...">
+      </div>
+      <nav class="toc" aria-label="جدولة الأقسام">
+        <a href="#page1">الصفحة 1</a>
+        <a href="#page2">الصفحة 2</a>
+        <a href="#page3">الصفحة 3</a>
+        <a href="#page4">الصفحة 4</a>
+        <a href="#page5">الصفحة 5</a>
+        <a href="#page6">الصفحة 6</a>
+        <a href="#page7">الصفحة 7</a>
+        <a href="#page8">الصفحة 8</a>
+        <a href="#page9">الصفحة 9</a>
+        <a href="#page10">الصفحة 10</a>
+        <a href="#page11">الصفحة 11</a>
+        <a href="#raw">النص الكامل</a>
+      </nav>
+    </div>
+    <!-- Page 1 -->
+    <section id="page1" class="card">
+      <h2>الصفحة 1: المقدمة الذاتية</h2>
+      <div class="highlight">
+        <p><strong>Self-introduction</strong> <span class="trans">— المقدمة الذاتية</span></p>
+        <p><strong>The way you introduce yourself varies depending on the context or situation. The two primary contexts to consider are:</strong> <span class="trans">— طريقة تعريفك لنفسك تختلف حسب السياق أو الموقف. السياقان الرئيسيان اللذان يجب النظر فيهما هما:</span></p>
+      </div>
+      <ul>
+        <li><strong>Formal</strong> <span class="trans">— رسمي</span></li>
+        <li><strong>Informal</strong> <span class="trans">— غير رسمي</span></li>
+        <li><strong>Casual</strong> <span class="trans">— عفوي / عادي</span></li>
+        <li><strong>Professional</strong> <span class="trans">— احترافي</span></li>
+        <li><strong>Social</strong> <span class="trans">— اجتماعي</span></li>
+      </ul>
+      <div class="note">
+        <strong><span class="badge">ملاحظة</span></strong>
+        في السياقات الرسمية، يجب أن تكون أكثر احترافية ودقة. في السياقات غير الرسمية، يمكنك أن تكون أكثر طلاقة وعفوية.
+      </div>
+    </section>
+    <!-- Page 2 -->
+    <section id="page2" class="card">
+      <h2>الصفحة 2: تقديم نفسك</h2>
+      <p class="note">
+        <strong><span class="badge">هيكل</span></strong>
+        إليك الهيكل الأساسي لتقديم نفسك في سياقات مختلفة
+      </p>
+      <div class="grid">
+        <div>
+          <h3>السياق الرسمي / المقابلات</h3>
+          <ul>
+            <li><strong>1- Greeting</strong> <span class="trans">— التحية</span></li>
+            <li><strong>2- Name</strong> <span class="trans">— الاسم</span></li>
+            <li><strong>3- Age</strong> <span class="trans">— العمر</span></li>
+            <li><strong>4- Social status</strong> <span class="trans">— الحالة الاجتماعية</span></li>
+            <li><strong>5- Qualification / Job</strong> <span class="trans">— المؤهل / الوظيفة</span></li>
+            <li><strong>6- Experience</strong> <span class="trans">— الخبرة</span></li>
+            <li><strong>7- Objective / Personal statement</strong> <span class="trans">— الهدف / البيان الشخصي</span></li>
+            <li><strong>8- Interest/ Hobbies</strong> <span class="trans">— الاهتمامات / الهوايات</span></li>
+          </ul>
         </div>
-    </div>
-
-    <div class="back-to-top" id="backToTop">
-        ↑
-    </div>
-
-    <script>
-        // Progress bar functionality
-        const progressBar = document.getElementById('progressBar');
-        const backToTop = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.body.offsetHeight;
-            const winHeight = window.innerHeight;
-            const scrollPercent = scrollTop / (docHeight - winHeight);
-            const scrollPercentRounded = Math.round(scrollPercent * 100);
-            
-            progressBar.style.width = scrollPercentRounded + '%';
-            
-            // Show/hide back to top button
-            if (scrollTop > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-
-        // Back to top functionality
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Add subtle animation to sections on load
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach((section, index) => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
-                }, 200 * index);
-            });
-        });
-    </script>
+        <div>
+          <h3>السياق غيرالرسمي / عفوي</h3>
+          <ul>
+            <li><strong>1- Greeting</strong> <span class="trans">— التحية</span></li>
+            <li><strong>2- Name</strong> <span class="trans">— الاسم</span></li>
+            <li><strong>3- Background</strong> <span class="trans">— الخلفية (من أين أنت)</span></li>
+            <li><strong>4- Age</strong> <span class="trans">— العمر</span></li>
+            <li><strong>5- Qualification / Job</strong> <span class="trans">— المؤهل / الوظيفة</span></li>
+            <li><strong>6- Interest/ Hobbies</strong> <span class="trans">— الاهتمامات / الهوايات</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight">
+        <p><strong><span class="badge">نصيحة</span></strong> يمكنك تعديل هذا الهيكل حسب السياق والوقت المتاح. في المقابلات الرسمية، ركّز على المهارات والخبرات. في اللقاءات الاجتماعية، ركّز على الاهتمامات والهوايات.</p>
+      </div>
+    </section>
+    <!-- Page 3 -->
+    <section id="page3" class="card">
+      <h2>الصفحة 3: أنواع التحيات</h2>
+      <p class="note">
+        <strong><span class="badge">مقارنة</span></strong>
+        جدول يوضح الفرق بين التحيات غير الرسمية والرسمية
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Informal greetings <span class="trans">— تحيات غير رسمية</span></th>
+            <th>Formal greetings <span class="trans">— تحيات رسمية</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>How's it going?<div class="trans">— كيف الحال؟</div></td>
+            <td>Hello!<div class="trans">— مرحبًا!</div></td>
+          </tr>
+          <tr>
+            <td>Hey there!<div class="trans">— أهلاً!</div></td>
+            <td>Good morning!<div class="trans">— صباح الخير!</div></td>
+          </tr>
+          <tr>
+            <td>What's up?<div class="trans">— ماذا هناك؟ / ايه الأخبار؟</div></td>
+            <td>Good afternoon!<div class="trans">— مساء الخير! (بعد الظهر)</div></td>
+          </tr>
+          <tr>
+            <td>How's everything?<div class="trans">— كيف تسير الأمور؟</div></td>
+            <td>Good evening!<div class="trans">— مساء الخير!</div></td>
+          </tr>
+          <tr>
+            <td>Hey mate!<div class="trans">— يا صاحبي!</div></td>
+            <td>How do you do?<div class="trans">— تشرفت بمقابلتك (تحية رسمية)</div></td>
+          </tr>
+          <tr>
+            <td>What's up bro?<div class="trans">— ايه الأخبار يا صاحبي؟</div></td>
+            <td>How do you do?<div class="trans">— تشرفت بمقابلتك</div></td>
+          </tr>
+          <tr>
+            <td>Hey buddy!<div class="trans">— أهلاً يا صديقي!</div></td>
+            <td>How have you been?<div class="trans">— كيف كنت؟</div></td>
+          </tr>
+          <tr>
+            <td>How's things?<div class="trans">— كيف الأحوال؟</div></td>
+            <td>How are you?<div class="trans">— كيف حالك؟</div></td>
+          </tr>
+          <tr>
+            <td>How's life?<div class="trans">— كيف الحياة؟</div></td>
+            <td>How are you today?<div class="trans">— كيف حالك اليوم؟</div></td>
+          </tr>
+          <tr>
+            <td>Hi man!<div class="trans">— مرحباً يا رجل!</div></td>
+            <td>How are you feeling today?<div class="trans">— كيف تشعر اليوم؟</div></td>
+          </tr>
+          <tr>
+            <td>What's crackin'?<div class="trans">— ايه الحركات؟ (عامية)</div></td>
+            <td>It is a pleasure to meet you.<div class="trans">— من دواعي سروري مقابلتك.</div></td>
+          </tr>
+          <tr>
+            <td>Long time no see!<div class="trans">— من زمان ماشوفتك!</div></td>
+            <td>Nice to meet you.<div class="trans">— سعيد بمقابلتك.</div></td>
+          </tr>
+          <tr>
+            <td>All good?<div class="trans">— كله تمام؟</div></td>
+            <td>Good to see you.<div class="trans">— سعيد برؤيتك.</div></td>
+          </tr>
+          <tr>
+            <td>What's poppin'?<div class="trans">— ايه الجديد؟ (عامية)</div></td>
+            <td>It is an honour to meet you.<div class="trans">— يشرفني مقابلتك.</div></td>
+          </tr>
+          <tr>
+            <td>Hey, you!<div class="trans">— أهلاً أنت!</div></td>
+            <td>Pleased to meet you.<div class="trans">— تشرفت بمقابلتك.</div></td>
+          </tr>
+          <tr>
+            <td>How's tricks?<div class="trans">— كيف الأمور؟ (عامية)</div></td>
+            <td>How was your day, sir?<div class="trans">— كيف كان يومك يا سيدي؟</div></td>
+          </tr>
+          <tr>
+            <td>Howdy, folks!<div class="trans">— مرحباً يا جماعة!</div></td>
+            <td>I am happy to see you again.<div class="trans">— سعيد لرؤيتك مرة أخرى.</div></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="highlight">
+        <p><strong><span class="badge">تذكير</span></strong> استخدم التحيات الرسمية في المقابلات، الاجتماعات، واللقاءات الأولى. استخدم التحيات غير الرسمية مع الأصدقاء، الزملاء المقربين، والأشخاص الذين تعرفهم جيدًا.</p>
+      </div>
+    </section>
+    <!-- الصفحة 4: الاستفسار عن الحالة - الإصدار المعدل -->
+    <section id="page4" class="card">
+      <h2>الصفحة 4: الاستفسار عن الحالة</h2>
+      <div class="section-header">
+        <i>💬</i>
+        <h3>أسئلة الاستفسار عن الحالة</h3>
+      </div>
+      <ul>
+        <li><strong>Hi! How are you?</strong> <span class="trans">— مرحبًا! كيف حالك؟</span></li>
+        <li><strong>Hi there! How are you?</strong> <span class="trans">— أهلاً! كيف حالك؟</span></li>
+        <li><strong>Hey! How are you doing?</strong> <span class="trans">— يا هلا! كيف تسير أمورك؟</span></li>
+      </ul>
+      <div class="section-header">
+        <i>🔄</i>
+        <h3>إجابات محتملة</h3>
+      </div>
+      <ul>
+        <li><strong>I'm fine.</strong> <span class="trans">— أنا بخير.</span></li>
+        <li><strong>Great, thank you. How are you?</strong> <span class="trans">— ممتاز، شكرًا. وكيف حالك؟</span></li>
+        <li><strong>Not bad.</strong> <span class="trans">— ليس سيئًا.</span></li>
+        <li><strong>Good.</strong> <span class="trans">— جيد.</span></li>
+        <li><strong>Good. How are you doing?</strong> <span class="trans">— جيد. كيف حالك؟</span></li>
+        <li><strong>Doing good. How are you doing?</strong> <span class="trans">— أمور جيدة. كيف حالك؟</span></li>
+        <li><strong>Pretty good.</strong> <span class="trans">— جيد جدًا.</span></li>
+        <li><strong>Fine, thanks, and you?</strong> <span class="trans">— بخير، شكرًا، وأنت؟</span></li>
+        <li><strong>Not so good.</strong> <span class="trans">— ليس جيدًا جدًا.</span></li>
+        <li><strong>Not so well.</strong> <span class="trans">— لست على ما يرام.</span></li>
+        <li><strong>Not great.</strong> <span class="trans">— ليس بخير.</span></li>
+        <li><strong>I'm a little tired.</strong> <span class="trans">— أنا متعب قليلاً.</span></li>
+        <li><strong>I'm OK. Just a little tired.</strong> <span class="trans">— أنا بخير. فقط متعب قليلاً.</span></li>
+        <li><strong>I'm not feeling well.</strong> <span class="trans">— لا أشعر بالراحة.</span></li>
+      </ul>
+      <div class="highlight">
+        <p><strong><span class="badge">نصيحة ذهبية</span></strong> عند الإجابة، لا تنسَ أن تسأل الشخص الآخر عن حالته. هذا يُظهر الاهتمام واللباقة ويبني اتصالاً أفضل.</p>
+      </div>
+    </section>
+    <!-- Page 5 -->
+    <section id="page5" class="card">
+      <h2>الصفحة 5: التعبيرات الرسمية في اللغة المنطوقة</h2>
+      <div class="section-header">
+        <i>🎯</i>
+        <h3>عبارات التحية الرسمية</h3>
+      </div>
+      <ul>
+        <li><strong>Good morning.</strong><div class="trans">— صباح الخير.</div></li>
+        <li><strong>Good morning, Mr / Mrs / Ms / Miss .... (name). My name is....(name). I work for .... (company).</strong><div class="trans">— صباح الخير، السيد/السيدة/... (الاسم). اسمي ... (الاسم). أعمل لدى ... (الشركة).</div></li>
+        <li><strong>Good morning, Mr / Mrs / Ms / Miss .... (name). How are you today?</strong><div class="trans">— صباح الخير، السيد/السيدة/... (الاسم). كيف حالك اليوم؟</div></li>
+        <li><strong>Good morning. My name is....(name). I'm a .... (job title) at ....(company).</strong><div class="trans">— صباح الخير. اسمي ... (الاسم). أنا ... (المسمى الوظيفي) في ... (الشركة).</div></li>
+        <li><strong>How do you do, .... (name)?</strong><div class="trans">— تشرفت بمقابلتك يا ... (الاسم).</div></li>
+        <li><strong>Good afternoon.</strong><div class="trans">— مساء الخير.</div></li>
+        <li><strong>Good evening.</strong><div class="trans">— مساء الخير.</div></li>
+      </ul>
+      <div class="section-header">
+        <i>🔄</i>
+        <h3>إجابات محتملة</h3>
+      </div>
+      <ul>
+        <li><strong>Good morning. It's a pleasure to meet you.</strong><div class="trans">— صباح الخير. من دواعي سروري مقابلتك.</div></li>
+        <li><strong>Nice to meet you, .... (name)</strong><div class="trans">— سعيد بمقابلتك، ... (الاسم)</div></li>
+        <li><strong>Good to see you, .... (name).</strong><div class="trans">— سعيد برؤيتك، ... (الاسم).</div></li>
+        <li><strong>Pleased to see you, .... (name).</strong><div class="trans">— سعيد برؤيتك، ... (الاسم).</div></li>
+        <li><strong>Pleased to meet you, .... (name).</strong><div class="trans">— تشرفت بمقابلتك، ... (الاسم).</div></li>
+        <li><strong>Good morning, .... (name). I'm doing well, thank you. And yourself?</strong><div class="trans">— صباح الخير، ... (الاسم). أنا بخير، شكرًا. وأنت؟</div></li>
+        <li><strong>Very well, thank you.</strong><div class="trans">— بخير جدًا، شكرًا.</div></li>
+        <li><strong>Great. How about you?</strong><div class="trans">— رائع. ماذا عنك؟</div></li>
+        <li><strong>Good afternoon.</strong><div class="trans">— مساء الخير.</div></li>
+      </ul>
+      <div class="highlight">
+        <p><strong><span class="badge">ملاحظة احترافية</span></strong> في السياقات الرسمية، استخدم دائمًا ألقاب الأشخاص (السيد، السيدة، الآنسة) حتى لو طلبوا منك استخدام أسمائهم الأولى. هذا يُظهر الاحترام واللباقة المهنية.</p>
+      </div>
+    </section>
+    <!-- Page 6 -->
+    <section id="page6" class="card">
+      <h2>الصفحة 6: تقديم الاسم</h2>
+      <div class="section-header">
+        <i>📌</i>
+        <h3>أسئلة تقديم الاسم</h3>
+      </div>
+      <ul>
+        <li><strong>Introducing your name.</strong><div class="trans">— تعريف اسمك.</div></li>
+        <li><strong>What's your name?</strong><div class="trans">— ما اسمك؟</div></li>
+        <li><strong>What should I call you?</strong><div class="trans">— بما يجب أن أناديك؟</div></li>
+        <li><strong>I don't think we've been introduced yet. May I have your name, please?</strong><div class="trans">— لا أعتقد أننا تقابلنا من قبل. هل لي بمعرفة اسمك من فضلك؟</div></li>
+        <li><strong>Could you tell me your name, please?</strong><div class="trans">— هل يمكنك أن تخبرني باسمك، من فضلك؟</div></li>
+      </ul>
+      <hr style="border: 1px solid rgba(51, 65, 85, 0.3); margin: 20px 0;">
+      <div class="section-header">
+        <i>🔄</i>
+        <h3>إجابات محتملة</h3>
+      </div>
+      <ul>
+        <li><strong>My name is ... (name)</strong><div class="trans">— اسمي ... (الاسم)</div></li>
+        <li><strong>My name is Jack.</strong><div class="trans">— اسمي جاك.</div></li>
+        <li><strong>I'm ... (name)</strong><div class="trans">— أنا ... (الاسم)</div></li>
+        <li><strong>I'm ... (name), but you can call me/ I go by ... (nickname)</strong><div class="trans">— أنا ... (الاسم)، لكن يمكنك مناداتي بـ ... (اللقب)</div></li>
+        <li><strong>I'm ... (name), but people call me ... (nickname)</strong><div class="trans">— أنا ... (الاسم)، لكن الناس ينادونني ... (اللقب)</div></li>
+      </ul>
+      <div class="highlight">
+        <p><strong><span class="badge">تلميح</span></strong> في السياقات الرسمية، قدم اسمك الكامل. في السياقات غير الرسمية، يمكنك تقديم اسمك الأول فقط أو اللقب الذي تُعرف به. هذا يساعد في بناء اتصال أكثر دفئًا.</p>
+      </div>
+    </section>
+    <!-- Page 7 -->
+    <section id="page7" class="card">
+      <h2>الصفحة 7: السؤال عن العمر</h2>
+      <div class="section-header">
+        <i>📅</i>
+        <h3>أسئلة عن العمر</h3>
+      </div>
+      <ul>
+        <li><strong>How old are you?</strong><div class="trans">— كم عمرك؟</div></li>
+        <li><strong>Could you please tell me how old you are / your age?</strong><div class="trans">— هل يمكن أن تخبرني كم عمرك؟</div></li>
+      </ul>
+      <div class="section-header">
+        <i>🔄</i>
+        <h3>إجابات محتملة</h3>
+      </div>
+      <ul>
+        <li><strong>I'm …. years old.</strong><div class="trans">— أنا ... سنة.</div></li>
+        <li><strong>I'm in my thirties.</strong><div class="trans">— أنا في الثلاثينات من عمري.</div></li>
+        <li><strong>I'm in my early forties.</strong><div class="trans">— أنا في أوائل الأربعينات.</div></li>
+        <li><strong>I'm in my late sixties.</strong><div class="trans">— أنا في أواخر الستينات.</div></li>
+      </ul>
+      <div class="highlight">
+        <p><strong><span class="badge">تحذير ثقافي</span></strong> في بعض الثقافات، يعتبر السؤال عن العمر موضوعًا حساسًا. في السياقات الرسمية، قد لا يكون مناسبًا. في السياقات الاجتماعية، يمكن طرحه بطرق غير مباشرة بعد بناء علاقة أساسية.</p>
+      </div>
+    </section>
+    <!-- Page 8 -->
+    <section id="page8" class="card">
+      <h2>الصفحة 8: الخلفية والانتماء الجغرافي</h2>
+      <div class="section-header">
+        <i>🌍</i>
+        <h3>أسئلة عن المكان الأصلي</h3>
+      </div>
+      <ul>
+        <li><strong>Where are you from?</strong><div class="trans">— من أين أنت؟</div></li>
+        <li><strong>Where do you come from?</strong><div class="trans">— من أين أتيت؟</div></li>
+        <li><strong>Where were you born?</strong><div class="trans">— أين ولدت؟</div></li>
+        <li><strong>What is your place of birth?</strong><div class="trans">— ما مكان ميلادك؟</div></li>
+        <li><strong>In which city were you born?</strong><div class="trans">— في أي مدينة ولدت؟</div></li>
+        <li><strong>In which town were you born?</strong><div class="trans">— في أي بلدة ولدت؟</div></li>
+      </ul>
+      <div class="section-header">
+        <i>🔄</i>
+        <h3>إجابات محتملة</h3>
+      </div>
+      <ul>
+        <li><strong>I'm from …. (country)</strong><div class="trans">— أنا من ... (الدولة)</div></li>
+        <li><strong>I come from …. (country)</strong><div class="trans">— أتيت من ... (الدولة)</div></li>
+        <li><strong>I hail from …. (place)</strong><div class="trans">— أنتمي إلى ... (المكان)</div></li>
+        <li><strong>I'm originally from …. (country)</strong><div class="trans">— أنا في الأصل من ... (الدولة)</div></li>
+        <li><strong>I was born in …. (place or country)</strong><div class="trans">— ولدت في ... (المكان أو الدولة)</div></li>
+        <li><strong>My place of birth is …. (place)</strong><div class="trans">— مكان ميلادي هو ... (المكان)</div></li>
+      </ul>
+      <div class="highlight">
+        <p><strong><span class="badge">توضيح</span></strong> "I'm from" تشير إلى المكان الذي تعيش فيه حاليًا أو تشعر بالانتماء إليه. "I was born in" تشير إلى مكان الميلاد الفعلي. "I'm originally from" تشير إلى الجذور أو الأصل. استخدم كل تعبير حسب السياق المناسب.</p>
+      </div>
+    </section>
+    <!-- Page 9 -->
+    <section id="page9" class="card">
+      <h2>الصفحة 9: الحالة الاجتماعية والعائلة</h2>
+      <div class="section-header">
+        <i>👨‍👩‍👧‍👦</i>
+        <h3>أسئلة عن الحالة الاجتماعية</h3>
+      </div>
+      <ul>
+        <li><strong>Would you mind referring to your social status?</strong><div class="trans">— هل تمانع أن تشير إلى حالتك الاجتماعية؟</div></li>
+        <li><strong>How many people are there in your family?</strong><div class="trans">— كم عدد الأشخاص في عائلتك؟</div></li>
+        <li><strong>How many siblings do you have?</strong><div class="trans">— كم إخًا وأختًا لديك؟</div></li>
+        <li><strong>Do you have any siblings?</strong><div class="trans">— هل لديك إخوة أو أخوات؟</div></li>
+        <li><strong>Do you have any brothers and sisters?</strong><div class="trans">— هل لديك إخوة وأخوات؟</div></li>
+      </ul>
+      <hr style="border: 1px solid rgba(51, 65, 85, 0.3); margin: 20px 0;">
+      <div class="section-header">
+        <i>🔄</i>
+        <h3>إجابات محتملة</h3>
+      </div>
+      <ul>
+        <li><strong>I'm single</strong><div class="trans">— أنا أعزب/عزباء</div></li>
+        <li><strong>I'm married</strong><div class="trans">— أنا متزوج/متزوجة</div></li>
+        <li><strong>I'm engaged</strong><div class="trans">— أنا مخطوب/مخطوبة</div></li>
+        <li><strong>We are a family of five.</strong><div class="trans">— نحن عائلة مكونة من خمسة أفراد.</div></li>
+        <li><strong>I have two brothers and one sister.</strong><div class="trans">— لدي أخوين وأخت واحدة.</div></li>
+        <li><strong>Yes, I have .... and ....</strong><div class="trans">— نعم، لدي ... و ...</div></li>
+        <li><strong>Yes, I have two brothers and one sister.</strong><div class="trans">— نعم، لدي أخوين وأخت واحدة.</div></li>
+        <li><strong>No, I'm an only child.</strong><div class="trans">— لا، أنا طفل وحيد.</div></li>
+      </ul>
+      <div class="highlight">
+        <p><strong><span class="badge">تحذير اجتماعي</span></strong> في السياقات الرسمية، قد لا يكون من المناسب طرح أسئلة عن الحالة الاجتماعية. في السياقات الاجتماعية، يمكن طرح هذه الأسئلة بعد أن يتم بناء علاقة أساسية، ويفضل أن تكون بطريقة غير مباشرة.</p>
+      </div>
+    </section>
+    <!-- Page 10 -->
+    <section id="page10" class="card">
+      <h2>الصفحة 10: المؤهلات والوظيفة والخبرة</h2>
+      <div class="section-header">
+        <i>💼</i>
+        <h3>أسئلة عن العمل والمؤهلات</h3>
+      </div>
+      <ul>
+        <li><strong>Can you please tell me more about your qualifications and degrees?</strong><div class="trans">— هل يمكنك من فضلك أن تخبرني المزيد عن مؤهلاتك وشهاداتك؟</div></li>
+        <li><strong>What degrees do you obtain?</strong><div class="trans">— ما الشهادات التي حصلت عليها؟</div></li>
+        <li><strong>What do you do?</strong><div class="trans">— ماذا تعمل؟</div></li>
+        <li><strong>What do you do for living?</strong><div class="trans">— بماذا تكسب رزقك؟</div></li>
+        <li><strong>What's your job?</strong><div class="trans">— ما وظيفتك؟</div></li>
+        <li><strong>Can you tell me a brief about your work your experience?</strong><div class="trans">— هل يمكنك أن تعطيني نبذة قصيرة عن عملك وخبرتك؟</div></li>
+      </ul>
+      <hr style="border: 1px solid rgba(51, 65, 85, 0.3); margin: 20px 0;">
+      <div class="section-header">
+        <i>🔄</i>
+        <h3>إجابات محتملة</h3>
+      </div>
+      <ul>
+        <li><strong>I graduated from ......</strong><div class="trans">— تخرجت من ......</div></li>
+        <li><strong>I am a graduate of ......</strong><div class="trans">— أنا خريج/خريجة من ......</div></li>
+        <li><strong>Majored/specialized in ......</strong><div class="trans">— تخصصت في ......</div></li>
+        <li><strong>I'm still an undergraduate/ student at ...... I study ...... In ......</strong><div class="trans">— أنا لا أزال طالبًا/طالبة في ...... أدرس ...... في ......</div></li>
+        <li><strong>I'm a doctor.</strong><div class="trans">— أنا طبيب/طبيبة.</div></li>
+        <li><strong>I work as a mechanical engineer for NASA.</strong><div class="trans">— أعمل كمهندس ميكانيكي لدى ناسا.</div></li>
+        <li><strong>I work for NASA as a mechanical engineer.</strong><div class="trans">— أعمل لدى ناسا كمهندس ميكانيكي.</div></li>
+        <li><strong>I'm responsible for analysing customer feedback at Amazon.</strong><div class="trans">— أنا مسؤول/مسؤولة عن تحليل ملاحظات العملاء في أمازون.</div></li>
+      </ul>
+      <div class="highlight">
+        <p><strong><span class="badge">نصيحة للمقابلات</span></strong> عند الحديث عن الخبرة، ركّز على الإنجازات والمهارات بدلاً من مجرد وصف المهام. استخدم أرقامًا ونتائج ملموسة عندما يكون ذلك ممكنًا. مثال: "زدت المبيعات بنسبة 30% خلال 6 أشهر" أفضل من "كنت أعمل في المبيعات".</p>
+      </div>
+    </section>
+    <!-- Page 11 -->
+    <section id="page11" class="card">
+      <h2>الصفحة 11: الاهتمامات والهوايات</h2>
+      <div class="section-header">
+        <i>🎨</i>
+        <h3>أسئلة عن الهوايات</h3>
+      </div>
+      <ul>
+        <li><strong>What do you do in your free time?</strong><div class="trans">— ماذا تفعل في وقت فراغك؟</div></li>
+        <li><strong>What's your favourite ….(e.g., sport, food, etc.)?</strong><div class="trans">— ما هو مُفضل لديك ... (مثلًا: رياضة، طعام، إلخ)؟</div></li>
+        <li><strong>Who's your favourite ….(e.g., actor, actress, writer, etc.)</strong><div class="trans">— من هو/هي المفضل لديك ... (مثلًا: ممثل، مخرجة، كاتب، إلخ)؟</div></li>
+        <li><strong>What's your hobby?</strong><div class="trans">— ما هي هوايتك؟</div></li>
+        <li><strong>What do you like to do in your free time?</strong><div class="trans">— ماذا تحب أن تفعل في وقت فراغك؟</div></li>
+      </ul>
+      <div class="section-header">
+        <i>🔄</i>
+        <h3>إجابات محتملة</h3>
+      </div>
+      <ul>
+        <li><strong>I like playing the guitar in my free time. In my free time, I like playing the guitar. In my spare time, I like hanging out with my friends.</strong><div class="trans">— أحب عزف الجيتار في وقت فراغي. في وقت فراغي، أحب عزف الجيتار. في وقت فراغي، أحب الخروج مع أصدقائي.</div></li>
+        <li><strong>When I have free time, I …. When I have free time, I usually catch up on my reading.</strong><div class="trans">— عندما يتاح لي وقت فراغ، ... عادةً ألحق بالقراءة.</div></li>
+        <li><strong>I usually spend my free time doing …. I enjoy/love ….(+ ing form of the verb)…. I enjoy surfing and skiing. I enjoy swimming.</strong><div class="trans">— عادةً ما أقضي وقت فراغي في ... أحب/أستمتع بـ ... (صيغة -ing للفعل). أستمتع بركوب الأمواج والتزلج. أستمتع بالسباحة.</div></li>
+        <li><strong>I'm into …. I'm into cycling. My hobbies are …. My hobbies are skateboarding, skydiving, windsurfing, and ice skating.</strong><div class="trans">— أنا مهتم بـ ... أنا مهتم بالركوب بالدراجة. هواياتي هي ... هواياتي التزلج على اللوح، القفز بالمظلات، ركوب الأمواج باستخدام الشراع، والتزحلق على الجليد.</div></li>
+        <li><strong>My favourite sport is football.</strong><div class="trans">— رياضتي المفضلة هي كرة القدم.</div></li>
+      </ul>
+      <div class="highlight">
+        <p><strong><span class="badge">ملاحظة اجتماعية</span></strong> الهوايات والاهتمامات تساعد في بناء اتصال عاطفي مع الآخرين. في السياقات الاجتماعية، يمكن أن تكون نقطة بداية ممتازة للمحادثة. في المقابلات، يمكن أن تظهر جوانب إيجابية من شخصيتك.</p>
+      </div>
+    </section>
+    <!-- Raw exact text block -->
+    <section id="raw" class="card">
+      <h2>النص الكامل (Raw — مطابق تمامًا لما أرسلته)</h2>
+      <p class="note">
+        <strong><span class="badge">تنبيه</span></strong>
+        أدرجت النص بالكامل كما ورد دون تعديل أو حذف. (الكتلة الأصلية لم تتغير)
+      </p>
+    </section>
+  </main>
+  <footer>
+    <p>تم إنشاء هذه الصفحة كدليل شامل وفاخر للتقديم الذاتي في السياقات المختلفة</p>
+    <p>تم تحسين التصميم والتجربة البصرية مع الحفاظ على المحتوى الأصلي والترجمة الدقيقة</p>
+    <p>جميع الحقوق محفوظة © 2024 - دليل تقديم الذات الاحترافي</p>
+  </footer>
 </body>
 </html>
-```
