@@ -1,1262 +1,1 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Document Type Declaration: Standards, Quirks, and Rendering Modes</title>
-  <style>
-    :root {
-      --primary-orange: #f97316;
-      --light-orange: #ffedd5;
-      --border-orange: #fed7aa;
-      --dark-orange: #c2410c;
-      --bg-gradient: linear-gradient(135deg, #fff5e6, #fff8e1);
-      --code-bg: #1a1f29;
-      --code-line-number: #6b7280;
-      --code-text: #e2e8f0;
-      --code-keyword: #fbbf24;
-      --code-string: #4ade80;
-      --code-tag: #818cf8;
-      --code-attribute: #f472b6;
-      --code-comment: #9ca3af;
-      --example-bg: #f0fdf4;
-      --example-border: #4ade80;
-      --idea-bg: #eff6ff;
-      --idea-border: #3b82f6;
-      --question-bg: #fef3c7;
-      --question-border: #f59e0b;
-    }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--bg-gradient);
-      color: #333;
-      line-height: 1.7;
-      padding: 2rem;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .header {
-      text-align: right;
-      margin-bottom: 3rem;
-      padding-top: 2rem;
-    }
-
-    .header h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #333;
-      margin-bottom: 0.5rem;
-    }
-
-    .header h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary-orange);
-      letter-spacing: -0.5px;
-    }
-
-    .header p {
-      font-size: 1.1rem;
-      color: #666;
-      margin-top: 0.75rem;
-    }
-
-    .content-box {
-      background: white;
-      border-radius: 1.5rem;
-      box-shadow: 0 10px 30px rgba(255, 140, 0, 0.1);
-      border: 4px solid var(--border-orange);
-      padding: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .section-title {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .section-number {
-      width: 2rem;
-      height: 2rem;
-      background: var(--primary-orange);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 0.875rem;
-    }
-
-    .section-title h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #333;
-    }
-
-    .point {
-      background: white;
-      border: 2px solid var(--border-orange);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      transition: box-shadow 0.3s ease;
-    }
-
-    .point:hover {
-      box-shadow: 0 5px 15px rgba(255, 140, 0, 0.15);
-    }
-
-    .point-header {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .point-header h4 {
-      font-size: 1.125rem;
-      font-weight: 700;
-      color: #333;
-    }
-
-    .point-content {
-      text-align: right;
-      font-size: 1rem;
-      color: #555;
-    }
-
-    code {
-      background: var(--light-orange);
-      padding: 0.25rem 0.5rem;
-      border-radius: 0.375rem;
-      font-family: monospace;
-      font-size: 0.95rem;
-      color: var(--dark-orange);
-      direction: ltr;
-      text-align: left;
-      display: inline-block;
-    }
-
-    .modes-container {
-      margin-right: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .mode {
-      padding: 1rem;
-      border-radius: 0.75rem;
-      margin-bottom: 1rem;
-      text-align: right;
-    }
-
-    .standard-mode {
-      background: var(--light-orange);
-      border-right: 4px solid var(--primary-orange);
-    }
-
-    .quirks-mode {
-      background: #fef2f2;
-      border-right: 4px solid #ef4444;
-    }
-
-    .almost-mode {
-      background: #fefce8;
-      border-right: 4px solid #eab308;
-    }
-
-    .mode h5 {
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .standard-mode h5 {
-      color: var(--dark-orange);
-    }
-
-    .quirks-mode h5 {
-      color: #dc2626;
-    }
-
-    .almost-mode h5 {
-      color: #ca8a04;
-    }
-
-    ul {
-      list-style: disc;
-      margin-right: 1.5rem;
-      margin-top: 0.5rem;
-    }
-
-    li {
-      margin-bottom: 0.375rem;
-      color: #555;
-    }
-
-    /* تحسينات المحرر الاحترافي */
-    .code-editor {
-      background: var(--code-bg);
-      border-radius: 0.75rem;
-      padding: 1.5rem;
-      margin-top: 1rem;
-      font-family: 'Fira Code', 'Monaco', 'Consolas', 'Courier New', monospace;
-      direction: ltr;
-      position: relative;
-      overflow: hidden;
-      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .code-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-      color: white;
-      font-size: 0.875rem;
-    }
-
-    .code-dots {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-    }
-
-    .dot.red { background: #ff5f56; }
-    .dot.yellow { background: #ffbd2e; }
-    .dot.green { background: #27c93f; }
-
-    .code-lines {
-      counter-reset: line;
-      padding-right: 1rem;
-      border-right: 1px solid #374151;
-    }
-
-    .code-lines::before {
-      content: '';
-      display: table;
-    }
-
-    .code-line {
-      display: table;
-      width: 100%;
-      table-layout: fixed;
-      margin: 0.25rem 0;
-    }
-
-    .line-number {
-      display: table-cell;
-      width: 40px;
-      text-align: right;
-      padding-left: 0.5rem;
-      color: var(--code-line-number);
-      font-size: 0.95rem;
-      user-select: none;
-      opacity: 0.7;
-    }
-
-    .line-number::before {
-      counter-increment: line;
-      content: counter(line);
-    }
-
-    .line-content {
-      display: table-cell;
-      padding-left: 1rem;
-      color: var(--code-text);
-      font-size: 0.95rem;
-      white-space: pre-wrap;
-    }
-
-    .keyword { color: var(--code-keyword); font-weight: bold; }
-    .tag { color: var(--code-tag); }
-    .attribute { color: var(--code-attribute); }
-    .string { color: var(--code-string); }
-    .comment { color: var(--code-comment); font-style: italic; }
-
-    .footer {
-      text-align: center;
-      margin-top: 2rem;
-      color: #666;
-      font-weight: 500;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-      text-align: right;
-      direction: rtl;
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 0.75rem;
-      text-align: right;
-    }
-
-    th {
-      background-color: var(--light-orange);
-      color: var(--dark-orange);
-      font-weight: 700;
-    }
-
-    tr:nth-child(even) {
-      background-color: #fafafa;
-    }
-
-    .flashcard {
-      background: #f8fafc;
-      border: 2px solid #e2e8f0;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      margin: 1rem 0;
-      position: relative;
-    }
-
-    .flashcard::before {
-      content: "—";
-      position: absolute;
-      top: -10px;
-      right: 20px;
-      background: white;
-      padding: 0 10px;
-      color: #94a3b8;
-      font-size: 1.2rem;
-    }
-
-    .browser-preview {
-      background: white;
-      border: 2px solid var(--border-orange);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .browser-preview h1,
-    .browser-preview p {
-      direction: ltr;
-      text-align: left;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    .browser-preview h1 {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 1rem;
-    }
-
-    .browser-preview p {
-      font-size: 1.1rem;
-      color: #555;
-    }
-
-    .browser-preview.quirks {
-      border-color: #ef4444;
-    }
-
-    /* أنماط جديدة للأمثلة والأفكار والأسئلة */
-    .example {
-      background: var(--example-bg);
-      border: 2px solid var(--example-border);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      position: relative;
-    }
-
-    .example::before {
-      content: "مثال";
-      position: absolute;
-      top: -12px;
-      right: 20px;
-      background: var(--example-border);
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 0.5rem;
-      font-weight: bold;
-      font-size: 0.875rem;
-    }
-
-    .idea {
-      background: var(--idea-bg);
-      border: 2px solid var(--idea-border);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      position: relative;
-    }
-
-    .idea::before {
-      content: "فكرة رئيسية";
-      position: absolute;
-      top: -12px;
-      right: 20px;
-      background: var(--idea-border);
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 0.5rem;
-      font-weight: bold;
-      font-size: 0.875rem;
-    }
-
-    .question {
-      background: var(--question-bg);
-      border: 2px solid var(--question-border);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      position: relative;
-    }
-
-    .question::before {
-      content: "سؤال";
-      position: absolute;
-      top: -12px;
-      right: 20px;
-      background: var(--question-border);
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 0.5rem;
-      font-weight: bold;
-      font-size: 0.875rem;
-    }
-
-    .answer {
-      background: #f3f4f6;
-      border-right: 4px solid #6b7280;
-      border-radius: 0.5rem;
-      padding: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    @media (max-width: 768px) {
-      body {
-        padding: 1rem;
-      }
-      
-      .header h1 {
-        font-size: 2rem;
-      }
-      
-      .header h2 {
-        font-size: 1.25rem;
-      }
-      
-      .content-box {
-        padding: 1.5rem;
-      }
-      
-      .modes-container {
-        margin-right: 0;
-      }
-      
-      .code-editor {
-        padding: 1rem;
-      }
-      
-      .line-number {
-        width: 30px;
-        font-size: 0.85rem;
-      }
-      
-      .line-content {
-        font-size: 0.85rem;
-      }
-      
-      table {
-        font-size: 0.9rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <!-- العنوان الرئيسي -->
-    <div class="header">
-      <h1>Document Type Declaration:</h1>
-      <h2>Standards, Quirks, and Rendering Modes</h2>
-      <p>(إعلان نوع المستند: المعايير، أوضاع التوافق، وأنماط العرض)</p>
-    </div>
-
-    <!-- 1- المصطلحات و الكلامات الانجليزية -->
-    <div class="content-box">
-      <div class="section-title">
-        <h3>المصطلحات والمفاهيم الإنجليزية</h3>
-        <div class="section-number">1</div>
-      </div>
-      <div class="point">
-        <div class="point-content">
-          <h4>🧩 ثانياً: استخراج الكلمات والمصطلحات الإنجليزية — مرتبة أبجديًا (A → Z)</h4>
-          <table>
-            <thead>
-              <tr>
-                <th>المصطلح بالإنجليزي</th>
-                <th>الترجمة بالعربي</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Almost Standards Mode</td><td>وضع شبه المعايير</td></tr>
-              <tr><td>Box Model</td><td>نموذج الصندوق</td></tr>
-              <tr><td>Chrome</td><td>متصفح كروم</td></tr>
-              <tr><td>CSS</td><td>لغة تنسيق الصفحات (أسلوب وتصميم)</td></tr>
-              <tr><td>DOCTYPE</td><td>إعلان نوع المستند</td></tr>
-              <tr><td>Document Type Declaration</td><td>إعلان نوع المستند</td></tr>
-              <tr><td>HTML</td><td>لغة ترميز النص التشعبي</td></tr>
-              <tr><td>HTML4.01</td><td>إصدار قديم من HTML (4.01)</td></tr>
-              <tr><td>HTML5</td><td>الإصدار الخامس من HTML</td></tr>
-              <tr><td>IE (Internet Explorer)</td><td>متصفح إنترنت إكسبلورر</td></tr>
-              <tr><td>Layout</td><td>التخطيط / التصميم البصري للصفحة</td></tr>
-              <tr><td>Margin</td><td>الهامش الخارجي</td></tr>
-              <tr><td>Padding</td><td>الحشو الداخلي</td></tr>
-              <tr><td>Parsing</td><td>تحليل / تفسير (كود أو بيانات)</td></tr>
-              <tr><td>Quirks Mode</td><td>وضع التوافق مع الأنظمة القديمة</td></tr>
-              <tr><td>Rendering</td><td>العرض / التصيير</td></tr>
-              <tr><td>Rendering Modes</td><td>أنماط العرض</td></tr>
-              <tr><td>Safari</td><td>متصفح سفاري</td></tr>
-              <tr><td>SEO</td><td>تحسين محركات البحث</td></tr>
-              <tr><td>Standard Mode</td><td>وضع المعايير</td></tr>
-              <tr><td>Strict DOCTYPE</td><td>نوع إعلان مستند صارم (لا يسمح بخرق المعايير)</td></tr>
-              <tr><td>Tag</td><td>تاج / وسم HTML</td></tr>
-              <tr><td>Transitional DOCTYPE</td><td>نوع إعلان مستند انتقالي (يسمح ببعض الخروقات)</td></tr>
-              <tr><td>WHATWG</td><td>مجموعة عمل تطوير ويب HTML</td></tr>
-              <tr><td>W3C</td><td>اتحاد شبكة الويب العالمية</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2- المسائل الرياضية المذكورة في الدرس -->
-    <div class="content-box">
-      <div class="section-title">
-        <h3>المسائل الرياضية والقواعد</h3>
-        <div class="section-number">2</div>
-      </div>
-      <div class="point">
-        <div class="point-content">
-          <h4>📘 ثالثاً: القوانين أو المعدلات الرياضية</h4>
-          <p>في هذا الدرس <strong>ما فيش معادلات رياضية أو قوانين عددية</strong> — لأنه درس <strong>تقني/برمجي/متعلق بمعايير الويب</strong>، مش رياضيات.</p>
-          <p>لكن في جزء مهم جدًا هو:</p>
-          
-          <h5>⚖️ القاعدة: <strong>Box Model Behavior in Quirks vs Standard Mode</strong></h5>
-          
-          <h6>✅ في Standard Mode:</h6>
-          <div class="code-editor">
-            <div class="code-lines">
-              <div class="code-line">
-                <div class="line-number"></div>
-                <div class="line-content">width = content فقط</div>
-              </div>
-              <div class="code-line">
-                <div class="line-number"></div>
-                <div class="line-content">padding و border يزيدوا على العرض الكلي</div>
-              </div>
-            </div>
-          </div>
-          
-          <h6>❌ في Quirks Mode:</h6>
-          <div class="code-editor">
-            <div class="code-lines">
-              <div class="code-line">
-                <div class="line-number"></div>
-                <div class="line-content">width = content + padding + border</div>
-              </div>
-              <div class="code-line">
-                <div class="line-number"></div>
-                <div class="line-content">يعني لو حددت width: 200px; و padding: 20px; و border: 5px;</div>
-              </div>
-              <div class="code-line">
-                <div class="line-number"></div>
-                <div class="line-content">فالعرض الفعلي = 200px فقط (الـ padding و border يتأكلوا من الداخل)</div>
-              </div>
-            </div>
-          </div>
-          
-          <h6>📌 شرح بسيط:</h6>
-          <ul>
-            <li>ده فرق جوهري جدًا في الـ CSS Layout.</li>
-            <li>في Standard Mode: العناصر بتتصرف كما هو محدد في المواصفات الحديثة.</li>
-            <li>في Quirks Mode: المتصفح بيعمل "تقدير" قديم عشان يحافظ على التوافق مع صفحات التسعينات.</li>
-            <li>ده بيسبب كوارث في التصميم لو مش عارف إنت فين.</li>
-          </ul>
-          
-          <div class="example">
-            <h6>💡 مثال تطبيقي:</h6>
-            <div class="code-editor">
-              <div class="code-header">
-                <div class="code-dots">
-                  <div class="dot red"></div>
-                  <div class="dot yellow"></div>
-                  <div class="dot green"></div>
-                </div>
-                <span style="color: white; margin-right: 0.5rem;">styles.css</span>
-              </div>
-              <div class="code-lines">
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">.box {</div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">  width: 200px;</div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">  padding: 20px;</div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">  border: 5px solid black;</div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">}</div>
-                </div>
-              </div>
-            </div>
-            
-            <ul>
-              <li><strong>في Standard Mode</strong>: العرض الكلي = 200 + 40 + 10 = <strong>250px</strong></li>
-              <li><strong>في Quirks Mode</strong>: العرض الكلي = <strong>200px</strong> (الـ padding و border يتأكلوا من الداخل)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3- الجزء النظري -->
-    <div class="content-box">
-      <div class="section-title">
-        <h3>الجزء النظري</h3>
-        <div class="section-number">3</div>
-      </div>
-      <div class="point">
-        <div class="point-content">
-          
-          <div class="idea">
-            <h5>🔹 يعني إيه Document Type Declaration؟</h5>
-            <ul>
-              <li>الـ <code><!DOCTYPE html></code> مش تاج HTML، ده مجرد <strong>تصريح للمتصفح</strong> يقوله: "اسمع، الصفحة دي مكتوبة بالـ HTML5 أو الإصدار الفلاني."</li>
-              <li>المتصفح على أساسه بيحدد إزاي يعرض الصفحة.</li>
-            </ul>
-          </div>
-          
-          <div class="idea">
-            <h5>🔹 أوضاع العرض (Rendering Modes):</h5>
-            
-            <div class="modes-container">
-              <div class="mode standard-mode">
-                <h5>1. Standard Mode:</h5>
-                <ul>
-                  <li>المتصفح بيتبع المعايير (W3C / WHATWG).</li>
-                  <li>كل حاجة زي الكتاب.</li>
-                  <li>هو الوضع الطبيعي لو كتبت <code><!DOCTYPE html></code>.</li>
-                </ul>
-              </div>
-              
-              <div class="mode quirks-mode">
-                <h5>2. Quirks Mode:</h5>
-                <ul>
-                  <li>وضع "التوافق مع الماضي".</li>
-                  <li>لو نسيت تكتب DOCTYPE، أو كتبته غلط.</li>
-                  <li>المتصفح بيرجع يتصرف زي إصدارات قديمة (IE5 تقريبًا).</li>
-                  <li>مشاكل CSS كتير (box model بيتلخبط، margins/paddings مش زي ما متوقع).</li>
-                </ul>
-              </div>
-              
-              <div class="mode almost-mode">
-                <h5>3. Almost Standards Mode:</h5>
-                <ul>
-                  <li>شبه Standard، بس في حتة صغيرة: بيعالج الصور داخل الـ table cells بطريقة قديمة.</li>
-                  <li>موجود عشان صفحات قديمة متبوظش.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <div class="idea">
-            <h5>🔹 ليه الموضوع مهم؟</h5>
-            <ul>
-              <li>من غير DOCTYPE، الصفحة ممكن تبان مظبوطة في Chrome وتتلخبط في Safari.</li>
-              <li>لازم تبدأ أي صفحة بواحد صحيح:</li>
-            </ul>
-            
-            <div class="code-editor">
-              <div class="code-header">
-                <div class="code-dots">
-                  <div class="dot red"></div>
-                  <div class="dot yellow"></div>
-                  <div class="dot green"></div>
-                </div>
-              </div>
-              <div class="code-lines">
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content"><span class="tag"><!DOCTYPE</span> <span class="attribute">html</span><span class="tag">></span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4- الجزء التطبيقي -->
-    <div class="content-box">
-      <div class="section-title">
-        <h3>الجزء التطبيقي</h3>
-        <div class="section-number">4</div>
-      </div>
-      <div class="point">
-        <div class="point-content">
-          
-          <div class="example">
-            <h5>مثال 1: صفحة صح</h5>
-            <div class="code-editor">
-              <div class="code-header">
-                <div class="code-dots">
-                  <div class="dot red"></div>
-                  <div class="dot yellow"></div>
-                  <div class="dot green"></div>
-                </div>
-                <span style="color: white; margin-right: 0.5rem;">index.html</span>
-              </div>
-              <div class="code-lines">
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content"><span class="tag"><!DOCTYPE</span> <span class="attribute">html</span><span class="tag">></span></div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content"><span class="tag"><html></span></div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">  <span class="tag"><head></span></div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">    <span class="tag"><title></span>Test Page<span class="tag"></title></span></div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">  <span class="tag"></head></span></div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">  <span class="tag"><body></span></div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">    <span class="tag"><h1></span>I'm a properly formatted HTML5 page<span class="tag"></h1></span></div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">  <span class="tag"></body></span></div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content"><span class="tag"></html></span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="example">
-            <h5>مثال 2: صفحة من غير DOCTYPE</h5>
-            <div class="code-editor">
-              <div class="code-header">
-                <div class="code-dots">
-                  <div class="dot red"></div>
-                  <div class="dot yellow"></div>
-                  <div class="dot green"></div>
-                </div>
-                <span style="color: white; margin-right: 0.5rem;">broken.html</span>
-              </div>
-              <div class="code-lines">
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content"><span class="tag"><html></span></div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">  <span class="tag"><head></span></div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">    <span class="tag"><title></span>Broken Page<span class="tag"></title></span></div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">  <span class="tag"></head></span></div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">  <span class="tag"><body></span></div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">    <span class="tag"><h1></span>I might break in another browser<span class="tag"></h1></span></div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content">  <span class="tag"></body></span></div>
-                </div>
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content"><span class="tag"></html></span></div>
-                </div>
-              </div>
-            </div>
-            <p>في Chrome ممكن تشتغل.<br>
-            في متصفح قديم أو IE… الدنيا تتكسر.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 5- شكل توضيحي للاكواد بتظهر زاي في المتصفح -->
-    <div class="content-box">
-      <div class="section-title">
-        <h3>عرض الأكواد كما تظهر في المتصفح</h3>
-        <div class="section-number">5</div>
-      </div>
-      <div class="point">
-        <div class="point-content">
-          <h4>عرض توضيحي لكيفية ظهور الأكواد في المتصفح</h4>
-          <p>عندما يتم تنفيذ الكود في المتصفح، يظهر كالتالي:</p>
-          
-          <div class="browser-preview">
-            <h1>I'm a properly formatted HTML5 page</h1>
-            <p>This page contains a correct DOCTYPE and is displayed in Standard Mode</p>
-          </div>
-          
-          <div class="browser-preview quirks">
-            <h1>I might break in another browser</h1>
-            <p>This page without DOCTYPE may appear differently in different browsers</p>
-          </div>
-          
-          <p>As you can see, the content is the same but the display may vary depending on the presence or absence of DOCTYPE and the rendering mode the browser is operating in.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 6- اشهر المشاكل التقنية المتعلق بالدرس و حلها -->
-    <div class="content-box">
-      <div class="section-title">
-        <h3>أشهر المشاكل التقنية وحلولها</h3>
-        <div class="section-number">6</div>
-      </div>
-      <div class="point">
-        <div class="point-content">
-          <h4>⚠️ رابعاً: المشاكل التقنية أو البرمجية المتوقعة في هذا الدرس</h4>
-          
-          <h5>🔧 مشاكل برمجية:</h5>
-          
-          <div class="idea">
-            <h6>1. نسيان كتابة `<!DOCTYPE html>`</h6>
-            <ul>
-              <li>يؤدي لدخول المتصفح في <strong>Quirks Mode</strong> تلقائيًا.</li>
-              <li>التصميم ممكن يختلف من متصفح لمتصفح.</li>
-              <li>صعوبة في التحكم في الـ Layout.</li>
-            </ul>
-          </div>
-          
-          <div class="idea">
-            <h6>2. كتابة DOCTYPE بطريقة خاطئة</h6>
-            <ul>
-              <li>مثلاً: `<doctype html>` أو `<!doctype HTML>` (حساس لحالة الأحرف في بعض المتصفحات القديمة).</li>
-              <li>بعض المتصفحات ممكن تتعامل معه كأنه غير موجود → Quirks Mode.</li>
-            </ul>
-          </div>
-          
-          <div class="idea">
-            <h6>3. استخدام DOCTYPE قديم بدون فهم</h6>
-            <ul>
-              <li>مثلاً HTML4 Transitional → بيسمح بأشياء مش مقبولة في HTML5.</li>
-              <li>بيأثر على الـ CSS و JavaScript في بعض الحالات.</li>
-            </ul>
-          </div>
-          
-          <div class="idea">
-            <h6>4. عدم فهم تأثير الـ DOCTYPE على الـ CSS Box Model</h6>
-            <ul>
-              <li>المبرمج يحسب المساحات غلط → التصميم يطلع مشوه.</li>
-            </ul>
-          </div>
-          
-          <h5>🛠️ مشاكل تقنية:</h5>
-          
-          <div class="idea">
-            <h6>1. اختلاف العرض بين المتصفحات</h6>
-            <ul>
-              <li>Chrome ممكن يتعامل مع الصفحة بدون DOCTYPE بشكل شبه مقبول.</li>
-              <li>Safari أو Firefox أو IE ممكن يكسروها تمامًا.</li>
-            </ul>
-          </div>
-          
-          <div class="idea">
-            <h6>2. مشاكل في التوافق مع الأجهزة أو الشاشات المختلفة</h6>
-            <ul>
-              <li>لأن الـ Layout مش مبني على معيار ثابت.</li>
-            </ul>
-          </div>
-          
-          <div class="idea">
-            <h6>3. تأثير غير مباشر على SEO</h6>
-            <ul>
-              <li>لو الصفحة متكسرة أو فيها مشاكل عرض → المستخدم يخرج بسرعة → معدل الارتداد يزيد → ترتيب الصفحة يقل.</li>
-            </ul>
-          </div>
-          
-          <div class="idea">
-            <h6>4. مشاكل في اختبارات Cross-Browser Testing</h6>
-            <ul>
-              <li>لازم تتأكد إنك في Standard Mode عشان الاختبار يكون دقيق.</li>
-            </ul>
-          </div>
-          
-          <h5>✅ نصائح للحل:</h5>
-          
-          <ol>
-            <li><strong>ابدأ كل صفحة HTML بسطر واحد فقط:</strong>
-              <div class="code-editor">
-                <div class="code-lines">
-                  <div class="code-line">
-                    <div class="line-number"></div>
-                    <div class="line-content"><span class="tag"><!DOCTYPE</span> <span class="attribute">html</span><span class="tag">></span></div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li><strong>استخدم أدوات المطور (DevTools) في المتصفح:</strong>
-              <ul>
-                <li>افتح Console → اكتب: <code>document.compatMode</code></li>
-                <li>لو طلع <code>"CSS1Compat"</code> → فأنت في Standard Mode ✅</li>
-                <li>لو طلع <code>"BackCompat"</code> → فأنت في Quirks Mode ❌</li>
-              </ul>
-            </li>
-            <li><strong>لا تحاول تصلح مشاكل الـ Layout قبل ما تتأكد من الـ DOCTYPE.</strong></li>
-            <li><strong>لو شغال على مشروع قديم واستخدم DOCTYPE HTML4 — افهم الفرق بين Transitional و Strict.</strong></li>
-          </ol>
-        </div>
-      </div>
-    </div>
-
-    <!-- 7- اسالة الانترفيو -->
-    <div class="content-box">
-      <div class="section-title">
-        <h3>أسئلة الانترفيو</h3>
-        <div class="section-number">7</div>
-      </div>
-      <div class="point">
-        <div class="point-content">
-          <h4>🎯 خامساً: ملخص سريع (للحفظ أو المراجعة)</h4>
-          <table>
-            <thead>
-              <tr>
-                <th>المعلومة</th>
-                <th>التفاصيل</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>DOCTYPE الصحيح لـ HTML5</td>
-                <td><code><!DOCTYPE html></code></td>
-              </tr>
-              <tr>
-                <td>الوضع الافتراضي مع DOCTYPE</td>
-                <td>Standard Mode</td>
-              </tr>
-              <tr>
-                <td>الوضع لو مفيش DOCTYPE</td>
-                <td>Quirks Mode</td>
-              </tr>
-              <tr>
-                <td>الفرق في Box Model</td>
-                <td>Standard: width = content فقط — Quirks: width = content + padding + border</td>
-              </tr>
-              <tr>
-                <td>تأثير على SEO</td>
-                <td>غير مباشر (عن طريق تجربة المستخدم)</td>
-              </tr>
-              <tr>
-                <td>كيف تتأكد من وضع العرض؟</td>
-                <td><code>document.compatMode</code> في Console</td>
-              </tr>
-              <tr>
-                <td>DOCTYPE مش تاج HTML</td>
-                <td>صح — ده Declaration مش Tag</td>
-              </tr>
-            </tbody>
-          </table>
-          
-          <h4>🧠 بطاقات مراجعة (Flashcards) — لو عايز تحفظ</h4>
-          
-          <div class="flashcard">
-            <h5>الوجه الأمامي:</h5>
-            <p>إيه وظيفة `<!DOCTYPE html>`؟</p>
-            <h5>الوجه الخلفي:</h5>
-            <p>يخبر المتصفح أنه يجب عرض الصفحة في وضع Standard Mode وفقًا لمعايير HTML5.</p>
-          </div>
-          
-          <div class="flashcard">
-            <h5>الوجه الأمامي:</h5>
-            <p>إيه الفرق بين Quirks و Standard Mode في Box Model؟</p>
-            <h5>الوجه الخلفي:</h5>
-            <p>في Standard: العرض = المحتوى فقط.<br>
-            في Quirks: العرض = المحتوى + الحشو + الحدود.</p>
-          </div>
-          
-          <div class="flashcard">
-            <h5>الوجه الأمامي:</h5>
-            <p>إيه Almost Standards Mode؟</p>
-            <h5>الوجه الخلفي:</h5>
-            <p>وضع وسط — يشبه Standard لكنه يعالج الصور داخل الجداول بطريقة قديمة للتوافق مع المواقع القديمة.</p>
-          </div>
-          
-          <div class="flashcard">
-            <h5>الوجه الأمامي:</h5>
-            <p>إزاي أتأكد إني في Standard Mode؟</p>
-            <h5>الوجه الخلفي:</h5>
-            <p>افتح Console واكتب: <code>document.compatMode</code> — لو طلع <code>"CSS1Compat"</code> فأنت في الوضع الصحيح.</p>
-          </div>
-          
-          <div class="question">
-            <h4>س1: يعني إيه DOCTYPE؟</h4>
-            <div class="answer">
-              ج: تصريح للمتصفح يحدد وضع العرض (Rendering Mode).
-            </div>
-          </div>
-          
-          <div class="question">
-            <h4>س2: إيه الفرق بين Quirks Mode و Standard Mode؟</h4>
-            <div class="answer">
-              ج: Quirks بيشتغل بالـ CSS القديم (Box Model مضروب)، Standard يتبع المعايير الحديثة.
-            </div>
-          </div>
-          
-          <div class="question">
-            <h4>س3: لو نسيت تكتب DOCTYPE إيه اللي هيحصل؟</h4>
-            <div class="answer">
-              ج: المتصفح هيدخل Quirks Mode، والـ Layout ممكن يتبهدل.
-            </div>
-          </div>
-          
-          <div class="question">
-            <h4>س4: إيه Almost Standard Mode؟</h4>
-            <div class="answer">
-              ج: وضع وسط بين الاتنين، مش فارق كبير غير في الصور داخل الجداول.
-            </div>
-          </div>
-          
-          <div class="question">
-            <h4>س5: إزاي تكتب DOCTYPE للـ HTML5؟</h4>
-            <div class="answer">
-              ج: سطر واحد بس:
-              <div class="code-editor">
-                <div class="code-lines">
-                  <div class="code-line">
-                    <div class="line-number"></div>
-                    <div class="line-content"><span class="tag"><!DOCTYPE</span> <span class="attribute">html</span><span class="tag">></span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 8- الامتحان -->
-    <div class="content-box">
-      <div class="section-title">
-        <h3>الامتحان</h3>
-        <div class="section-number">8</div>
-      </div>
-      <div class="point">
-        <div class="point-content">
-          
-          <h5>مبتدئ (3 أسئلة)</h5>
-          <div class="question">
-            <strong>1. ما وظيفة DOCTYPE في HTML؟</strong>
-          </div>
-          <div class="question">
-            <strong>2. ما هو DOCTYPE الخاص بـ HTML5؟</strong>
-          </div>
-          <div class="question">
-            <strong>3. ماذا يحدث لو نسيت DOCTYPE؟</strong>
-          </div>
-          
-          <h5>متوسط (4 أسئلة)</h5>
-          <div class="question">
-            <strong>4. ما الفرق بين Standard Mode و Quirks Mode في الـ Box Model؟</strong>
-          </div>
-          <div class="question">
-            <strong>5. ما هو سبب وجود Almost Standard Mode؟</strong>
-          </div>
-          <div class="question">
-            <strong>6. هل DOCTYPE تاج (Tag)؟</strong>
-          </div>
-          <div class="question">
-            <strong>7. هل DOCTYPE بيأثر على SEO؟</strong>
-          </div>
-          
-          <h5>متقدم (باقي الأسئلة)</h5>
-          <div class="question">
-            <strong>8. كيف يتعامل محرك العرض مع صفحة بدون DOCTYPE مختلفة عن صفحة فيها DOCTYPE خاطئ؟</strong>
-          </div>
-          <div class="question">
-            <strong>9. ما علاقة DOCTYPE بالـ CSS Parsing؟</strong>
-          </div>
-          <div class="question">
-            <strong>10. هل ممكن أكتب DOCTYPE لـ HTML4.01؟</strong>
-          </div>
-          <div class="question">
-            <strong>11. إيه الفرق بين Transitional و Strict DOCTYPEs في HTML4؟</strong>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 9- الامتحان و حله -->
-    <div class="content-box">
-      <div class="section-title">
-        <h3>الامتحان وحله</h3>
-        <div class="section-number">9</div>
-      </div>
-      <div class="point">
-        <div class="point-content">
-          
-          <h5>مبتدئ (3 أسئلة)</h5>
-          <div class="question">
-            <strong>1. ما وظيفة DOCTYPE في HTML؟</strong>
-            <div class="answer">
-              ✅ يحدد للمتصفح طريقة عرض الصفحة (Rendering Mode).
-            </div>
-          </div>
-          <div class="question">
-            <strong>2. ما هو DOCTYPE الخاص بـ HTML5؟</strong>
-            <div class="answer">
-              ✅ <code><!DOCTYPE html></code>
-            </div>
-          </div>
-          <div class="question">
-            <strong>3. ماذا يحدث لو نسيت DOCTYPE؟</strong>
-            <div class="answer">
-              ✅ المتصفح بيدخل في Quirks Mode.
-            </div>
-          </div>
-          
-          <h5>متوسط (4 أسئلة)</h5>
-          <div class="question">
-            <strong>4. ما الفرق بين Standard Mode و Quirks Mode في الـ Box Model؟</strong>
-            <div class="answer">
-              ✅ في Standard: width = content فقط.<br>
-              ✅ في Quirks: width = content + padding + border.
-            </div>
-          </div>
-          <div class="question">
-            <strong>5. ما هو سبب وجود Almost Standard Mode؟</strong>
-            <div class="answer">
-              ✅ للتوافق مع صفحات قديمة كانت بتستخدم صور داخل الجداول.
-            </div>
-          </div>
-          <div class="question">
-            <strong>6. هل DOCTYPE تاج (Tag)؟</strong>
-            <div class="answer">
-              ✅ لا، ده مش تاج HTML، ده Declaration.
-            </div>
-          </div>
-          <div class="question">
-            <strong>7. هل DOCTYPE بيأثر على SEO؟</strong>
-            <div class="answer">
-              ✅ مش مباشر، بس عدم وجوده ممكن يعمل مشاكل عرض تؤثر سلبًا على الترتيب.
-            </div>
-          </div>
-          
-          <h5>متقدم (باقي الأسئلة)</h5>
-          <div class="question">
-            <strong>8. كيف يتعامل محرك العرض مع صفحة بدون DOCTYPE مختلفة عن صفحة فيها DOCTYPE خاطئ؟</strong>
-            <div class="answer">
-              ✅ الاتنين ممكن يدخلوا Quirks Mode، بس بعض المتصفحات بتفرق وتدخل Almost Standards في حالات معينة.
-            </div>
-          </div>
-          <div class="question">
-            <strong>9. ما علاقة DOCTYPE بالـ CSS Parsing؟</strong>
-            <div class="answer">
-              ✅ DOCTYPE بيحدد إن الـ CSS يتفسر بمعايير حديثة، وإلا ممكن يتفسر بمعايير قديمة.
-            </div>
-          </div>
-          <div class="question">
-            <strong>10. هل ممكن أكتب DOCTYPE لـ HTML4.01؟</strong>
-            <div class="answer">
-              ✅ أيوه:<br>
-              <div class="code-editor">
-                <div class="code-lines">
-                  <div class="code-line">
-                    <div class="line-number"></div>
-                    <div class="line-content"><span class="tag"><!DOCTYPE HTML PUBLIC</span> <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span></div>
-                  </div>
-                  <div class="code-line">
-                    <div class="line-number"></div>
-                    <div class="line-content">  <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span><span class="tag">></span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="question">
-            <strong>11. إيه الفرق بين Transitional و Strict DOCTYPEs في HTML4؟</strong>
-            <div class="answer">
-              ✅ Transitional بيسمح بعناصر قديمة غير قياسية، Strict بيرفضها ويجبرك على المعايير.
-            </div>
-          </div>
-          
-          <div class="idea">
-            <h4>الخاتمة</h4>
-            <p>وبرنس الدرس خلص 👑<br>
-            اتعلمنا النهاردة يعني إيه DOCTYPE، الفرق بين Standard, Quirks, وAlmost Standards Mode، وإزاي المتصفح بيتعامل معاهم.<br>
-            لو عايز تبقى بروفيشنال، متكتبش صفحة HTML من غير:<br>
-            <div class="code-editor">
-              <div class="code-lines">
-                <div class="code-line">
-                  <div class="line-number"></div>
-                  <div class="line-content"><span class="tag"><!DOCTYPE</span> <span class="attribute">html</span><span class="tag">></span></div>
-                </div>
-              </div>
-            </div>
-            سيبل تعليق قولي فهمت ولا لسه عندك لبس.<br>
-            كان معاكم البرنس … واستنوفي في الدرس الجاي 🔥</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-      <p>تم إنشاء هذا الموقع التعليمي لشرح Document Type Declaration وأنماط العرض ✨</p>
-    </div>
-  </div>
-</body>
-</html>
